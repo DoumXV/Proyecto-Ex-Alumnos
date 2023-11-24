@@ -14,11 +14,21 @@ if(isset($_POST['boton_enviar'])){
         $email=$_POST['email_admin'];
         $clave=$_POST['clave_admin'];
         $sql=$conexion->query("SELECT * FROM administrador WHERE email_admin='$email' AND clave_admin='$clave'");
+        
         #$sql=$conexion->query("SELECT * FROM `administrador` WHERE email_admin=\'maglio@gmail.com\' AND clave_admin=\'maglio\'");
+        echo "$email"."$clave";
+        if ($sql) {
+            echo "funciona";
+        } else {
+            echo "no funciona";
+        }
+        
+
         if ($datos=$sql->fetch_object()) {
             $_SESSION['email_admin']=$datos->email_admin;
             $_SESSION['clave_admin']=$datos->clave_admin;
             $_SESSION['nombre_admin']=$datos->nombre_admin;
+            echo "funciona";
             #header();
         } else {
             echo "Datos incorrectos";
