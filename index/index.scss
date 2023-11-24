@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 $color-verde:#364c59;
 $color-amarillo: #dbca11;
-$letra-titulos:Montserrat SemiBold;
-
+$letra-titulos:Montserrat;
+.titulos{
+  font-family: $letra-titulos;
+  background-color: $color-verde;
+  color: white;
+}
 *{
     margin: 0;
     padding: 0;
@@ -17,6 +21,7 @@ header{
     transition: 0.7s;
     padding: 30px 20px;
     z-index: 10;
+    
 }
 
 header.abajo{
@@ -46,8 +51,8 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
-
 header ul{
     position: relative;
     display: flex;
@@ -71,16 +76,34 @@ header ul li a{
 .zona1{
     position: relative;
     width: 100%;
-    height: 8.5rem;
-    background:$color-verde;
+    height: 90vh;
+    background: url(/img/_ALX9328.JPG);
     background-size: cover;
     background-position: center center;
 }
+
 header.abajo .logo,
 header.abajo ul li a{
     color: white;
+    
+}
+/*Ex alumnos recientes*/
+.recientes{
+  width: 100%;
+  height: 500px;
+  background-color: white;
 }
 
+.calendario{
+  width: 100%;
+  height: 500px;
+  background-color: white;
+}
+.formulario{
+  width: 100%;
+  height: 500px;
+  background-color: white;
+}
 /*FOOTER*/
 .contenedor-footer {
     background-color: $color-verde;
