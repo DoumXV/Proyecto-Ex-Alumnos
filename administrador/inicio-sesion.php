@@ -4,7 +4,7 @@ session_start();
 $server="localhost";
 $user="root";
 $password="maglio100";
-$db="herramientas-desarrollo2";
+$db="proyecto-ex-alumnos";
 
 $conexion = new mysqli($server,$user,$pass,$db);
 
@@ -16,20 +16,14 @@ if(isset($_POST['boton_enviar'])){
         $sql=$conexion->query("SELECT * FROM administrador WHERE email_admin='$email' AND clave_admin='$clave'");
         
         #$sql=$conexion->query("SELECT * FROM `administrador` WHERE email_admin=\'maglio@gmail.com\' AND clave_admin=\'maglio\'");
-        echo "$email"."$clave";
-        if ($sql) {
-            echo "funciona";
-        } else {
-            echo "no funciona";
-        }
+        #echo "$email"."$clave";
         
 
         if ($datos=$sql->fetch_object()) {
             $_SESSION['email_admin']=$datos->email_admin;
             $_SESSION['clave_admin']=$datos->clave_admin;
             $_SESSION['nombre_admin']=$datos->nombre_admin;
-            echo "funciona";
-            #header();
+            #header("Location:panel.php");
         } else {
             echo "Datos incorrectos";
         }
@@ -41,8 +35,8 @@ if(isset($_POST['boton_enviar'])){
     #para las otras paginas es esta validacion
     #<?php
     #session_start();
-    #if(empty($_SESSION['email_admin'])){ header(); }  
-    
+    #if(empty($_SESSION['email_admin'])){ header("Location:"); }  
+    #
 }
 
 
