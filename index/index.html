@@ -16,8 +16,10 @@
 			</ul>
 		</nav>
 	</header>
-    <section class="zona1"></section>
-    <section>
+    <section class="zona1">
+      <div class="header-difuminado mx-auto"></div>
+    </section>
+    <!--<section class="mt-3 pt-5">
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -39,37 +41,85 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-    </section>
+    </section>-->
     <section class="recientes">
-      <h2 class="titulos container-fluid text-center my-3">Ex-Alumnos destacados</h2>
+      <h2 class="titulos container-fluid text-center">Ex-Alumnos destacados</h2>
+      <div class="tarjetas d-flex flex-row justify-content-center align-content-center">
+        <div class="flip-card me-5">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (1).png" alt="Avatar" style="width:300px;height:300px;">
+              <h1>Maglio Quiroga</h1>
+            </div>
+            <div class="flip-card-back">
+              <h1>John Doe</h1>
+              <p>Architect & Engineer</p>
+              <p>We love that guy</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (2).png" alt="Avatar" style="width:300px;height:300px;">
+              <h1>Vicente Jaramillo</h1>
+            </div>
+            <div class="flip-card-back">
+              <h1>John Doe</h1>
+              <p>Architect & Engineer</p>
+              <p>We love that guy</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (3).png" alt="Avatar" style="width:300px;height:300px;">
+              <h1>Doublas Galleguillos</h1>
+            </div>
+            <div class="flip-card-back">
+              <h1>John Doe</h1>
+              <p>Architect & Engineer</p>
+              <p>We love that guy</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="calendario">
-      <h2 class="titulos container-fluid text-center my-3">Calendario</h2>
+      <h2 class="titulos container-fluid text-center">Calendario</h2>
     </section>
     <section class="formulario">
       <h2 class="titulos container-fluid text-center my-3">Formulario</h2>
+      <p>Quieres ser parte de nuestra galeria?</p>
     </section>
     <footer>
         <div class="contenedor-footer">
-            <div class="newsletter">
-                <h4>Newsletter</h4>
-                <p>Suscríbete en nuestro Newsletter y se el primero en enterarte de ofertas y novedades.</p>
-                <input type="email" placeholder="Correo Electronico">
-                <button>Suscribirse</button>
+            <div class="footer-logo">
+                <img src="../img/logo-udacorp-txtblanco.png" alt="">
+                <ul>
+                  <li class="mt-1"><a href="">Ubícanos en
+                    Copiapó, Av. Copayapu 485</a></li>
+                  <li class="mt-1"><a href="">(52) 2 255555</a></li>
+                  <li class="mt-1"><a href="">anakarina.pena@uda.cl</a></li>
+              </ul>
             </div>
             <div class="acerca mx-auto">
-                <h4>Acerca de Nosotros</h4>
+                <h4 class="mt-2">Links</h4>
                 <ul>
-                    <li><a href="">Terminos y Condiciones</a></li>
-                    <li><a href="">Politica de Privacidad</a></li>
-                    <li><a href="">Informaciones Varias</a></li>
-                    <li><a href="">Informacion de Contacto</a></li>
+                    <li class="mt-4"><a href="">Académicos</a></li>
+                    <li class="mt-1"><a href="">Noticias</a></li>
+                    <li class="mt-1"><a href="">Moodle</a></li>
+                    <li class="mt-1"><a href="">Instagram</a></li>
                 </ul>
             </div>
             <div class="mapa">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.023629643002!2d-3.6920712739872252!3d40.45261397143391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228e23705d39f%3A0xa8fff6d26e2b1988!2sEstadio%20Santiago%20Bernab%C3%A9u!5e0!3m2!1ses!2scl!4v1697844284262!5m2!1ses!2scl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>    
+        <div class="copyright">
+          <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
+      </div>
     </footer>
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){

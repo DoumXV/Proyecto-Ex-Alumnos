@@ -11,6 +11,11 @@ $letra-titulos:Montserrat;
     margin: 0;
     padding: 0;
 }
+
+body{
+  background-color: white;
+}
+
 header{
     position: fixed;
     top: 0;
@@ -39,6 +44,22 @@ header .logo{
     width:300px ;
     height: 90px;
 }
+
+//HEADER//
+
+.header-difuminado{
+  display: flex;
+  height: 9rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  filter: blur(10px);
+  -webkit-filter: blur(20px);
+  backdrop-filter: blur(10px);
+}
+
 .linkeado{
     font-family:'Montserrat';
     text-transform: uppercase;
@@ -94,6 +115,54 @@ header.abajo ul li a{
   background-color: white;
 }
 
+//TARJETAS ALUMNOS//
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 3rem 3rem 3rem 3rem;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-front h1{
+  margin: 1rem 0;
+  font-size: larger;
+}
+
+.flip-card-back {
+  background-color: $color-verde;
+  color: white;
+  transform: rotateY(180deg);
+}
+
 .calendario{
   width: 100%;
   height: 500px;
@@ -112,65 +181,38 @@ header.abajo ul li a{
     padding: 4rem 8rem;
   }
   
-  .newsletter {
-    display: flex;
-    flex-direction: column;
+  .footer-logo img{
+    width: 300px;
+    height: 90px;
   }
   
-  .newsletter h4 {
-    font-size: 1.4rem;
-    margin: 0;
-  }
-  
-  .newsletter input {
-    background: none;
-    color: white;
-    border: none;
-    border-bottom: 2px solid #E5E7E9;
-    padding: 0.5rem 0rem 0.5rem;
-    font-size: medium;
-  }
-  
-  .newsletter input::-moz-placeholder {
-    color:white;
-  }
-  
-  .newsletter input::placeholder {
-    color: white;
-  }
-  
-  .newsletter button {
-    margin: 1rem 0;
-    border: none;
-    border-radius: 1rem;
-    background-color: #E5E7E9;
-    cursor: pointer;
-    font-weight: 400;
-    font-size: medium;
-    padding: 0.5rem 4rem;
-  }
-  
-  .acerca {
+  .acerca , .footer-logo{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  .acerca li {
+  .acerca li , .footer-logo li{
     list-style: none;
     padding: 0;
   }
   
-  .acerca li a {
+  .acerca li a , .footer-logo li a{
     color: white;
     text-decoration: none;
-    font-size: small;
+    font-size: medium;
+  }
+
+  .acerca li a:hover, .footer-logo li a:hover{
+    color: black;
   }
   
   .acerca h4 {
     font-size: 1.5rem;
     margin: 0;
-    margin-left: 4.5rem;
+    margin-left: 1rem;
+    color: white;
+    text-decoration: underline;
   }
   
   .mapa {
@@ -181,9 +223,20 @@ header.abajo ul li a{
   }
   
   .mapa iframe {
-    border-radius: 10rem;
+    border-radius: 2rem;
     width: 16rem;
     height: 12rem;
     padding-top: 0rem;
     margin: 0;
   }
+
+  /*Copyright*/
+.copyright {
+  border-top: 1px solid black;
+  justify-content: center;
+  display: flex;
+  background-color: $color-verde;
+  align-items: center;
+  padding: 0rem 8rem;
+  color: white;
+}
