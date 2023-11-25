@@ -1,3 +1,8 @@
+<?php
+include("../calendario/calendario.php");
+$query=$conexion->query("SELECT * FROM eventos WHERE inicio >= now()");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,8 +77,29 @@
         </div>
       </div>
     </section>
-    <section class="calendario">
+    <section class="calendario d-flex flex-column">
       <h2 class="titulos container-fluid text-center">Calendario de eventos</h2>
+      <div class="tarjetas d-flex flex-row  justify-content-around">
+        <?php while($registros=$query->fetch_object()){ ?>
+            <div class="card1 card text-center">
+              <div class="card-header">
+                <h3><?php echo $registros->nombre_evento; ?></h3>
+              </div>
+              <div class="card-body">
+                <div class="ubicacion d-flex flex-row">
+                  <!--<i><img src="../img/location-dot-solid.svg" alt=""></i>-->
+                  <h5 class="card-title mx-auto"><?php echo $registros->ubicacion; ?></h5>
+                </div>
+                <p class="card-text"><?php echo $registros->inicio; ?></p>
+                <p class="card-text"><?php echo $registros->final; ?></p>
+                <a href="#" class="btn btn-primary">Más información</a>
+              </div>
+            </div>
+          
+        <?php } ?>
+      </div>
+      
+      
     </section>
 
     <section class="formulario-caja">
