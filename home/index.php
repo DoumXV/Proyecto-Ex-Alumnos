@@ -1,3 +1,7 @@
+<?php
+include("../calendario/calendario.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,8 +76,19 @@
         </div>
       </div>
     </section>
-    <section class="calendario">
+    <section class="calendario d-flex flex-column">
       <h2 class="titulos container-fluid text-center">Calendario de eventos</h2>
+      <?php while($fila=$registro){ ?>
+          <div class="alert alert-warning">
+            <?php
+             echo $fila['nombre_evento'];
+             echo $fila['ubicacion'];
+             echo $fila['inicio'];
+             echo $fila['final'];
+           ?>
+           </div>
+        
+      <?php } ?>
     </section>
 
     <section class="formulario-caja">
