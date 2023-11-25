@@ -2,12 +2,12 @@
 
 $server="localhost";
 $user="root";
-$password="";
+$pass="";
 $db="proyecto-ex-alumnos";
 
 $conexion = new mysqli($server,$user,$pass,$db);
 
-$query="SELECT * FROM eventos WHERE inicio >= now()";
+$query=$conexion->query("SELECT * FROM eventos WHERE inicio >= now()");
 
 $registros=$query->fetch_object();
 
