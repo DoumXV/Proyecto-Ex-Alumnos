@@ -2,10 +2,10 @@
 
 $server="localhost";
 $user="root";
-$password="";
+$password="maglio100";
 $db="proyecto-ex-alumnos";
 
-$conexion = new mysqli($server,$user,$pass,$db);
+$conexion = new mysqli($server,$user,$password,$db);
 
 $nombre=$_POST['nombre_peticion'];
 $email=$_POST['email_peticion'];
@@ -19,6 +19,8 @@ if (!empty($nombre) and !empty($email) and !empty($contacto) and !empty($descrip
         if($sql2){
             echo "Solicitud enviada, su revision esta en proceso.";
         }
+    }else{
+        echo "no se ha encontrado el usuario";
     }
 } else {
     echo "No se pueden ingresar campos vacios";
