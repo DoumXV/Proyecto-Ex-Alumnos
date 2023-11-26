@@ -1,11 +1,6 @@
 <?php
 
-$server="localhost";
-$user="root";
-$password="maglio100";
-$db="proyecto-ex-alumnos";
-
-$conexion = new mysqli($server,$user,$pass,$db);
+include("../administrador/conexion.php");
 
 $query="SELECT * FROM eventos WHERE inicio >= now()";
 

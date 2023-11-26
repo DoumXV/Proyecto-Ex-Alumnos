@@ -2,10 +2,10 @@
 
 $server="localhost";
 $user="root";
-$password="maglio100";
+$pass="";
 $db="proyecto-ex-alumnos";
 
-$conexion = new mysqli($server,$user,$password,$db);
+$conexion = new mysqli($server,$user,$pass,$db);
 
 $nombre=$_POST['nombre_peticion'];
 $email=$_POST['email_peticion'];
