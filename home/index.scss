@@ -132,6 +132,7 @@ header.abajo ul li a{
   height: 300px;
   perspective: 1000px;
   margin: 3rem 3rem 3rem 3rem;
+  cursor: pointer;
 }
 
 .flip-card-inner {
@@ -142,6 +143,11 @@ header.abajo ul li a{
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  font-family: Montserrat;
+}
+
+.flip-card-inner h1{
+  padding: 1rem;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -159,6 +165,7 @@ header.abajo ul li a{
 .flip-card-front {
   background-color: #bbb;
   color: black;
+  font-family: Montserrat;
 }
 
 .flip-card-front h1{
@@ -171,7 +178,7 @@ header.abajo ul li a{
   color: white;
   transform: rotateY(180deg);
 }
-//calendario//
+//EVENTOS//
 
 .calendario{
   width: 100%;
@@ -180,8 +187,12 @@ header.abajo ul li a{
 }
 
 .boton-calendario{
-  background-color: $color-amarillo;
-  color: #dbca11;
+  background-color: $color-verde;
+  color: $color-verde;
+}
+
+.boton-calendario:hover{
+  background-color: #364c59;
 }
 
 .tarjetas {
@@ -192,22 +203,98 @@ header.abajo ul li a{
 .card1{
   width: 300px;
   height: 100px;
+  margin: 3rem 0;
 }
 
 .ubicacion{
   padding: 0;
   margin: 0;
+  justify-content: center;
 }
 
 .ubicacion img{
-  width: 30%;
-  padding-left: 4rem;
-  margin-right: 0;
+  width: 10%;
 }
 
 .ubicacion h5{
-  padding: 10px 0 0 1rem;
+  padding: 10px 0 0 .5rem;
 }
+
+.horario p{
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.fecha{
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.dia{
+  background-color: $color-verde;
+  border-bottom-left-radius: .3rem;
+  border-top-left-radius: .3rem ;
+  justify-content: end;
+  text-align: end;
+}
+
+.dia p{
+  font-size: 1.5rem;
+  color: white;
+  font-family: $letra-titulos;
+  padding: .5rem 0rem .5rem .5rem;
+  font-weight: 500;
+}
+
+.mes{
+  background-color: $color-verde;
+  border-top-right-radius: .3rem;
+  border-bottom-right-radius: .3rem;
+  padding: 0 .4rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.mes p{
+  padding: .5rem;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  font-family: $letra-titulos;
+  font-weight: 500;
+}
+
+.ini{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.ini img{
+  width: 10%;
+}
+
+.ini p{
+  padding: 2px 0 0 .5rem;
+}
+
+.fin{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.fin img{
+  width: 10%;
+}
+
+.fin p{
+  padding: 2px 0 0 .7rem;
+}
+
+
 
 /*Formulario*/
 .formulario-caja{
@@ -215,6 +302,7 @@ header.abajo ul li a{
   width: 100%;
   height: auto;
   background-color: white;
+  font-family: Montserrat;
 }
 /*FOOTER*/
 .contenedor-footer {
@@ -222,6 +310,7 @@ header.abajo ul li a{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 4rem 8rem;
+    font-family: Montserrat;
   }
   
   .footer-logo img{
@@ -282,4 +371,5 @@ header.abajo ul li a{
   align-items: center;
   padding: 0rem 8rem;
   color: white;
+  font-family: Montserrat;
 }

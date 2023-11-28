@@ -104,6 +104,7 @@ $meses = array(
                   <img src="../img/compass-regular.svg" alt="">
                   <h5 class="card-title"><?php echo $registros->ubicacion; ?></h5>
                 </div>
+                <div class="horario d-flex flex-column">
                 <?php
                   // Convertir la cadena de fecha a un objeto DateTime
                   $fechaObj = new DateTime($registros->inicio);
@@ -114,23 +115,30 @@ $meses = array(
                   $hora = $fechaObj->format('H:i');
 
                   // Imprimir los resultados
-                  echo "Día: $dia<br>";
-                  echo "Mes: $meses[$mes]<br>";
-                  echo "Hora Inicio: $hora<br>"; 
+                  echo "<div class='fecha'>";
+                  echo "<div class='dia'><p>$dia</p></div>";
+                  echo "<div class='mes'><p>$meses[$mes]</p></div></div>";
+                  echo "<div class='ini'>";
+                  echo "<img src='../img/clock-regular.svg'>";
+                  echo "<p>Inicio: $hora</p></div>"; 
                 ?>
-                <?php
-                  // Convertir la cadena de fecha a un objeto DateTime
-                  $fechaObj = new DateTime($registros->final);
+                  <?php
+                    // Convertir la cadena de fecha a un objeto DateTime
+                    $fechaObj = new DateTime($registros->final);
 
-                  // Obtener el día, mes y hora
-                  $dia = $fechaObj->format('d');
-                  $mes = $fechaObj->format('m');
-                  $hora = $fechaObj->format('H:i');
+                    // Obtener el día, mes y hora
+                    $dia = $fechaObj->format('d');
+                    $mes = $fechaObj->format('m');
+                    $hora_final = $fechaObj->format('H:i');
 
-                  // Imprimir los resultados
-                  echo "Hora Fin: $hora<br><br>"; 
-                ?>
-                <a href="#" class="boton-calendario btn btn" style="background-color: #dbca11; border: 1px solid black;">Más información</a>
+                    // Imprimir los resultados
+                    echo "<div class='fin'>";
+                    echo "<img src='../img/clock-solid.svg'>";
+                    echo "<p>Final: $hora_final</p></div>"; 
+                  ?>
+                </div>
+                
+                <button type="button" class="btn btn-dark">Mas Información</button>
               </div>
             </div>
           
@@ -142,7 +150,7 @@ $meses = array(
 
     <section class="formulario-caja">
       <h2 class="titulos container-fluid text-center my-3">Formulario</h2>
-      <p class="text-center" style="font-family: Monserrat;font-size: 20px;">¿Quieres ser parte de nuestra galeria de ex-alumnos del departamento de Ingenieria civil en computacion e Informática?</p>
+      <p class="text-center mt-5" style="font-family: Montserrat;font-size: 20px;">¿Quieres ser parte de nuestra galeria de ex-alumnos del departamento de Ingenieria civil en computacion e Informática?</p>
       <div class="d-flex flex-column justify-content-center align-items-center">
         <div class="d-flex flex-column justify-content-center align-items-center my-5 w-75">
           <form action="" class="w-75">
@@ -162,7 +170,7 @@ $meses = array(
               <label for="descripcion_peticion" class="form-label">Descripcion del ex-alumno</label>
               <textarea class="form-control" name="descripcion_peticion" id="descripcion_peticion" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="background-color: #364c59; border: 1px solid black;" name="enviar_peticion">Enviar</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #364c59; border: 1px solid black; font-family: Montserrat;" name="enviar_peticion">Enviar</button>
           </form>
         </div>
       </div>
