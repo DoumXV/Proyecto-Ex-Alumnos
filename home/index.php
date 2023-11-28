@@ -1,6 +1,20 @@
 <?php
 include("../calendario/calendario.php");
 $query=$conexion->query("SELECT * FROM eventos WHERE inicio >= now()");
+$meses = array(
+  1 => "Enero",
+  2 => "Febrero",
+  3 => "Marzo",
+  4 => "Abril",
+  5 => "Mayo",
+  6 => "Junio",
+  7 => "Julio",
+  8 => "Agosto",
+  9 => "Septiembre",
+  10 => "Octubre",
+  11 => "Noviembre",
+  12 => "Diciembre"
+);
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +58,8 @@ $query=$conexion->query("SELECT * FROM eventos WHERE inicio >= now()");
             </div>
             <div class="flip-card-back">
               <h1>Violeta Parra</h1>
-              <p>Architect & Engineer</p>
-              <p>We love that girl</p>
+              <p>Contacto</p>
+              <p>Descripcion</p>
             </div>
           </div>
         </div>
@@ -56,9 +70,9 @@ $query=$conexion->query("SELECT * FROM eventos WHERE inicio >= now()");
               <h1>Matias Fernandez</h1>
             </div>
             <div class="flip-card-back">
-              <h1>John Doe</h1>
-              <p>Architect & Engineer</p>
-              <p>We love that guy</p>
+              <h1>Matias Fernandez</h1>
+              <p>Contacto</p>
+              <p>Descripcion</p>
             </div>
           </div>
         </div>
@@ -70,29 +84,53 @@ $query=$conexion->query("SELECT * FROM eventos WHERE inicio >= now()");
             </div>
             <div class="flip-card-back">
               <h1>Andrea Gonzalez</h1>
-              <p>Architect & Engineer</p>
-              <p>We love that girl</p>
+              <p>Contacto</p>
+              <p>Descripcion</p>
             </div>
           </div>
         </div>
       </div>
     </section>
     <section class="calendario d-flex flex-column">
-      <h2 class="titulos container-fluid text-center">Calendario de eventos</h2>
+      <h2 class="titulos container-fluid text-center">Eventos</h2>
       <div class="tarjetas d-flex flex-row  justify-content-around">
         <?php while($registros=$query->fetch_object()){ ?>
-            <div class="card1 card text-center">
-              <div class="card-header">
+            <div class="card1 card text-center" style="border: 1px solid black;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+              <div class="card-header" style="background-color: #364c59; color: white;">
                 <h3><?php echo $registros->nombre_evento; ?></h3>
               </div>
               <div class="card-body">
-                <div class="ubicacion d-flex flex-row">
-                  <!--<i><img src="../img/location-dot-solid.svg" alt=""></i>-->
-                  <h5 class="card-title mx-auto"><?php echo $registros->ubicacion; ?></h5>
+                <div class="ubicacion d-flex mx-auto">
+                  <img src="../img/compass-regular.svg" alt="">
+                  <h5 class="card-title"><?php echo $registros->ubicacion; ?></h5>
                 </div>
-                <p class="card-text"><?php echo $registros->inicio; ?></p>
-                <p class="card-text"><?php echo $registros->final; ?></p>
-                <a href="#" class="btn btn-primary">Más información</a>
+                <?php
+                  // Convertir la cadena de fecha a un objeto DateTime
+                  $fechaObj = new DateTime($registros->inicio);
+
+                  // Obtener el día, mes y hora
+                  $dia = $fechaObj->format('d');
+                  $mes = $fechaObj->format('m');
+                  $hora = $fechaObj->format('H:i');
+
+                  // Imprimir los resultados
+                  echo "Día: $dia<br>";
+                  echo "Mes: $meses[$mes]<br>";
+                  echo "Hora Inicio: $hora<br>"; 
+                ?>
+                <?php
+                  // Convertir la cadena de fecha a un objeto DateTime
+                  $fechaObj = new DateTime($registros->final);
+
+                  // Obtener el día, mes y hora
+                  $dia = $fechaObj->format('d');
+                  $mes = $fechaObj->format('m');
+                  $hora = $fechaObj->format('H:i');
+
+                  // Imprimir los resultados
+                  echo "Hora Fin: $hora<br><br>"; 
+                ?>
+                <a href="#" class="boton-calendario btn btn" style="background-color: #dbca11; border: 1px solid black;">Más información</a>
               </div>
             </div>
           
@@ -124,7 +162,7 @@ $query=$conexion->query("SELECT * FROM eventos WHERE inicio >= now()");
               <label for="descripcion_peticion" class="form-label">Descripcion del ex-alumno</label>
               <textarea class="form-control" name="descripcion_peticion" id="descripcion_peticion" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="background-color: #364c59;" name="enviar_peticion">Enviar</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #364c59; border: 1px solid black;" name="enviar_peticion">Enviar</button>
           </form>
         </div>
       </div>

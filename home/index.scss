@@ -179,6 +179,11 @@ header.abajo ul li a{
   background-color: white;
 }
 
+.boton-calendario{
+  background-color: $color-amarillo;
+  color: #dbca11;
+}
+
 .tarjetas {
   padding: 4rem 0;
 
@@ -195,8 +200,15 @@ header.abajo ul li a{
 }
 
 .ubicacion img{
-  width: 10%;
+  width: 30%;
+  padding-left: 4rem;
+  margin-right: 0;
 }
+
+.ubicacion h5{
+  padding: 10px 0 0 1rem;
+}
+
 /*Formulario*/
 .formulario-caja{
   margin: auto;
