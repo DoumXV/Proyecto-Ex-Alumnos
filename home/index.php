@@ -148,12 +148,10 @@ $meses = array(
       <p class="text-center mt-5" style="font-family: Montserrat;font-size: 20px;">¿Quieres ser parte de nuestra galeria de ex-alumnos del departamento de Ingenieria civil en computacion e Informática?</p>
       <div class="d-flex flex-column justify-content-center align-items-center">
         <div class="d-flex flex-column justify-content-center align-items-center my-5 w-75">
-          <div class="alert alert-info">
             <?php
               include("../formulario-ex-alumnos/descripcion.php");
             ?>
-          </div>
-          <form action="" class="w-75">
+          <form action="" class="w-75" method="post">
             <div class="mb-3">
               <label for="nombre_peticion" class="form-label">Nombre Completo</label>
               <input type="text" id="nombre_peticion" class="form-control" name="nombre_peticion">

@@ -197,6 +197,10 @@ header.abajo ul li a {
   background-color: #dbca11;
 }
 
+.tarjetas {
+  margin: 3rem 0;
+}
+
 .card1 {
   width: 300px;
   height: auto;
