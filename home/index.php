@@ -24,8 +24,8 @@ $meses = array(
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ex alumnos UDA</title>
 </head>
-<link rel="stylesheet" href="index.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="index.css">
 <body>
 	<header>
 		<a href="index.html" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
@@ -38,15 +38,11 @@ $meses = array(
 			</ul>
 		</nav>
 	</header>
+
     <section class="zona1">
       <div class="header-difuminado mx-auto"></div>
-
-      <!--<div class="h-75 d-flex flex-column align-items-center justify-content-center">
-        <h1 class="texto">Departamento de Ingenieria</h1>
-        <p class="texto">Pagina de Ex-alumnos</p>
-      </div>-->
-
     </section>
+
     <section class="recientes">
       <h2 class="titulos container-fluid text-center">Ex-Alumnos destacados</h2>
       <div class="tarjetas d-flex flex-row justify-content-center align-content-center">
@@ -91,15 +87,16 @@ $meses = array(
         </div>
       </div>
     </section>
+
     <section class="calendario d-flex flex-column">
       <h2 class="titulos container-fluid text-center">Eventos</h2>
       <div class="tarjetas d-flex flex-row  justify-content-around">
         <?php while($registros=$query->fetch_object()){ ?>
-            <div class="card1 card text-center" style="border: 1px solid black;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div class="card1 card text-center h-auto" style="border: 1px solid black;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
               <div class="card-header" style="background-color: #364c59; color: white;">
                 <h3><?php echo $registros->nombre_evento; ?></h3>
               </div>
-              <div class="card-body">
+              <div class="card-body h-auto">
                 <div class="ubicacion d-flex mx-auto">
                   <img src="../img/compass-regular.svg" alt="">
                   <h5 class="card-title"><?php echo $registros->ubicacion; ?></h5>
@@ -138,14 +135,12 @@ $meses = array(
                   ?>
                 </div>
                 
-                <button type="button" class="btn btn-dark">Mas Información</button>
+                <button type="button" class="btn-calendario btn btn-dark">Mas Información</button>
               </div>
             </div>
           
         <?php } ?>
       </div>
-      
-      
     </section>
 
     <section class="formulario-caja">
@@ -174,8 +169,8 @@ $meses = array(
           </form>
         </div>
       </div>
+    </section>}
 
-    </section>
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -204,6 +199,7 @@ $meses = array(
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+    
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
