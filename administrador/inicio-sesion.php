@@ -3,7 +3,7 @@ session_start();
 
 $server="localhost";
 $user="root";
-$password="maglio100";
+$password="";
 $db="proyecto-ex-alumnos";
 
 $conexion = new mysqli($server,$user,$pass,$db);
