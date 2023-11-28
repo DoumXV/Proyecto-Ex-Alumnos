@@ -28,7 +28,7 @@ $meses = array(
 <link rel="stylesheet" href="index.css">
 <body>
 	<header>
-		<a href="index.html" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
+		<a href="index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
 				<li><a class="linkeado" href="#">Inicio</a></li>
