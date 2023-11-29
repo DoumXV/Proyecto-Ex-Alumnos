@@ -28,7 +28,7 @@ $meses = array(
 <link rel="stylesheet" href="index.css">
 <body>
 	<header>
-		<a href="index.html" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
+		<a href="index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
 				<li><a class="linkeado" href="#">Inicio</a></li>
@@ -148,7 +148,10 @@ $meses = array(
       <p class="text-center mt-5" style="font-family: Montserrat;font-size: 20px;">¿Quieres ser parte de nuestra galeria de ex-alumnos del departamento de Ingenieria civil en computacion e Informática?</p>
       <div class="d-flex flex-column justify-content-center align-items-center">
         <div class="d-flex flex-column justify-content-center align-items-center my-5 w-75">
-          <form action="" class="w-75">
+            <?php
+              include("../formulario-ex-alumnos/descripcion.php");
+            ?>
+          <form action="" class="w-75" method="post">
             <div class="mb-3">
               <label for="nombre_peticion" class="form-label">Nombre Completo</label>
               <input type="text" id="nombre_peticion" class="form-control" name="nombre_peticion">
@@ -169,7 +172,7 @@ $meses = array(
           </form>
         </div>
       </div>
-    </section>}
+    </section>
 
     <footer>
         <div class="contenedor-footer">
