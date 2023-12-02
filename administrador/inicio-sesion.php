@@ -6,7 +6,7 @@ $user="root";
 $password="";
 $db="proyecto-ex-alumnos";
 
-$conexion = new mysqli($server,$user,$pass,$db);
+$conexion = new mysqli($server,$user,$password,$db);
 
 
 if(isset($_POST['boton_enviar'])){
@@ -23,6 +23,7 @@ if(isset($_POST['boton_enviar'])){
             $_SESSION['email_admin']=$datos->email_admin;
             $_SESSION['clave_admin']=$datos->clave_admin;
             $_SESSION['nombre_admin']=$datos->nombre_admin;
+            echo "estas logeado";
             #header("Location:panel.php");
         } else {
             echo "Datos incorrectos";
@@ -30,7 +31,7 @@ if(isset($_POST['boton_enviar'])){
         
     }
     else{
-        echo "No se pueden ingresar campos vacios";
+        echo 'No se pueden ingresar campos vacios';
     }
     #para las otras paginas es esta validacion
     #<?php
