@@ -6,10 +6,15 @@ if(isset($_POST['enviar_peticion'])){
     $email=$_POST['email_peticion'];
     $contacto=$_POST['contacto_peticion'];
     $descripcion=$_POST['descripcion_peticion'];
-    if (!empty($nombre) and !empty($email) and !empty($contacto) and !empty($descripcion)) {
+    $nombre_imagen=$_FILES['imagen_peticion']['name'];
+    $ruta_imagen=$_FILES['imagen_peticion']['tmp_name'];
+    $ruta_guardado="../img-ex-alumnos/".$nombre_imagen;
+    if (!empty($nombre) and !empty($email) and !empty($contacto) and !empty($descripcion) and !empty($ruta_imagen) and !empty($nombre_imagen)) {
         $sql1=$conexion->query("SELECT * FROM usuarios WHERE email_usuario='$email'");
         if(mysqli_num_rows($sql1) > 0){
-            $sql2=$conexion->query("INSERT INTO peticiones (nombre_peticion,email_peticion,contacto_peticion,descripcion_peticion) VALUES ('$nombre','$email','$contacto','$descripcion')");
+            move_uploaded_file($ruta_imagen,$ruta_guardado);
+            $sql2=$conexion->query("INSERT INTO peticiones (nombre_peticion,email_peticion,contacto_peticion,descripcion_peticion,direccion_imagen) VALUES ('$nombre','$email','$contacto','$descripcion','$ruta_guardado')");
+            #$sql3=$conexion->query("UPDATE usuarios SET direccion_imagen = '$ruta_guardado' WHERE email_usuario = '$email'");
             if($sql2){
                 echo "<div class='alert alert-info'>Solicitud enviada, su revision esta en proceso.</div>";
             }else{

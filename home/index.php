@@ -34,7 +34,7 @@ $meses = array(
 				<li><a class="linkeado" href="#">Inicio</a></li>
 				<li><a class="linkeado" href="#">Galeria</a></li>
         <li><a class="linkeado" href="#">Empleos</a></li>
-				<li><a class="linkeado" href="#">Administrador</a></li>
+				<li><a class="linkeado" href="../log-admin/admin.php">Administrador</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -151,7 +151,7 @@ $meses = array(
             <?php
               include("../formulario-ex-alumnos/descripcion.php");
             ?>
-          <form action="" class="w-75" method="post">
+          <form action="" class="w-75" method="post" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="nombre_peticion" class="form-label">Nombre Completo</label>
               <input type="text" id="nombre_peticion" class="form-control" name="nombre_peticion">
@@ -167,6 +167,10 @@ $meses = array(
             <div class="mb-3">
               <label for="descripcion_peticion" class="form-label">Descripcion del ex-alumno</label>
               <textarea class="form-control" name="descripcion_peticion" id="descripcion_peticion" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Foto de ex-alumno</label>
+              <input class="form-control" type="file" id="formFile" name="imagen_peticion" accept="image/png, image/jpeg">
             </div>
             <button type="submit" class="btn btn-primary" style="background-color: #364c59; border: 1px solid black; font-family: Montserrat;" name="enviar_peticion">Enviar</button>
           </form>
