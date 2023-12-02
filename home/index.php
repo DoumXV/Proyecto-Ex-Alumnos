@@ -34,7 +34,7 @@ $meses = array(
 				<li><a class="linkeado" href="#">Inicio</a></li>
 				<li><a class="linkeado" href="#">Galeria</a></li>
         <li><a class="linkeado" href="#">Empleos</a></li>
-				<li><a class="linkeado" href="#">Administrador</a></li>
+				<li><a class="linkeado" href="../log-admin/admin.php">Administrador</a></li>
 			</ul>
 		</nav>
 	</header>
