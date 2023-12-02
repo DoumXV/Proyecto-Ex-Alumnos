@@ -6,10 +6,9 @@ $user="root";
 $password="";
 $db="proyecto-ex-alumnos";
 
-$conexion = new mysqli($server,$user,$pass,$db);
+$conexion = new mysqli($server,$user,$password,$db);
 
-
-if(isset($_POST['boton_enviar'])){
+if(!empty($_POST["boton_enviar"])){
     if (!empty($_POST['email_admin']) and !empty($_POST['clave_admin'])) {
         $email=$_POST['email_admin'];
         $clave=$_POST['clave_admin'];
@@ -23,14 +22,15 @@ if(isset($_POST['boton_enviar'])){
             $_SESSION['email_admin']=$datos->email_admin;
             $_SESSION['clave_admin']=$datos->clave_admin;
             $_SESSION['nombre_admin']=$datos->nombre_admin;
+            echo "<div class='alert alert-info text-center'>Sesion Iniciada Correctamente.</div>";
             #header("Location:panel.php");
         } else {
-            echo "Datos incorrectos";
+            echo "<div class='alert alert-warning text-center'>Datos Incorrectos.</div>";
         }
         
     }
     else{
-        echo "No se pueden ingresar campos vacios";
+        echo "<div class='alert alert-warning text-center'>No se pueden ingresar campos vacios.</div>";
     }
     #para las otras paginas es esta validacion
     #<?php
