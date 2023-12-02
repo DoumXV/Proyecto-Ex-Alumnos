@@ -13,9 +13,9 @@ if(isset($_POST['enviar_peticion'])){
         $sql1=$conexion->query("SELECT * FROM usuarios WHERE email_usuario='$email'");
         if(mysqli_num_rows($sql1) > 0){
             move_uploaded_file($ruta_imagen,$ruta_guardado);
-            $sql2=$conexion->query("INSERT INTO peticiones (nombre_peticion,email_peticion,contacto_peticion,descripcion_peticion) VALUES ('$nombre','$email','$contacto','$descripcion')");
-            $sql3=$conexion->query("UPDATE usuarios SET direccion_imagen = '$ruta_guardado' WHERE email_usuario = '$email'");
-            if($sql2 and $sql3){
+            $sql2=$conexion->query("INSERT INTO peticiones (nombre_peticion,email_peticion,contacto_peticion,descripcion_peticion,direccion_imagen) VALUES ('$nombre','$email','$contacto','$descripcion','$ruta_guardado')");
+            #$sql3=$conexion->query("UPDATE usuarios SET direccion_imagen = '$ruta_guardado' WHERE email_usuario = '$email'");
+            if($sql2){
                 echo "<div class='alert alert-info'>Solicitud enviada, su revision esta en proceso.</div>";
             }else{
                 echo "<div class='alert alert-danger'>La solicitud no se pudo enviar, intentelo mas tarde.</div>";
