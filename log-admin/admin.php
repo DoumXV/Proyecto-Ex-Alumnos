@@ -48,7 +48,7 @@
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
-                <img src="../img/logo-corp-diic-txtblanco.png" alt="">
+                <img src="../img/logo-udacorp-lineablanca.png" alt="">
                 <ul>
                   <li class="mt-1"><a href="">Ubícanos en
                     Copiapó, Av. Copayapu 485</a></li>
