@@ -4,52 +4,41 @@
 	<title>Ex alumnos UDA</title>
 </head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="admin.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="admin.css">
 <body>
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
-				<li><a class="linkeado" href="#">Inicio</a></li>
+				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
 				<li><a class="linkeado" href="#">Galeria</a></li>
                 <li><a class="linkeado" href="#">Empleos</a></li>
-				<li><a class="linkeado" href="#">Administrador</a></li>
+				<li><a class="linkeado" href="../home/index.php">Administrador</a></li>
 			</ul>
 		</nav>
 	</header>
     <section class="zona1">
     </section>
     <section class="formulario-logeo">
-        <h2 class="titulos container-fluid text-center mb-3">Formulario de logueo</h2>
-
         <section class="container-login">
             <div class="form">
                 <h1 class="title-form">Iniciar Sesión</h1>
+                <?php
+                    include("../administrador/inicio-sesion.php");
+                ?>
                 <div class="form-content">
-                    <form action="" method="POST">
+                    <form action="" method="post">
                         <div class="form-inputs">
                           <p class="text-form">Correo Electronico</p>
-                          <input type="email" name="email">
+                          <input type="email" name="email_admin">
                           <p class="text-form">Contraseña</p>
-                          <input type="password" name="password">
+                          <input type="password" name="clave_admin">
                         </div>
-                        <div class="form-options">
-                            <div class="remember-me">
-                                <input type="checkbox">
-                                <p>Recuérdame</p>
-                            </div>
-                            <div class="forgot-password">
-                                <a href="../recuperacion/recuperar.php">¿Ha olvidado su contraseña?</a>
-                            </div>
+                        <div class="d-grid gap-2 col-6 mx-auto my-3 mt-5">
+                            <input type="submit" style="background-color: black; border: 1px solid black; box-shadow: 2rem; box-shadow: 0 10px 22px 0 rgba(0,0,0,0.2);" class="btn btn-primary" name="boton_enviar" value="Iniciar Sesion">
                         </div>
-                        <div class="form-button">
-                            <input type="submit" class="btn btn-primary" name="btniniciar" value="Iniciar Sesion">
-                        </div>
-                        <div class="form-register">
-                            <p>¿No tienes Cuenta?</p>
-                            <a href="../registro/registro.php">Registrate Aqui</a>
-                        </div>
+                        
                     </form>
                 </div>
             </div>
@@ -59,7 +48,7 @@
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
-                <img src="../img/logo-udacorp-txtblanco.png" alt="">
+                <img src="../img/logo-corp-diic-txtblanco.png" alt="">
                 <ul>
                   <li class="mt-1"><a href="">Ubícanos en
                     Copiapó, Av. Copayapu 485</a></li>

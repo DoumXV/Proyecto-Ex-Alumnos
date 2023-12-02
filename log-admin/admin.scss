@@ -34,7 +34,7 @@ header{
 }
 
 header.abajo{
-    background: $color-verde;
+    background: rgb(26, 26, 26);
     padding: 15px 20px;
 }
 header .logo{
@@ -123,11 +123,10 @@ header.abajo ul li a{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 4rem;
 }
 
 .title-form {
-  text-transform: uppercase;
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
@@ -142,7 +141,7 @@ header.abajo ul li a{
 }
 
 .form-inputs p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -151,49 +150,21 @@ header.abajo ul li a{
   outline: none;
   background: none;
   border: none;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid $color-verde;
   cursor: pointer;
   padding: 0 1.2rem;
   color: var(--dark-color);
   display: block;
   width: 100%;
   font-family: inherit;
-  font-size: 1rem;
-}
-
-.form-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, min-content);
-  row-gap: 1rem;
-}
-
-.remember-me {
-  display: flex;
-  align-items: center;
-}
-
-.remember-me p {
-  font-size: 0.8rem;
-  padding-left: 0.5rem;
-}
-
-.forgot-password {
-  display: flex;
-}
-
-.forgot-password a {
-  text-decoration: underline;
-  color: black;
-  padding-top: 1rem;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 
 .form-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0rem;
+  margin-top: 2rem;
 }
 
 .form-button button {
@@ -214,28 +185,9 @@ header.abajo ul li a{
   color: var(--dark-color);
 }
 
-.form-register {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 2rem;
-}
-
-.form-register p {
-  font-size: 1rem;
-  font-weight: 400;
-  padding-right: 1rem;
-}
-
-.form-register a {
-  font-size: 1rem;
-  font-weight: 400;
-  text-decoration: underline;
-  color: var(--background-color);
-}
 /*FOOTER*/
 .contenedor-footer {
-    background-color: $color-verde;
+    background-color: rgb(26, 26, 26);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 4rem 8rem;
@@ -295,7 +247,7 @@ header.abajo ul li a{
   border-top: 1px solid black;
   justify-content: center;
   display: flex;
-  background-color: $color-verde;
+  background-color: rgb(26, 26, 26);
   align-items: center;
   padding: 0rem 8rem;
   color: white;
