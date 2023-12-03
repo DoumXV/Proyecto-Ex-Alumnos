@@ -1,11 +1,15 @@
+<?php
+include("../administrador/conexion.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Ex alumnos UDA</title>
 </head>
 <meta charset="UTF-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 <link rel="stylesheet" href="galeria.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <body>
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
@@ -29,45 +33,65 @@
     </section>
 
     <section class="galeria">
-        <h2 class="titulos container-fluid text-center">Galeria de Ex-Alumnos</h2>
-        <div class="tarjetas d-flex flex-row justify-content-center align-content-center">
-            <div class="flip-card me-5">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (1).png" alt="Avatar" style="width:350px;height:350px;">
-                  <h1>Violeta Parra</h1>
-                </div>
-                <div class="flip-card-back">
-                  <h1>Violeta Parra</h1>
-                  <p>Contacto</p>
-                  <p>Descripcion</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Launch static backdrop modal
-                  </button>
-                </div>
-              </div>
-            </div>
-        </div>
-    </section>  
+        
+    <?php
+    #script donde se secciona de 4 en 4 registros la tabla usuarios
+    $_REQUEST['nume'] = !empty($_REQUEST['nume']) ? $_REQUEST['nume'] : '1';
+    $alumnos = $conexion->query("SELECT * FROM usuarios");
+    $numero_alumnos = mysqli_num_rows($alumnos);
+    $registros = 4;
+    $pagina = $_REQUEST['nume'];
 
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    if(is_numeric($pagina)){
+        $inicio = (($pagina - 1) * $registros);
+    } else {
+        $inicio = 0;
+    }
+
+    $busqueda = $conexion->query("SELECT * FROM usuarios LIMIT $inicio, $registros");
+    $paginas = ceil($numero_alumnos / $registros);
+?>
+
+<?php while ($resultado = mysqli_fetch_assoc($busqueda)) { ?>
+  <!--  aca es donde tiene que ir la flipcard de los ex-alumnos  -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <?php echo $resultado['nombre_usuario']; ?>
             </div>
-            <div class="modal-body">
-            ...
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-            </div>
-        </div>
         </div>
     </div>
+<?php } ?>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <ul class="pagination">
+                <?php
+                #script de la paginacion de los ex-alumnos
+                if ($_REQUEST['nume'] == '1') {
+                    $_REQUEST['nume'] = '0';
+                    echo "";
+                } else {
+                    $ant = ($_REQUEST['nume'] > 1) ? $_REQUEST['nume'] - 1 : 1;
+                    echo "<li class='page-item'><a class='page-link' aria-label='Previous' href='galeria.php?nume=" . $ant . "'><span aria-hidden='true'>&laquo;</span><span class='sr-only'>Previous</span></a></li>";
+                }
+
+                for ($i = 1; $i <= $paginas; $i++) {
+                    $activeClass = ($i == $_REQUEST['nume']) ? 'active' : '';
+                    echo "<li class='page-item $activeClass'><a class='page-link' href='galeria.php?nume=$i'>$i</a></li>";
+                }
+
+                $sig = ($_REQUEST['nume'] < $paginas) ? $_REQUEST['nume'] + 1 : $paginas;
+                echo "<li class='page-item'><a class='page-link' aria-label='Next' href='galeria.php?nume=" . $sig . "'><span aria-hidden='true'>&raquo;</span><span class='sr-only'>Next</span></a></li>";
+                ?>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
 
     </section>
     <footer>
