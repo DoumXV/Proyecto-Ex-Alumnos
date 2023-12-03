@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="panel-admin.css">
 <body>
 	<header>
-		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
+		<a href="../log-admin/admin.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
 				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>

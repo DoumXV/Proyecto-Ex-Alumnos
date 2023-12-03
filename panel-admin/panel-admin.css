@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;550;550&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
 .titulos {
   font-family: Montserrat;
   background-color: #364c59;
@@ -59,7 +59,7 @@ header .logo {
   filter: blur(10px);
   -webkit-filter: blur(20px);
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 
 .linkeado {
@@ -96,7 +96,7 @@ header ul li a {
   text-decoration: none;
   color: #fff;
   letter-spacing: 2px;
-  font-weight: 550;
+  font-weight: 600;
   transition: 0.7s;
 }
 
@@ -112,6 +112,78 @@ header ul li a {
 header.abajo .logo,
 header.abajo ul li a {
   color: white;
+}
+
+.formulario-logeo {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+}
+
+.container-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.title-form {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.form-inputs p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.form-inputs input {
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #364c59;
+  cursor: pointer;
+  padding: 0 1.2rem;
+  color: var(--dark-color);
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1.2rem;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.form-button button {
+  border: none;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.form-button button:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
 }
 
 .caja-eventos {
@@ -212,6 +284,4 @@ header.abajo ul li a {
   align-items: center;
   padding: 0rem 8rem;
   color: white;
-}
-
-/*# sourceMappingURL=panel-admin.css.map */
+}/*# sourceMappingURL=panel-admin.css.map */
