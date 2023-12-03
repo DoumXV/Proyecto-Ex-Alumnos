@@ -43,56 +43,63 @@ $meses = array(
       <div class="header-difuminado mx-auto"></div>
     </section>
 
-    <section class="recientes">
+    <section class="recientes h-auto">
       <h2 class="titulos container-fluid text-center">Ex-Alumnos destacados</h2>
-      <div class="tarjetas d-flex flex-row justify-content-center align-content-center">
-        <div class="flip-card me-5">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (1).png" alt="Avatar" style="width:300px;height:300px;">
-              <h1>Violeta Parra</h1>
-            </div>
-            <div class="flip-card-back">
-              <h1>Violeta Parra</h1>
-              <p>Contacto</p>
-              <p>Descripcion</p>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (2).png" alt="Avatar" style="width:300px;height:300px;">
-              <h1>Matias Fernandez</h1>
-            </div>
-            <div class="flip-card-back">
-              <h1>Matias Fernandez</h1>
-              <p>Contacto</p>
-              <p>Descripcion</p>
+      <div class="tarjetas row justify-content-center align-content-center">
+        <div class="g-5 col-xl-4 col-lg-6 col-md-7">
+          <div class="flip-card me-5">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (1).png" alt="Avatar" style="width:300px;height:300px;">
+                <h1>Violeta Parra</h1>
+              </div>
+              <div class="flip-card-back">
+                <h1>Violeta Parra</h1>
+                <p>Contacto</p>
+                <p>Descripcion</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (3).png" alt="Avatar" style="width:300px;height:300px;">
-              <h1>Andrea Gonzalez</h1>
+        <div class="g-5 col-xl-4 col-lg-6 col-md-7">
+          <div class="flip-card me-5">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (2).png" alt="Avatar" style="width:300px;height:300px;">
+                <h1>Matias Fernandez</h1>
+              </div>
+              <div class="flip-card-back">
+                <h1>Matias Fernandez</h1>
+                <p>Contacto</p>
+                <p>Descripcion</p>
+              </div>
             </div>
-            <div class="flip-card-back">
-              <h1>Andrea Gonzalez</h1>
-              <p>Contacto</p>
-              <p>Descripcion</p>
+          </div>
+        </div>
+        <div class="g-5 col-xl-4 col-lg-6 col-md-7">
+          <div class="flip-card me-5">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (3).png" alt="Avatar" style="width:300px;height:300px;">
+                <h1>Andrea Gonzalez</h1>
+              </div>
+              <div class="flip-card-back">
+                <h1>Andrea Gonzalez</h1>
+                <p>Contacto</p>
+                <p>Descripcion</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="calendario d-flex flex-column">
+    <section class="calendario">
       <h2 class="titulos container-fluid text-center">Eventos</h2>
-      <div class="tarjetas d-flex flex-row  justify-content-around">
+      <div class="tarjetas row justify-content-center align-content-center">
         <?php while($registros=$query->fetch_object()){ ?>
-            <div class="card1 card text-center h-auto" style="border: 1px solid black;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div class="col-xxl-3 g-5 col-xl-4 col-lg-6 col-md-7">
+            <div class="card1 card text-center h-auto mx-auto" style="border: 1px solid black;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
               <div class="card-header" style="background-color: #364c59; color: white;">
                 <h3><?php echo $registros->nombre_evento; ?></h3>
               </div>
@@ -114,10 +121,12 @@ $meses = array(
                   // Imprimir los resultados
                   echo "<div class='fecha'>";
                   echo "<div class='dia'><p>$dia</p></div>";
-                  echo "<div class='mes'><p>$meses[$mes]</p></div></div>";
+                  echo "<div class='mes'><p>$meses[$mes]</p></div>
+                        </div>";
                   echo "<div class='ini'>";
                   echo "<img src='../img/clock-regular.svg'>";
-                  echo "<p>Inicio: $hora</p></div>"; 
+                  echo "<p>Inicio: $hora</p>
+                        </div>";
                 ?>
                   <?php
                     // Convertir la cadena de fecha a un objeto DateTime
@@ -131,14 +140,14 @@ $meses = array(
                     // Imprimir los resultados
                     echo "<div class='fin'>";
                     echo "<img src='../img/clock-solid.svg'>";
-                    echo "<p>Final: $hora_final</p></div>"; 
+                    echo "<p>Final: $hora_final</p>
+                          </div>"; 
                   ?>
                 </div>
-                
                 <button type="button" class="btn-calendario btn btn-dark">Mas Información</button>
               </div>
             </div>
-          
+            </div>
         <?php } ?>
       </div>
     </section>
