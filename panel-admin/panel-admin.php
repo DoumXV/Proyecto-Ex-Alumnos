@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(empty($_SESSION['email_admin'])){
+        header("Location:../log-admin/admin.php"); 
+        }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +14,12 @@
 <link rel="stylesheet" href="panel-admin.css">
 <body>
 	<header>
-		<a href="../log-admin/admin.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
+		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
-				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
-				<li><a class="linkeado" href="#">Galeria</a></li>
-                <li><a class="linkeado" href="#">Empleos</a></li>
-				<li><a class="linkeado" href="../home/index.php">Administrador</a></li>
+				<li><a class="linkeado" href="panel-admin.php">Inicio</a></li>
+                <li><a class="linkeado" href="../administrador/cerrar-sesion.php">Cerrar sesion</a></li>
+
 			</ul>
 		</nav>
 	</header>
@@ -52,10 +57,10 @@
             <div class="acerca mx-auto">
                 <h4 class="mt-2">Links</h4>
                 <ul>
-                    <li class="mt-4"><a href="">Académicos</a></li>
-                    <li class="mt-1"><a href="">Noticias</a></li>
-                    <li class="mt-1"><a href="">Moodle</a></li>
-                    <li class="mt-1"><a href="">Instagram</a></li>
+                    <li class="mt-4"><a href="https://diicc.uda.cl/academicos.php">Académicos</a></li>
+                    <li class="mt-1"><a href="https://diicc.uda.cl/noticias.php">Noticias</a></li>
+                    <li class="mt-1"><a href="https://www.moodle.uda.cl/">Moodle</a></li>
+                    <li class="mt-1"><a href="https://www.instagram.com/diicc_uda/">Instagram</a></li>
                 </ul>
             </div>
             <div class="mapa">

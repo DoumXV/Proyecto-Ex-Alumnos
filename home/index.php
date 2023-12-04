@@ -51,12 +51,13 @@ $meses = array(
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (1).png" alt="Avatar" style="width:300px;height:300px;">
-                <h1>Violeta Parra</h1>
+                <h1>Violeta Rodriguez</h1>
               </div>
               <div class="flip-card-back">
-                <h1>Violeta Parra</h1>
-                <p>Contacto</p>
-                <p>Descripcion</p>
+                <h1>Violeta Rodriguez</h1>
+                <p>+56 9 8291 1314</p>
+                <p>Analisis de Datos</p>
+                <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
           </div>
@@ -65,13 +66,14 @@ $meses = array(
           <div class="flip-card me-5">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (2).png" alt="Avatar" style="width:300px;height:300px;">
-                <h1>Matias Fernandez</h1>
+                <img src="../img/vicente.jpeg" alt="Avatar" style="width:100%; height: 300px; object-fit: cover; ">
+                <h1>Vicente Jaramillo</h1>
               </div>
               <div class="flip-card-back">
-                <h1>Matias Fernandez</h1>
-                <p>Contacto</p>
-                <p>Descripcion</p>
+                <h1>Vicente Jaramillo</h1>
+                <p>+56 9 5806 6626</p>
+                <p>Inteligencia Artificial</p>
+                <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
           </div>
@@ -85,8 +87,9 @@ $meses = array(
               </div>
               <div class="flip-card-back">
                 <h1>Andrea Gonzalez</h1>
-                <p>Contacto</p>
-                <p>Descripcion</p>
+                <p>+56 9 8172 5323</p>
+                <p>Tecnologias de la Información</p>
+                <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
           </div>
@@ -201,10 +204,10 @@ $meses = array(
             <div class="acerca mx-auto">
                 <h4 class="mt-2">Links</h4>
                 <ul>
-                    <li class="mt-4"><a href="">Académicos</a></li>
-                    <li class="mt-1"><a href="">Noticias</a></li>
-                    <li class="mt-1"><a href="">Moodle</a></li>
-                    <li class="mt-1"><a href="">Instagram</a></li>
+                    <li class="mt-4"><a href="https://diicc.uda.cl/academicos.php">Académicos</a></li>
+                    <li class="mt-1"><a href="https://diicc.uda.cl/noticias.php">Noticias</a></li>
+                    <li class="mt-1"><a href="https://www.moodle.uda.cl/">Moodle</a></li>
+                    <li class="mt-1"><a href="https://www.instagram.com/diicc_uda/">Instagram</a></li>
                 </ul>
             </div>
             <div class="mapa">

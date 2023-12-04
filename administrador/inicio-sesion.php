@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $server="localhost";
 $user="root";
 $password="";
@@ -23,7 +22,7 @@ if(!empty($_POST["boton_enviar"])){
             $_SESSION['clave_admin']=$datos->clave_admin;
             $_SESSION['nombre_admin']=$datos->nombre_admin;
             echo "<div class='alert alert-info text-center'>Sesion Iniciada Correctamente.</div>";
-            #header("Location:panel.php");
+            header("Location:../panel-admin/panel-admin.php");
         } else {
             echo "<div class='alert alert-warning text-center'>Datos Incorrectos.</div>";
         }

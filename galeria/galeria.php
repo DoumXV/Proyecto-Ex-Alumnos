@@ -163,10 +163,10 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
             <div class="acerca mx-auto">
                 <h4 class="mt-2">Links</h4>
                 <ul>
-                    <li class="mt-4"><a href="">Académicos</a></li>
-                    <li class="mt-1"><a href="">Noticias</a></li>
-                    <li class="mt-1"><a href="">Moodle</a></li>
-                    <li class="mt-1"><a href="">Instagram</a></li>
+                    <li class="mt-4"><a href="https://diicc.uda.cl/academicos.php">Académicos</a></li>
+                    <li class="mt-1"><a href="https://diicc.uda.cl/noticias.php">Noticias</a></li>
+                    <li class="mt-1"><a href="https://www.moodle.uda.cl/">Moodle</a></li>
+                    <li class="mt-1"><a href="https://www.instagram.com/diicc_uda/">Instagram</a></li>
                 </ul>
             </div>
             <div class="mapa">
