@@ -137,7 +137,7 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
 
             for ($i = 1; $i <= $paginas; $i++) {
                 $activeClass = ($i == $_REQUEST['nume']) ? 'active' : '';
-                echo "<li class='page-item $activeClass' style: background-color: white;><a class='page-link' style='color: white; background-color: #364c59;' href='galeria.php?nume=$i'>$i</a></li>";
+                echo "<li class='page-item $activeClass' style: background-color: white;><a class='page-link' style='color: white; background-color: #364c59;border: 1px solid black;' href='galeria.php?nume=$i'>$i</a></li>";
             }
             
             $sig = ($_REQUEST['nume'] < $paginas) ? $_REQUEST['nume'] + 1 : $paginas;
