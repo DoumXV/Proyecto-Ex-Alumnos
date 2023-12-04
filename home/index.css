@@ -198,13 +198,11 @@ header.abajo ul li a {
 }
 
 .tarjetas {
-  margin: 3rem 0;
+  margin: 3rem 4rem;
 }
 
 .card1 {
   width: 300px;
-  height: auto;
-  margin: 3rem 0;
 }
 
 .ubicacion {

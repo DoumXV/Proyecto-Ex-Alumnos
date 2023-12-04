@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+.titulos {
+  font-family: Montserrat;
+  background-color: #364c59;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.texto {
+  color: white;
+  font-family: Montserrat;
+}
+
+body {
+  background-color: white;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  transition: 0.7s;
+  padding: 30px 20px;
+  z-index: 10;
+}
+
+header.abajo {
+  background: #364c59;
+  padding: 15px 20px;
+}
+
+header .logo {
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2em;
+  letter-spacing: 2px;
+  transition: 1.5s;
+  text-decoration: none;
+  width: 300px;
+  height: 90px;
+}
+
+.header-difuminado {
+  display: flex;
+  height: 8rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  filter: blur(10px);
+  -webkit-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.linkeado {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+}
+
+.logo-uda {
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  font-family: helvetica;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 0.7s;
+}
+
+.zona1 {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background: url(../img/_ALX9336.JPG);
+  background-size: cover;
+  background-position: center center;
+}
+
+header.abajo .logo,
+header.abajo ul li a {
+  color: white;
+}
+
+.galeria {
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 10rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 350px;
+  perspective: 1000px;
+  margin: 3rem 3rem 3rem 3rem;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font-family: Montserrat;
+}
+
+.flip-card-inner h1 {
+  padding: 1rem;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  font-family: Montserrat;
+}
+
+.flip-card-front h1 {
+  margin: 1rem 0;
+  font-size: larger;
+}
+
+.flip-card-back {
+  background-color: #364c59;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/*FOOTER*/
+.contenedor-footer {
+  background-color: #364c59;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 4rem 8rem;
+}
+
+.footer-logo img {
+  width: 300px;
+  height: 90px;
+}
+
+.acerca, .footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.acerca li, .footer-logo li {
+  list-style: none;
+  padding: 0;
+}
+
+.acerca li a, .footer-logo li a {
+  color: white;
+  text-decoration: none;
+  font-size: medium;
+}
+
+.acerca li a:hover, .footer-logo li a:hover {
+  color: black;
+}
+
+.acerca h4 {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-left: 1rem;
+  color: white;
+  text-decoration: underline;
+}
+
+.mapa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 0 10rem;
+}
+
+.mapa iframe {
+  border-radius: 2rem;
+  width: 16rem;
+  height: 12rem;
+  padding-top: 0rem;
+  margin: 0;
+}
+
+/*Copyright*/
+.copyright {
+  border-top: 1px solid black;
+  justify-content: center;
+  display: flex;
+  background-color: #364c59;
+  align-items: center;
+  padding: 0rem 8rem;
+  color: white;
+  margin-bottom: 0;
+}/*# sourceMappingURL=galeria.css.map */
