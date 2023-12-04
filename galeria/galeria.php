@@ -17,9 +17,9 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
 		<nav>
 			<ul>
 				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
-				<li><a class="linkeado" href="galeria.html">Galeria</a></li>
+				<li><a class="linkeado" href="galeria.php">Galeria</a></li>
                 <li><a class="linkeado" href="#">Empleos</a></li>
-				<li><a class="linkeado" href="#">Administrador</a></li>
+				<li><a class="linkeado" href="../log-admin/admin.php">Administrador</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -33,23 +33,43 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
 
     </section>
 
-    <section class="galeria h-auto">
+    <!--Maglio-->
+    <?php
+    #script donde se secciona de 4 en 4 registros la tabla usuarios
+    $_REQUEST['nume'] = !empty($_REQUEST['nume']) ? $_REQUEST['nume'] : '1';
+    $alumnos = $conexion->query("SELECT * FROM usuarios");
+    $numero_alumnos = mysqli_num_rows($alumnos);
+    $registros = 4;
+    $pagina = isset($_REQUEST['nume']) ? $_REQUEST['nume'] : 1;
+
+    if(is_numeric($pagina)){
+        $inicio = (($pagina - 1) * $registros);
+    } else {
+        $inicio = 0;
+    }
+
+    $busqueda = $conexion->query("SELECT * FROM usuarios LIMIT $inicio, $registros");
+    $paginas = ceil($numero_alumnos / $registros);
+?>
+
+<section class="galeria">
         <h2 class="titulos container-fluid text-center">Galeria de Ex-Alumnos</h2>
         <div class="tarjetas row ">
-          <?php while($registros=$query->fetch_object()){ ?>
-            <!-- Modal -->
+        <?php while ($resultado = $busqueda->fetch_object()) { ?>
+        <!--  aca es donde tiene que ir la flipcard de los ex-alumnos  -->
+        <!-- Modal --> 
             <?php
-              $modalID = "modal_" . preg_replace("/[^a-zA-Z0-9]/", "_", $registros->email_usuario);
+              $modalID = "modal_" . preg_replace("/[^a-zA-Z0-9]/", "_", $resultado->email_usuario);
             ?>
             <div class="modal fade" id="<?php echo $modalID; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">                
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel"><?php echo $registros->nombre_usuario; ?></h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel"><?php echo $resultado->nombre_usuario; ?></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <p><?php echo $registros->descripcion; ?></p>
+                      <p><?php echo $resultado->descripcion; ?></p>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -60,7 +80,7 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
 
             <?php
                   // Convertir la cadena de fecha a un objeto DateTime
-                  $fechaObj = new DateTime($registros->fecha_egreso);
+                  $fechaObj = new DateTime($resultado->fecha_egreso);
 
                   // Obtener el día, mes y hora
                   $year = $fechaObj->format('Y');
@@ -76,35 +96,59 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
                   <div class="flip-card-front">
                   <?php
                     // Verificar si la imagen principal está disponible
-                    if (file_exists($registros->direccion_imagen)) {
+                    if (file_exists($resultado->direccion_imagen)) {
                         // Si está disponible, muestra la imagen principal
-                        $imagenSrc = $registros->direccion_imagen;
+                        $imagenSrc = $resultado->direccion_imagen;
                     } else {
                         // Si no está disponible, muestra la imagen predeterminada
                         $imagenSrc = "../img-ex-alumnos/usuario1.png";
                     }
                     ?>
                     <img src="<?php echo $imagenSrc; ?>" alt="../img-ex-alumnos/usuario.png" style="width:350px;height:350px;">
-                    <h1><?php echo $registros->nombre_usuario; ?></h1>
+                    <h1><?php echo $resultado->nombre_usuario; ?></h1>
                   </div>
                   <div class="flip-card-back d-flex flex-column align-content-center align-items-center justify-content-center">
-                    <h1><?php echo $registros->nombre_usuario; ?></h1>
-                    <p><?php echo $registros->contacto; ?></p>
-                    <p><?php echo $registros->area_interes; ?></p>
+                    <h1><?php echo $resultado->nombre_usuario; ?></h1>
+                    <p><?php echo $resultado->contacto; ?></p>
+                    <p><?php echo $resultado->area_interes; ?></p>
                     <p>Año Egreso <?php echo $year; ?></p>
                     <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#<?php echo $modalID; ?>">
                       Mas informacion
                     </button>
 
-                  </div>
+                    </div>
+                    </div>
                 </div>
-              </div>
             </div>
-              <?php } ?>
-              <!--tarjetas-->
-        </div>
-    </section>  
+            <?php } ?>
 
+<div class="container-fluid">
+    <div class="tarjetas row justify-content-center align-content-center">
+        <div class="col-12">
+        <ul class="pagination justify-content-center mt-5">
+            <?php
+            #script de la paginacion de los ex-alumnos
+            if ($_REQUEST['nume'] > 1) {
+                $ant = $_REQUEST['nume'] - 1;
+                echo "<li class='page-item'><a class='page-link' style='color: white; background-color: #364c59;' aria-label='Previous' href='galeria.php?nume=" . $ant . "'><span aria-hidden='true' style: background-color: white;>&laquo;</span><span style='color: white; background-color: #364c59;' class='sr-only'>Anterior</span></a></li>";
+            } else {
+                echo "";
+            }
+
+            for ($i = 1; $i <= $paginas; $i++) {
+                $activeClass = ($i == $_REQUEST['nume']) ? 'active' : '';
+                echo "<li class='page-item $activeClass' style: background-color: white;><a class='page-link' style='color: white; background-color: #364c59;' href='galeria.php?nume=$i'>$i</a></li>";
+            }
+            
+            $sig = ($_REQUEST['nume'] < $paginas) ? $_REQUEST['nume'] + 1 : $paginas;
+            echo "<li class='page-item'><a style='color: white; background-color: #364c59;' class='page-link' aria-label='Next' href='galeria.php?nume=" . $sig . "'><span style='color: white;' aria-hidden='true'>&raquo;</span><span class='sr-only'>Siguiente</span></a></li>";
+            ?>
+        </ul>
+
+        </div>
+    </div>
+</div>
+</div>
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -129,7 +173,7 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1019.5733182946361!2d-70.35256776105918!3d-27.35752684276538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x969803ec1a19a399%3A0x3cd60b166021c427!2sDIICC%20UDA!5e0!3m2!1ses-419!2scl!4v1700927546943!5m2!1ses-419!2scl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>    
-        <div class="copyright">
+        <div class="copyright mb-0">
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>

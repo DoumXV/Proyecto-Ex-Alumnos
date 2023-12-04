@@ -118,10 +118,12 @@ header.abajo ul li a {
   width: 100%;
   height: auto;
   background-color: white;
-  margin-bottom: 6rem;
 }
 
 .tarjetas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 3rem 10rem;
 }
 
@@ -243,4 +245,5 @@ header.abajo ul li a {
   align-items: center;
   padding: 0rem 8rem;
   color: white;
+  margin-bottom: 0;
 }/*# sourceMappingURL=galeria.css.map */
