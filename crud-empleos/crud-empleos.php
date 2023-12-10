@@ -38,6 +38,7 @@
         include("../administrador/conexion.php");
         include("registro-empleos.php");
         include("modificar-empleo.php");
+        include("eliminar-empleo.php");
         ?>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -66,11 +67,6 @@
         </div>
         </div>
 
-        <?php
-        include("../administrador/conexion.php");
-        include("eliminar-empleo.php");
-
-        ?>
     </div>
     <div class="container mt-5">        
             <div class="">
@@ -125,11 +121,6 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        <?php
-        include("conexion.php");
-        $id_empleo=$_GET["id_empleo"];
-        $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
-        ?>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
