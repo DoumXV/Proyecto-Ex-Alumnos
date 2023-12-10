@@ -1,11 +1,12 @@
 <?php
 include "../administrador/conexion.php";
 if(!empty($_POST["btnregistrar"])){
-    if(!empty($_POST["titulo"]) and !empty($_POST["empresa"]) and !empty($_POST["ciudad"]) and !empty($_POST["descripcion"]) and !empty($_POST["archivo"])){
+    if(!empty($_POST["titulo"]) and !empty($_POST["empresa"]) and !empty($_POST["ciudad"]) and !empty($_POST["descripcion"]) and !empty($_POST["sueldo"]) and !empty($_POST["archivo"])){
         $titulo=$_POST["titulo"];
         $empresa=$_POST["empresa"];
         $ciudad=$_POST["ciudad"];
         $descripcion=$_POST["descripcion"];
+        $sueldo=$_POST["sueldo"];
 
         $nombre_archivo=$_FILES['archivo']['name'];
         $ruta_archivo=$_FILES['archivo']['tmp_name'];

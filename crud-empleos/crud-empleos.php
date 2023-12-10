@@ -20,7 +20,7 @@
 				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
 				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
                 <li><a class="linkeado" href="#">Empleos</a></li>
-				<li><a class="linkeado" href="../home/index.php">Administrador</a></li>
+				<li><a class="linkeado" href="../panel-admin/panel-admin.php">Administrador</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -29,16 +29,16 @@
 
     <section class="caja-crud" style=" height: auto;">
     <div class="container my-5">
-        <h1 class="text-center">Ingresar Empleo</h1>
+        <!-- Button trigger modal -->
+        <div class="d-flex align-content-center justify-content-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Empleo
+            </button>
+        </div>
         <?php 
         include("../administrador/conexion.php");
         include("registro-empleos.php");
+        include("modificar-empleo.php");
         ?>
-
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Empleo
-        </button>
-
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -54,13 +54,13 @@
                     <input type="text" class="form-control mb-3" name="empresa" placeholder="Empresa">
                     <input type="text" class="form-control mb-3" name="ciudad" placeholder="Ciudad de estadia">
                     <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del empleo"></textarea>
+                    <input type="text" class="form-control mb-3" name="sueldo" placeholder="Sueldo">
                     <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf">
-
+                    <div class="d-flex justify-content-center align-items-center"><button type="submit" class="btn btn-dark" name="btnregistrar" value="ok">Registrar empleo</button></div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <div class="d-flex justify-content-center align-items-center"><button type="submit" class="btn btn-dark" name="btnregistrar" value="ok">Registrar empleo</button></div>
             </div>
             </div>
         </div>
@@ -69,6 +69,7 @@
         <?php
         include("../administrador/conexion.php");
         include("eliminar-empleo.php");
+
         ?>
     </div>
     <div class="container mt-5">        
@@ -81,7 +82,8 @@
                             <th>Empresa</th>
                             <th>Ciudad</th>
                             <th>Descripcion</th>
-                            <th>Archivo</th>
+                            <th>Sueldo</th>
+                            <th>Archivo PDF</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -92,17 +94,16 @@
                         $sql=$conexion->query("SELECT * FROM empleos");
                         while($datos=$sql->fetch_object()){
                         ?>
-
                         <tr class="text-center">
                             <td><?= $datos->id_empleo ?> </td>
                             <td><?= $datos->titulo?> </td>
                             <td><?= $datos->empresa ?></td>
                             <td><?= $datos->ciudad?></td>
                             <td><?= $datos->descripcion?></td>
+                            <td><?= $datos->sueldo?></td>
                             <td><?= $datos->archivo ?></td>
-                            <th><a href="pagina-modificar.php?rut=<?=$datos->id_empleo?>" class="btn btn-info">Editar</a></th>
+                            <th><a $id_empleo=<?=$datos->id_empleo?> data-bs-toggle="modal" data-bs-target="#modal_editar" class="btn btn-info">Editar</a></th>
                             <th><a onclick="return eliminar()" href="crud-empleos.php?id_empleo=<?=$datos->id_empleo?>" class="btn btn-danger">Eliminar</a></th> 
-
                         </tr>
                          <?php 
                         }
@@ -115,6 +116,28 @@
     </div>
     </section>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modal_editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <?php
+        include("conexion.php");
+        $id_empleo=$_GET["id_empleo"];
+        $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
+        ?>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div>
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
