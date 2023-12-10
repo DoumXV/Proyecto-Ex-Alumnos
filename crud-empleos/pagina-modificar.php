@@ -41,7 +41,12 @@ $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
             <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del empleo"><?=$datos->descripcion?></textarea>
             <input type="text" class="form-control mb-3" name="sueldo" placeholder="Sueldo"  value="<?=$datos->sueldo?>">
             <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf" value="<?=$datos->archivo?>">
-            <!-- Aca va el modificar archivo-->
+            <div>
+                <p>
+                    direccion del archivo<br><br>
+                    <?php echo $datos->archivo ?>
+                </p>
+            </div>
 
             <button type="submit" class="btn btn-primary" name="btnmodificar" value="ok">Modificar</button>
             <?php
