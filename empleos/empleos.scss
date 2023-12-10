@@ -7,6 +7,9 @@ $letra-titulos:Montserrat;
   font-family: $letra-titulos;
   background-color: $color-verde;
   color: white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 1.5rem 0;
 }
 *{
     margin: 0;
@@ -98,35 +101,193 @@ header ul li a{
     font-weight: 600;
     transition: 0.7s;
 }
-.zona1{
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    background: url(../img/_ALX9334.JPG);
-    background-size: cover;
-    background-position: center center;
-}
-.empleos{
-    width: 100%;
-}
-
-.box{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.banner{
-  background-image: url(../img/joven-universitario-haciendole-una-mentoria-a-otro-upscaled.png);
-  height: 40rem;
-  background-size: cover;
-   
-}
-
 
 header.abajo .logo,
 header.abajo ul li a{
     color: white;
     
 }
+
+.zona1{
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background: url(../img/_ALX9328.JPG);
+    background-size: cover;
+    background-position: center center;
+}
+.empleos{
+    width: 100%;
+    background-color: $color-verde;
+}
+
+.box{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/joven-universitario-haciendole-una-mentoria-a-otro-upscaled.png);
+    background-size: cover;
+    filter: blur(10px);
+    -webkit-filter: blur(3px);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+  }
+}
+
+.banner p {
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+
+.banner h2{
+  font-size: 2rem;
+  color: white;
+}
+
+.tarjetas{
+  background-color: $color-verde;
+  padding-bottom: 2rem;
+}
+
+.carta-mentoria{
+  width: 100%;
+  background-color: white;
+}
+
+.info-mentoria{
+  display: flex;
+  margin-top: 2rem;
+}
+
+.info-mentoria p{
+  font-size: 1rem;
+  font-family: Montserrat;
+}
+
+.titulo-mentoria{
+  font-family: Montserrat;
+  margin-top: 2rem;
+  display: flex;
+  text-align: center;
+}
+
+.titulo-mentoria img{
+  width: 7%;
+  color: #364c59;
+}
+
+.contenedor-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 2rem;
+}
+
+.contenedor-img img{
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  width: 50%;
+  border-radius: 1rem;
+}
+
+.contenedor-mentoria{
+
+}
+
+
+
+//EFECTO LETRAS//
+
+
+.titulo2{
+  font-size: 4rem;
+  font-family: Montserrat;
+}
+
+.escape {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding: 2rem; // Ajusta el espacio interno según sea necesario
+}
+
+.escape h2 {
+  font-size: 4rem;
+  font-family: Montserrat;
+  margin-bottom: 1rem; // Ajusta el margen según sea necesario
+}
+
+.escape span {
+  display: block;
+}
+
+.escape:first-of-type {    /* For increasing performance 
+                       ID/Class should've been used. 
+                       For a small demo 
+                       it's okaish for now */
+  animation: showup 7s infinite;
+}
+
+.escape:last-of-type {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+.escape:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+
+.escape:last-of-type h2 {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+  
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:500px; }
+    100% { margin-left:500px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:auto;}
+    80% {opacity:1;}
+    100% {opacity:0;width:auto;}
+}
+
+
+
 /*FOOTER*/
 .contenedor-footer {
     background-color: $color-verde;

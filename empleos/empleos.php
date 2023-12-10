@@ -24,6 +24,8 @@ $query = $conexion->query("SELECT * FROM empleos;");
 		</nav>
 	</header>
 
+  
+
   <section class="zona1"><div class="header-difuminado mx-auto"></div></section>
 
   <section class="empleos h-auto">
@@ -62,36 +64,105 @@ $query = $conexion->query("SELECT * FROM empleos;");
       <?php } ?>
   </section>
 
-  <section class="mentoria mt-5">
-    <h2 class="titulos container-fluid text-center pb-0 mb-0">Oportunidades de Mentoría</h2>
+  <section class="mentoria">
+    <h2 class="titulos container-fluid text-center m-0">Beneficios</h2>
     <div class="banner">
-      <p>Explora las oportunidades de mentoría disponibles para ex-alumnos del Departamento de Informática.</p>
+        <div class="escape">
+            <h2 class="titulo2">Mentoria</h2>
+            <span>Sé parte de nuestro equipo</span>
+        </div>
     </div>
+    
 
     <!-- Lista de Oportunidades de Mentoría -->
-    <ul>
-        <li>
-            <h3>Mentoría en Desarrollo de Software</h3>
-            <p>Descripción breve de la oportunidad de mentoría en desarrollo de software. Incluye requisitos y beneficios.</p>
-            <p>Fecha de Inicio: [Fecha]</p>
-            <p>Contacto: [Correo Electrónico]</p>
-        </li>
-        <li>
-            <h3>Mentoría en Seguridad Informática</h3>
-            <p>Información sobre la oportunidad de mentoría en el campo de seguridad informática. Detalles sobre el programa y cómo aplicar.</p>
-            <p>Fecha de Inicio: [Fecha]</p>
-            <p>Contacto: [Correo Electrónico]</p>
-        </li>
-        <!-- Agrega más oportunidades de mentoría según sea necesario -->
-    </ul>
 
-    <!-- Formulario para Agregar Oportunidades de Mentoría (solo si es aplicable) -->
-    <h3>¿Tienes una oportunidad de mentoría para compartir?</h3>
-    <form action="procesar_formulario.php" method="post">
-        <!-- Campos del formulario: título, descripción, fecha de inicio, contacto, etc. -->
-        <!-- Agrega aquí tus campos de formulario según tus necesidades -->
-        <button type="submit">Enviar Oportunidad</button>
-    </form>
+    <div class="carta-mentoria row">
+      <div class="col-4">
+        <div class="contenedor-img mt-auto">
+          <img src="../img/logo-uda-vertical.png" alt="uda">
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="titulo-mentoria">
+          <img src="../img/code-solid.svg" alt="code">
+          <h2 class="ms-3 my-auto">Mentoría en Desarrollo de Software</h2>
+        </div>
+        <div class="info-mentoria">
+            <ul>
+              <li><p>Descripción breve de la oportunidad de mentoría en desarrollo de software. Incluye requisitos y beneficios.</p></li>
+              <li><p>Fecha de Inicio</p></li>
+              <li><p>Descripción breve de la oportunidad de mentoría en desarrollo de software. Incluye requisitos y beneficios.</p></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="carta-mentoria row" style="background-color: #F1F1F1;">
+      <div class="col-4">
+        <div class="contenedor-img mt-auto">
+          <img src="../img/logo-uda-vertical-removebg-preview.png" alt="uda">
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="contenedor-mentoria">
+          <div class="titulo-mentoria">
+            <img src="../img/database-solid.svg" alt="code">
+            <h2 class=" ms-3 my-auto">Mentoría en Base de Datos</h2>
+          </div>
+          <div class="info-mentoria">
+              <ul>
+                <li><p>Descripción breve de la oportunidad de mentoría en Base de Datos. Incluye requisitos y beneficios.</p></li>
+                <li><p>Fecha de Inicio</p></li>
+                <li><p>Descripción breve de la oportunidad de mentoría en Base de Datos. Incluye requisitos y beneficios.</p></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carta-mentoria row">
+      <div class="col-4">
+        <div class="contenedor-img mt-auto">
+          <img src="../img/logo-uda-vertical.png" alt="uda">
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="contenedor-mentoria">
+          <div class="titulo-mentoria">
+            <img src="../img/user-shield-solid.svg" alt="code">
+            <h2 class=" ms-3 my-auto">Mentoría en Seguridad Informatica</h2>
+          </div>
+          <div class="info-mentoria">
+              <ul>
+                <li><p>Descripción breve de la oportunidad de mentoría en Seguridad Informatica. Incluye requisitos y beneficios.</p></li>
+                <li><p>Fecha de Inicio</p></li>
+                <li><p>Descripción breve de la oportunidad de mentoría en Seguridad Informatica. Incluye requisitos y beneficios.</p></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carta-mentoria row" style="background-color: #F1F1F1;">
+      <div class="col-4">
+        <div class="contenedor-img mt-auto">
+          <img src="../img/logo-uda-vertical-removebg-preview.png" alt="uda">
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="contenedor-mentoria">
+          <div class="titulo-mentoria">
+            <img src="../img/sitemap-solid.svg" alt="code">
+            <h2 class=" ms-3 my-auto">Mentoría en Sistemas Digitales</h2>
+          </div>
+          <div class="info-mentoria">
+              <ul>
+                <li><p>Descripción breve de la oportunidad de mentoría en Sistemas Digitales. Incluye requisitos y beneficios.</p></li>
+                <li><p>Fecha de Inicio</p></li>
+                <li><p>Descripción breve de la oportunidad de mentoría en Sistemas Digitales. Incluye requisitos y beneficios.</p></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </section>
 
