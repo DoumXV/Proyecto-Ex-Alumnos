@@ -13,7 +13,7 @@
 			<ul>
 				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
 				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
-                <li><a class="linkeado" href="#">Empleos</a></li>
+                <li><a class="linkeado" href="../empleos/empleos.php">Empleos</a></li>
 				<li><a class="linkeado" href="../home/index.php">Administrador</a></li>
 			</ul>
 		</nav>

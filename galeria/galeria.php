@@ -18,7 +18,7 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
 			<ul>
 				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
 				<li><a class="linkeado" href="galeria.php">Galeria</a></li>
-                <li><a class="linkeado" href="#">Empleos</a></li>
+                <li><a class="linkeado" href="../empleos/empleos.php">Empleos</a></li>
 				<li><a class="linkeado" href="../log-admin/admin.php">Administrador</a></li>
 			</ul>
 		</nav>

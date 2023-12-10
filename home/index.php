@@ -33,7 +33,7 @@ $meses = array(
 			<ul>
 				<li><a class="linkeado" href="#">Inicio</a></li>
 				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
-        <li><a class="linkeado" href="#">Empleos</a></li>
+        <li><a class="linkeado" href="../empleos/empleos.php">Empleos</a></li>
 				<li><a class="linkeado" href="../log-admin/admin.php">Administrador</a></li>
 			</ul>
 		</nav>

@@ -19,17 +19,25 @@ $query = $conexion->query("SELECT * FROM empleos;");
 				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
 				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
                 <li><a class="linkeado" href="empleos.php">Empleos</a></li>
-				<li><a class="linkeado" href="../administrador/inicio-sesion.php">Administrador</a></li>
+				<li><a class="linkeado" href="../log-admin/admin.php">Administrador</a></li>
 			</ul>
 		</nav>
 	</header>
-
   
+  <section class="zona1">
+    <div class="header-difuminado mx-auto">
+    </div>
+    <div class="header-difuminado2 mx-auto">
+    </div>
+    <div class="escape2">
+            <h1 class="titulo2">Beneficios</h1>
+            <p>Exclusivos para Ex-Alumnos</p>
+        </div>
 
-  <section class="zona1"><div class="header-difuminado mx-auto"></div></section>
+  </section>
 
   <section class="empleos h-auto">
-      <h2 class="titulos container-fluid text-center">Empleos</h2>
+      <h2 class="titulos container-fluid text-center">Ofertas de Empleo</h2>
       <div class="container tarjetas row mx-auto" >
       <?php while ($resultado = $query->fetch_object()) { ?>
             <!-- Tarjetas -->
@@ -65,7 +73,6 @@ $query = $conexion->query("SELECT * FROM empleos;");
   </section>
 
   <section class="mentoria">
-    <h2 class="titulos container-fluid text-center m-0">Beneficios</h2>
     <div class="banner">
         <div class="escape">
             <h2 class="titulo2">Mentoria</h2>
