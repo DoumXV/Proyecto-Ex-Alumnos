@@ -26,8 +26,8 @@
 		</nav>
 	</header>
     <section class="zona1">
-    </section>
-    <section>
+    </section >
+    <section class="my-5 container">
 
        
         <table  class="table bg-white">

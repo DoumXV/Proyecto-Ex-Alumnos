@@ -1,7 +1,5 @@
 <?php
 
-#include '../../administrador/conexion.php';
-
 $server="localhost";
 $user="root";
 $pass="";
@@ -14,18 +12,13 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
 if(!empty($id)){
     $sql=$conexion->query("SELECT * FROM peticiones WHERE id_peticion=$id");
     if($sql){
-    $datos=$sql->fetch_object();
-    $sql1=$conexion->query("UPDATE usuarios SET direccion_imagen='$datos->direccion_imagen' ,contacto='$datos->contacto_peticion',descripcion='$datos->descripcion_peticion' WHERE email_usuario='$datos->email_peticion'");
     $sql2=$conexion->query("DELETE FROM peticiones WHERE id_peticion=$id");
-    if($sql1 and $sql2){
-        
+    if($sql2){
         header('location:../gestion-eventos.php');
     }else{
-       
         header('location:../gestion-eventos.php');
     }
     }
 }
-
 
 ?>
