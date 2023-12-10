@@ -49,7 +49,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <form class="" method="POST"> 
+            <form class="" method="POST" enctype="multipart/form-data"> 
 
                     <input type="text" class="form-control mb-3" name="titulo" placeholder="Titulo del empleo">
                     <input type="text" class="form-control mb-3" name="empresa" placeholder="Empresa">
