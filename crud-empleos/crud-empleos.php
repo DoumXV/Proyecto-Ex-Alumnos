@@ -19,7 +19,7 @@
 			<ul>
 				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
 				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
-                <li><a class="linkeado" href="#">Empleos</a></li>
+                <li><a class="linkeado" href="">Empleos</a></li>
 				<li><a class="linkeado" href="../panel-admin/panel-admin.php">Administrador</a></li>
 			</ul>
 		</nav>
@@ -39,6 +39,7 @@
         include("registro-empleos.php");
         include("modificar-empleo.php");
         include("eliminar-empleo.php");
+        
         ?>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -98,7 +99,7 @@
                             <td><?= $datos->descripcion?></td>
                             <td><?= $datos->sueldo?></td>
                             <td><?= $datos->archivo ?></td>
-                            <th><a $id_empleo=<?=$datos->id_empleo?> data-bs-toggle="modal" data-bs-target="#modal_editar" class="btn btn-info">Editar</a></th>
+                            <th><a href="pagina-modificar.php?id_empleo=<?=$datos->id_empleo?>" class="btn btn-info">Editar</a></th>
                             <th><a onclick="return eliminar()" href="crud-empleos.php?id_empleo=<?=$datos->id_empleo?>" class="btn btn-danger">Eliminar</a></th> 
                         </tr>
                          <?php 
@@ -111,24 +112,6 @@
         </div>
     </div>
     </section>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal_editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-        </div>
-    </div>
-    </div>
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
