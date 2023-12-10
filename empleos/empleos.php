@@ -1,3 +1,8 @@
+<?php
+include("consulta.php");
+$query = $conexion->query("SELECT * FROM empleos;");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,13 +24,76 @@
 		</nav>
 	</header>
 
-    <section class="zona1"><div class="header-difuminado mx-auto"></div></section>
+  <section class="zona1"><div class="header-difuminado mx-auto"></div></section>
 
-    </section>
+  <section class="empleos h-auto">
+      <h2 class="titulos container-fluid text-center">Empleos</h2>
+      <div class="container tarjetas row mx-auto" >
+      <?php while ($resultado = $query->fetch_object()) { ?>
+            <!-- Tarjetas -->
+            <div class="col-xxl-6 g-5 col-xl-6 col-lg-6 col-md-6">
+                <div class="box card mx-auto mb-3" style="max-width: 500px; max-height: 600px;">
+                    <div class="row g-0">
+                        <div class="col-md-10 mx-auto">
+                            <div class="card-body">
+                                <div class="titulo-tarjeta d-flex">
+                                  <h5 class="card-title"><?php echo $resultado->titulo; ?></h5>
+                                </div>
+                                <p class="card-text"><medium class="text-muted"><?php echo $resultado->empresa; ?></medium></p>
+                                <p class="card-text"><?php echo $resultado->descripcion; ?></p>
+                                <p class="card-text"><small class="text-muted"><?php echo $resultado->ciudad; ?></small></p>
+                                <div class="sueldo d-flex justify-content-between">
+                                  <div class=" d-flex flex-column">
+                                    <div class=" d-flex">
+                                      <img class="w-25" src="../img/icons8-banknotes-50.png" alt="money">
+                                      <p class="card-text ms-1">Sueldo</p>
+                                    </div>
+                                    <h5 class="card-title"><?php echo $resultado->sueldo; ?></h5>
+                                  </div>
+                                  <a class="btn btn-dark text-center align-self-center py-2" href="descargar.php?id_empleo=<?php echo $resultado->id_empleo;?>">Postular</a>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+      <?php } ?>
+  </section>
 
-    <section class="empleos">
+  <section class="mentoria mt-5">
+    <h2 class="titulos container-fluid text-center pb-0 mb-0">Oportunidades de Mentoría</h2>
+    <div class="banner">
+      <p>Explora las oportunidades de mentoría disponibles para ex-alumnos del Departamento de Informática.</p>
+    </div>
 
-    </section>
+    <!-- Lista de Oportunidades de Mentoría -->
+    <ul>
+        <li>
+            <h3>Mentoría en Desarrollo de Software</h3>
+            <p>Descripción breve de la oportunidad de mentoría en desarrollo de software. Incluye requisitos y beneficios.</p>
+            <p>Fecha de Inicio: [Fecha]</p>
+            <p>Contacto: [Correo Electrónico]</p>
+        </li>
+        <li>
+            <h3>Mentoría en Seguridad Informática</h3>
+            <p>Información sobre la oportunidad de mentoría en el campo de seguridad informática. Detalles sobre el programa y cómo aplicar.</p>
+            <p>Fecha de Inicio: [Fecha]</p>
+            <p>Contacto: [Correo Electrónico]</p>
+        </li>
+        <!-- Agrega más oportunidades de mentoría según sea necesario -->
+    </ul>
+
+    <!-- Formulario para Agregar Oportunidades de Mentoría (solo si es aplicable) -->
+    <h3>¿Tienes una oportunidad de mentoría para compartir?</h3>
+    <form action="procesar_formulario.php" method="post">
+        <!-- Campos del formulario: título, descripción, fecha de inicio, contacto, etc. -->
+        <!-- Agrega aquí tus campos de formulario según tus necesidades -->
+        <button type="submit">Enviar Oportunidad</button>
+    </form>
+
+  </section>
 
     <footer>
         <div class="contenedor-footer">
