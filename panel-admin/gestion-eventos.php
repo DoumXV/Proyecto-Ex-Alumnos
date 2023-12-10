@@ -54,7 +54,7 @@
                     <td><?= $datos->email_peticion ?></td>
                     <td><?= $datos->contacto_peticion?></td>
                     <td><?= $datos->descripcion_peticion?></td>
-                    <td><?= $datos->direccion_imagen ?></td>
+                    <td><img alt="" src="<?= $datos->direccion_imagen?>" class="img-thumbnail"></td>
                     <td><a onclick="return aceptar()" href="comandos/aceptar.php?id=<?=$datos->id_peticion?>" class="btn btn-success">Aceptar</a></td>
                     <td><a onclick="return eliminar()" href="comandos/rechazar.php?id=<?=$datos->id_peticion?>" class="btn btn-danger">Rechazar</a></td>
                 </tr>
