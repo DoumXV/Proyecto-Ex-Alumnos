@@ -16,21 +16,27 @@ $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
-				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
-				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
-                <li><a class="linkeado" href="#">Empleos</a></li>
-				<li><a class="linkeado" href="../home/index.php">Administrador</a></li>
+                <li><a class="linkeado" href="../panel-admin/panel-admin.php">Inicio</a></li>
+				<li><a class="linkeado" href="">Eventos</a></li>
+                <li><a class="linkeado" href="#">Alumnos</a></li>
+                <li><a class="linkeado" href="crud-empleos.php">Empleos</a></li>
+				<li><a class="linkeado" href="#">Peticiones</a></li>
+                <li><a class="linkeado" href="../administrador/cerrar-sesion.php">Cerrar sesion</a></li>
 			</ul>
 		</nav>
 	</header>
     <section class="zona1">
     </section>
-    <section class="modificar">
-    <div class="col-md-3 m-auto">
-        <h1>Ingrese datos</h1>
+    <section class="modificar d-flex flex-column align-items-center justify-content-center">
+    <div class="col-md-5 my-5">
+        <h5 class="text-center alert alert-secondary">Modificar Empleos</h5>
         <form method="POST" enctype="multipart/form-data">
+            <div>
+                <p>
+                    Id de empleo a modificar: <?php echo $id_empleo ?>
+                </p>
+            </div>
             <input type="hidden" name="id_empleo" value="<?=$_GET["id_empleo"]?>">
-            <h5 class="text-center alert alert-secondary">Modificar Empleos</h5>
             <?php 
             include("modificar-empleo.php");
             while($datos=$sql->fetch_object()){
@@ -43,12 +49,14 @@ $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
             <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf" value="<?=$datos->archivo?>">
             <div>
                 <p>
-                    direccion del archivo<br><br>
-                    <?php echo $datos->archivo ?>
+                    Dirección del archivo: <?php echo $datos->archivo ?>
                 </p>
             </div>
-
-            <button type="submit" class="btn btn-primary" name="btnmodificar" value="ok">Modificar</button>
+            <div class="d-flex flex-row align-items-center justify-content-center">
+                <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Modificar empleo</button>
+                <a href="crud-empleos.php" class="btn btn-danger">Salir de editar</a>
+            </div>
+            
             <?php
             }
             ?>

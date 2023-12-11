@@ -17,10 +17,12 @@
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
-				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
-				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
-                <li><a class="linkeado" href="">Empleos</a></li>
-				<li><a class="linkeado" href="../panel-admin/panel-admin.php">Administrador</a></li>
+				<li><a class="linkeado" href="../panel-admin/panel-admin.php">Inicio</a></li>
+				<li><a class="linkeado" href="">Eventos</a></li>
+                <li><a class="linkeado" href="#">Alumnos</a></li>
+                <li><a class="linkeado" href="crud-empleos.php">Empleos</a></li>
+				<li><a class="linkeado" href="#">Peticiones</a></li>
+                <li><a class="linkeado" href="../administrador/cerrar-sesion.php">Cerrar sesion</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -31,7 +33,7 @@
     <div class="container my-5">
         <!-- Button trigger modal -->
         <div class="d-flex align-content-center justify-content-center">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Empleo
+            <button type="button" class="btn" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Empleo
             </button>
         </div>
         <?php 
@@ -58,7 +60,9 @@
                     <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del empleo"></textarea>
                     <input type="text" class="form-control mb-3" name="sueldo" placeholder="Sueldo">
                     <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf">
-                    <div class="d-flex justify-content-center align-items-center"><button type="submit" class="btn btn-dark" name="btnregistrar" value="ok">Registrar empleo</button></div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button type="submit" class="btn btn-dark" name="btnregistrar" value="ok">Registrar empleo</button>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
