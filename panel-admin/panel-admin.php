@@ -34,7 +34,7 @@
         <section class="caja-usuarios">
         </section>
     </a>
-    <a href="../plantilla/plantilla.html">
+    <a href="../crud-empleos/crud-empleos.php">
         <section class="caja-empleos">
         </section>
     </a>
