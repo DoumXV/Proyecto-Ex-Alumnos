@@ -56,8 +56,8 @@
 
                     <input type="text" class="form-control mb-3" name="titulo" placeholder="Titulo del empleo">
                     <input type="text" class="form-control mb-3" name="empresa" placeholder="Empresa">
-                    <input type="text" class="form-control mb-3" name="ciudad" placeholder="Ciudad de estadia">
-                    <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del empleo"></textarea>
+                    <input type="text" class="form-control mb-3" name="ciudad" placeholder="Ciudad">
+                    <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripcion del empleo"></textarea>
                     <input type="text" class="form-control mb-3" name="sueldo" placeholder="Sueldo">
                     <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf">
                     <div class="d-flex justify-content-center align-items-center">
