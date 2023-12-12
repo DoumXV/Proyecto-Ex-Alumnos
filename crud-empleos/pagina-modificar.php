@@ -1,4 +1,10 @@
 <?php
+    session_start();
+    if(empty($_SESSION['email_admin'])){
+        header("Location:../log-admin/admin.php"); 
+        }
+?>
+<?php
 include("../administrador/conexion.php");
 $id_empleo=$_GET["id_empleo"];
 $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
@@ -41,11 +47,17 @@ $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
             include("modificar-empleo.php");
             while($datos=$sql->fetch_object()){
             ?>
+            <label for="titulo" class="form-label">Titulo Empleo</label>
             <input type="text" class="form-control mb-3" name="titulo" placeholder="Titulo del empleo" value="<?=$datos->titulo?>">
+            <label for="empresa" class="form-label">Empresa</label>
             <input type="text" class="form-control mb-3" name="empresa" placeholder="Nombre de la empresa" value="<?=$datos->empresa?>">
+            <label for="ciudad" class="form-label">Ciudad</label>
             <input type="text" class="form-control mb-3" name="ciudad" placeholder="Ciudad"  value="<?=$datos->ciudad?>">
+            <label for="descripcion" class="form-label">Descripcion</label>
             <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del empleo"><?=$datos->descripcion?></textarea>
+            <label for="sueldo" class="form-label">Sueldo</label>
             <input type="text" class="form-control mb-3" name="sueldo" placeholder="Sueldo"  value="<?=$datos->sueldo?>">
+            <label for="archivo" class="form-label">Archivo</label>
             <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf">
             <div>
                 <p>

@@ -1,4 +1,9 @@
 <?php
+    if(empty($_SESSION['email_admin'])){
+        header("Location:../log-admin/admin.php"); 
+        }
+?>
+<?php
 if(!empty($_POST["btnmodificar"])){
     $id_empleo=$_POST["id_empleo"];
         $titulo=$_POST["titulo"];

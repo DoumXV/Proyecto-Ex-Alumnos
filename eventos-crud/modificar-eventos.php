@@ -1,3 +1,4 @@
+
 <?php
 
 include '../administrador/conexion.php';
@@ -43,7 +44,8 @@ $hora_final = $fechaFinal->format('H:i:s');
     <form class="" method="POST" enctype="multipart/form-data">
         
             <?php include 'update-eventos.php'; ?>
-
+            
+            <label for="nombre" class="form-label">Nombre Evento</label>
             <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre del evento" value="<?php echo $datos->nombre_evento ?>">
             <label for="ubicacion" class="form-label">Ubicacion</label>
             <select class="form-select" aria-label="Default select example" name="ubicacion" id="ubicacion">

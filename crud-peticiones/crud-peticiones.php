@@ -18,10 +18,8 @@
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
-				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
-				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
-                <li><a class="linkeado" href="#">Empleos</a></li>
-				<li><a class="linkeado" href="panel-admin.php">Administrador</a></li>
+            <li><a class="linkeado" href="../panel-admin/panel-admin.php">Panel</a></li>
+                <li><a class="linkeado" href="../administrador/cerrar-sesion.php">Cerrar sesion</a></li>
 			</ul>
 		</nav>
 	</header>

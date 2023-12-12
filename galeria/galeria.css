@@ -405,6 +405,7 @@ header.abajo ul li a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 4rem 8rem;
+  font-family: Montserrat;
 }
 
 .footer-logo img {
@@ -466,4 +467,5 @@ header.abajo ul li a {
   padding: 0rem 8rem;
   color: white;
   margin-bottom: 0;
+  font-family: Montserrat;
 }/*# sourceMappingURL=galeria.css.map */

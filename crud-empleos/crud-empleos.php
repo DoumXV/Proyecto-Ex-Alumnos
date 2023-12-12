@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(empty($_SESSION['email_admin'])){
+        header("Location:../log-admin/admin.php"); 
+        }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +23,7 @@
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
-				<li><a class="linkeado" href="../panel-admin/panel-admin.php">Inicio</a></li>
-				<li><a class="linkeado" href="">Eventos</a></li>
-                <li><a class="linkeado" href="#">Alumnos</a></li>
-                <li><a class="linkeado" href="crud-empleos.php">Empleos</a></li>
-				<li><a class="linkeado" href="#">Peticiones</a></li>
+				<li><a class="linkeado" href="../panel-admin/panel-admin.php">Panel</a></li>
                 <li><a class="linkeado" href="../administrador/cerrar-sesion.php">Cerrar sesion</a></li>
 			</ul>
 		</nav>
