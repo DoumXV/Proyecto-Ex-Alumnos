@@ -46,7 +46,7 @@ $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
             <input type="text" class="form-control mb-3" name="ciudad" placeholder="Ciudad"  value="<?=$datos->ciudad?>">
             <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del empleo"><?=$datos->descripcion?></textarea>
             <input type="text" class="form-control mb-3" name="sueldo" placeholder="Sueldo"  value="<?=$datos->sueldo?>">
-            <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf" value="<?=$datos->archivo?>">
+            <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf">
             <div>
                 <p>
                     Dirección del archivo: <?php echo $datos->archivo ?>
@@ -54,7 +54,7 @@ $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
             </div>
             <div class="d-flex flex-row align-items-center justify-content-center">
                 <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Modificar empleo</button>
-                <a href="crud-empleos.php" class="btn btn-danger">Salir de editar</a>
+                <a href="crud-empleos.php" class="btn btn-danger">Salir sin editar</a>
             </div>
             
             <?php
