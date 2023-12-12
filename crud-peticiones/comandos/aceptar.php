@@ -19,10 +19,10 @@ if(!empty($id)){
     $sql2=$conexion->query("DELETE FROM peticiones WHERE id_peticion=$id");
     if($sql1 and $sql2){
         
-        header('location:../gestion-eventos.php');
+        header('location:../crud-peticiones.php');
     }else{
        
-        header('location:../gestion-eventos.php');
+        header('location:../curd-peticiones.php');
     }
     }
 }
