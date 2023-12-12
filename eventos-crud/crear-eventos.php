@@ -20,7 +20,7 @@ if(!empty($nombre) and !empty($ubicacion) and !empty($fecha) and !empty($hora_in
     if($hi<$hf and $fecha > $fecha_sql){
         $sql=$conexion->query("INSERT INTO eventos (nombre_evento,ubicacion,inicio,final) VALUES ('$nombre','$ubicacion','$fecha_inicio','$fecha_termino')");
         if($sql){
-            echo "<div class='alert alert-info text-center'>Evento creado .</div>";
+            echo "<div class='alert alert-info text-center'>Evento creado correctamente.</div>";
         }else{
             echo "<div class='alert alert-warning text-center'>No se pudo crear el evento.</div>";
         }
