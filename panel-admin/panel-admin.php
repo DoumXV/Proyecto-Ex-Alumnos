@@ -8,10 +8,11 @@
 <html>
 <head>
 	<title>Panel de control de Ex-Alumnos</title>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="panel-admin.css">
 </head>
-<meta charset="UTF-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="panel-admin.css">
+
 <body>
 	<header>
 		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
@@ -23,25 +24,14 @@
 			</ul>
 		</nav>
 	</header>
-    <section class="zona1">
-    </section>
-
-    <a href="../plantilla/plantilla.html">
-        <section class="caja-eventos">
-        </section>
-    </a>
-    <a href="../plantilla/plantilla.html">
-        <section class="caja-usuarios">
-        </section>
-    </a>
-    <a href="../crud-empleos/crud-empleos.php">
-        <section class="caja-empleos">
-        </section>
-    </a>
-    <a href="gestion-eventos.php">
-        <section class="caja-peticiones">
-        </section>
-    </a>
+    
+    <section class="zona1"></section>
+    <div class="gaaleria">
+        <a href="#"><img class="img-galeria"  style="border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;" src="../img/alumnos.png" alt="alumnos"></a>
+        <a href="../crud-peticiones/crud-peticiones.php"><img class="img-galeria" src="../img/peticiones.png" alt="aalumnos"></a>
+        <a href="../crud-empleos/curd-empleos.php"><img class="img-galeria" src="../img/empleos.png" alt="alumnos"></a>
+        <a href="../eventos-crud/tabla-eventos.php"><img class="img-galeria"  style="border-top-right-radius: 2rem; border-bottom-right-radius: 2rem;" src="../img/eventos.png" alt="alumnos"></a>
+    </div>
 
     <footer>
         <div class="contenedor-footer">

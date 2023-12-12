@@ -3,6 +3,19 @@
   font-family: Montserrat;
   background-color: #364c59;
   color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.titulos2 {
+  font-family: Montserrat;
+  background-color: #364c59;
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-shadow: inset rgba(0, 0, 0, 0.25) 0px 5px 10px, inset rgba(0, 0, 0, 0.12) 0px 12px 30px, inset rgba(0, 0, 0, 0.12) 0px 4px 6px, inset rgba(0, 0, 0, 0.17) 0px 12px 13px, inset rgba(0, 0, 0, 0.09) 0px 3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 * {
@@ -27,7 +40,7 @@ header {
   display: flex;
   justify-content: space-around;
   transition: 0.7s;
-  padding: 30px 20px;
+  padding: 25px 20px;
   z-index: 10;
 }
 
@@ -50,7 +63,8 @@ header .logo {
 
 .header-difuminado {
   display: flex;
-  height: 8rem;
+  height: 9rem;
+  position: absolute;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -60,6 +74,27 @@ header .logo {
   -webkit-filter: blur(20px);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+}
+
+.header-difuminado2 {
+  display: flex;
+  height: 42.5rem;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.header-difuminado2:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .linkeado {
@@ -109,6 +144,191 @@ header ul li a {
   background-position: center center;
 }
 
+.escape {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.escape h2 {
+  font-size: 4rem;
+  font-family: Montserrat;
+  margin-bottom: 1rem;
+}
+
+.escape span {
+  display: block;
+}
+
+.escape:first-of-type { /* For increasing performance 
+ID/Class should've been used. 
+For a small demo 
+it's okaish for now */
+  animation: showup 7s infinite;
+}
+
+.escape:last-of-type {
+  width: 0px;
+  animation: reveal 7s infinite;
+}
+
+.escape:last-of-type span {
+  margin-left: -355px;
+  animation: slidein 7s infinite;
+}
+
+.escape:last-of-type h2 {
+  margin-left: -355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slidein {
+  0% {
+    margin-left: -800px;
+  }
+  20% {
+    margin-left: -800px;
+  }
+  35% {
+    margin-left: 500px;
+  }
+  100% {
+    margin-left: 500px;
+  }
+}
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+  20% {
+    opacity: 1;
+    width: 0px;
+  }
+  30% {
+    width: auto;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: auto;
+  }
+}
+.escape2 {
+  display: flex;
+  position: absolute;
+  white-space: nowrap;
+  font-size: 2rem;
+  color: white;
+  padding: 2rem;
+}
+
+.escape2 h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  font-family: Montserrat;
+  margin-bottom: 0.5rem;
+  position: absolute;
+  padding-top: 8rem;
+}
+
+.escape2 p {
+  padding-top: 15rem;
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: Montserrat;
+}
+
+.escape2:first-of-type { /* For increasing performance 
+ID/Class should've been used. 
+For a small demo 
+it's okaish for now */
+  animation: showup2 7s infinite;
+}
+
+.escape2:last-of-type {
+  width: 0px;
+  animation: reveal2 7s infinite;
+}
+
+.escape2:last-of-type p {
+  margin-left: -355px;
+  animation: slidein2 7s infinite;
+}
+
+.escape2:last-of-type h1 {
+  margin-left: -355px;
+  animation: slidein2 7s infinite;
+}
+
+@keyframes showup2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slidein2 {
+  0% {
+    margin-left: -2000px;
+  }
+  20% {
+    margin-left: -2000px;
+  }
+  35% {
+    margin-left: 80px;
+  }
+  100% {
+    margin-left: 80px;
+  }
+}
+@keyframes reveal2 {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+  20% {
+    opacity: 1;
+    width: 0px;
+  }
+  30% {
+    width: auto;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: auto;
+  }
+}
 header.abajo .logo,
 header.abajo ul li a {
   color: white;
@@ -122,8 +342,9 @@ header.abajo ul li a {
 .recientes {
   width: 100%;
   height: 500px;
-  background-color: white;
-  margin-bottom: 6rem;
+  background-color: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
+  padding-bottom: 6rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .flip-card {
@@ -131,8 +352,9 @@ header.abajo ul li a {
   width: 300px;
   height: 300px;
   perspective: 1000px;
-  margin: 3rem 3rem 3rem 3rem;
+  margin: 3rem 3rem 0rem 3rem;
   cursor: pointer;
+  border-radius: 2rem;
 }
 
 .flip-card-inner {
@@ -144,6 +366,8 @@ header.abajo ul li a {
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   font-family: Montserrat;
+  font-size: 1rem;
+  border-radius: 2rem;
 }
 
 .flip-card-inner h1 {
@@ -152,6 +376,7 @@ header.abajo ul li a {
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+  border-radius: 2rem;
 }
 
 .flip-card-front, .flip-card-back {
@@ -159,29 +384,36 @@ header.abajo ul li a {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  border-radius: 2rem;
 }
 
 .flip-card-front {
   background-color: #bbb;
   color: black;
   font-family: Montserrat;
+  border-radius: 2rem;
+}
+
+.flip-card-front img {
+  border-radius: 2rem;
 }
 
 .flip-card-front h1 {
   margin: 1rem 0;
-  font-size: larger;
+  font-size: 1.5rem;
 }
 
 .flip-card-back {
   background-color: #364c59;
   color: white;
   transform: rotateY(180deg);
+  border-radius: 2rem;
 }
 
 .calendario {
   width: 100%;
   height: auto;
-  background-color: white;
+  background-color: transparent;
 }
 
 .boton-calendario {
@@ -194,21 +426,26 @@ header.abajo ul li a {
 }
 
 .btn-calendario:hover {
-  background-color: #dbca11;
+  background-color: #364c59;
 }
 
 .tarjetas {
-  margin: 3rem 4rem;
+  padding: 3rem 0;
+  margin: 0 4rem;
 }
 
 .card1 {
   width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin-bottom: 2rem;
+  font-family: Montserrat;
 }
 
 .ubicacion {
   padding: 0;
   margin: 0;
   justify-content: center;
+  font-family: Montserrat;
 }
 
 .ubicacion img {
@@ -229,6 +466,7 @@ header.abajo ul li a {
   justify-content: center;
   padding: 1rem 0;
   text-align: center;
+  font-family: Montserrat;
 }
 
 .dia {
@@ -277,6 +515,8 @@ header.abajo ul li a {
 
 .ini p {
   padding: 2px 0 0 0.5rem;
+  font-family: Montserrat;
+  font-weight: normal;
 }
 
 .fin {
@@ -291,15 +531,16 @@ header.abajo ul li a {
 
 .fin p {
   padding: 2px 0 0 0.7rem;
+  font-family: Montserrat;
 }
 
 /*Formulario*/
 .formulario-caja {
-  margin: auto;
   width: 100%;
   height: auto;
   background-color: white;
   font-family: Montserrat;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 /*FOOTER*/

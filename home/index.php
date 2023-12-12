@@ -33,21 +33,29 @@ $meses = array(
 			<ul>
 				<li><a class="linkeado" href="#">Inicio</a></li>
 				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
-        <li><a class="linkeado" href="#">Empleos</a></li>
+        <li><a class="linkeado" href="../empleos/empleos.php">Empleos</a></li>
 				<li><a class="linkeado" href="../log-admin/admin.php">Administrador</a></li>
 			</ul>
 		</nav>
 	</header>
 
-    <section class="zona1">
-      <div class="header-difuminado mx-auto"></div>
-    </section>
+  <section class="zona1">
+    <div class="header-difuminado mx-auto">
+    </div>
+    <div class="header-difuminado2 mx-auto">
+    </div>
+    <div class="escape2">
+            <h1 class="titulo2">Pagina Ex Alumnos</h1>
+            <p>Univerisdad de Atacama</p>
+        </div>
+
+  </section>
 
     <section class="recientes h-auto">
       <h2 class="titulos container-fluid text-center">Ex-Alumnos destacados</h2>
       <div class="tarjetas row justify-content-center align-content-center">
         <div class="g-5 col-xl-4 col-lg-6 col-md-7">
-          <div class="flip-card me-5">
+          <div class="box flip-card me-5">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (1).png" alt="Avatar" style="width:300px;height:300px;">
@@ -98,7 +106,7 @@ $meses = array(
     </section>
 
     <section class="calendario">
-      <h2 class="titulos container-fluid text-center">Eventos</h2>
+      <h2 class="titulos2 container-fluid text-center">Eventos</h2>
       <div class="tarjetas row justify-content-center align-content-center">
         <?php while($registros=$query->fetch_object()){ ?>
             <div class="col-xxl-3 g-5 col-xl-4 col-lg-6 col-md-7">
@@ -156,7 +164,7 @@ $meses = array(
     </section>
 
     <section class="formulario-caja">
-      <h2 class="titulos container-fluid text-center my-3">Formulario</h2>
+      <h2 class="titulos2 container-fluid text-center">Formulario</h2>
       <p class="text-center mt-5" style="font-family: Montserrat;font-size: 20px;">¿Quieres ser parte de nuestra galeria de ex-alumnos del departamento de Ingenieria civil en computacion e Informática?</p>
       <div class="d-flex flex-column justify-content-center align-items-center">
         <div class="d-flex flex-column justify-content-center align-items-center my-5 w-75">
