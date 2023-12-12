@@ -8,6 +8,7 @@
 
 include '../administrador/conexion.php';
 if(isset($_POST['btnmodificar'])){
+$id=$_POST['id_evento'];
 $nombre=$_POST['nombre'];
 $ubicacion=$_POST['ubicacion'];
 $fecha=$_POST['fecha'];
@@ -19,7 +20,7 @@ if(!empty($nombre) and !empty($ubicacion) and !empty($fecha) and !empty($hora_in
     $hi=strtotime($hora_inicio);
     $hf=strtotime($hora_termino);
     if($hi<$hf){
-        $sql=$conexion->query("UPDATE eventos SET nombre_evento='$nombre',ubicacion='$ubicacion',inicio='$fecha_inicio',final='$fecha_termino'");
+        $sql=$conexion->query("UPDATE eventos SET nombre_evento='$nombre',ubicacion='$ubicacion',inicio='$fecha_inicio',final='$fecha_termino' WHERE id_evento=$id");
         if($sql){
             echo 'evento modificado correctamente';
         }else{
