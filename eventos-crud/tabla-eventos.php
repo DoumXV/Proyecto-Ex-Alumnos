@@ -43,7 +43,14 @@
             <form class="" method="POST" enctype="multipart/form-data"> 
 
                     <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre del evento" >
-                    <input type="text" class="form-control mb-3" name="ubicacion" placeholder="Ubicacion">
+                    <label for="ubicacion" class="form-label">Ubicacion</label>
+                    <select class="form-select" aria-label="Default select example" name="ubicacion" id="ubicacion">
+                    <option value="Diic-1">Diic-1</option>
+                    <option value="Diic-2">Diic-2</option>
+                    <option value="Diic-3">Diic-3</option>
+                    <option value="Lab-Melquiades">Lab Melquiades</option>
+                    <option value="Lab-Olimpo">Lab Olimpo</option>
+                    </select>
                     <label for="ho1" class="form-label">Fecha de evento</label>
                     <input type="date" class="form-control mb-3" name="fecha" placeholder="Fecha" class="form-control mb-3" id="ho1">
                     <label for="ho1" class="form-label">Hora de inicio</label>
@@ -94,7 +101,7 @@
                             <td><?= $datos->ubicacion ?></td>
                             <td><?= $datos->inicio ?></td>
                             <td><?= $datos->final ?></td>
-                            <td></td>
+                            <td><a href="modificar-eventos.php?id=<?php echo $datos->id_evento ?>" class="btn btn-info">Modificar</a></td>
                             <td><a href="eliminar-eventos.php?id=<?php echo $datos->id_evento ?>" onclick="return eliminar()" class="btn btn-danger">Eliminar</a></td>
                         </tr>
                          <?php 
