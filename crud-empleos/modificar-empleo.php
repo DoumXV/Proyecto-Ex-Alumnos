@@ -5,7 +5,7 @@
 ?>
 <?php
 if(!empty($_POST["btnmodificar"])){
-    $id_empleo=$_POST["id_empleo"];
+        $id_empleo=$_POST["id_empleo"];
         $titulo=$_POST["titulo"];
         $empresa=$_POST["empresa"];
         $ciudad=$_POST["ciudad"];

@@ -22,11 +22,7 @@ $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
-                <li><a class="linkeado" href="../panel-admin/panel-admin.php">Inicio</a></li>
-				<li><a class="linkeado" href="">Eventos</a></li>
-                <li><a class="linkeado" href="#">Alumnos</a></li>
-                <li><a class="linkeado" href="crud-empleos.php">Empleos</a></li>
-				<li><a class="linkeado" href="#">Peticiones</a></li>
+                <li><a class="linkeado" href="../panel-admin/panel-admin.php">Panel</a></li>
                 <li><a class="linkeado" href="../administrador/cerrar-sesion.php">Cerrar sesion</a></li>
 			</ul>
 		</nav>
@@ -58,7 +54,7 @@ $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
             <label for="sueldo" class="form-label">Sueldo</label>
             <input type="text" class="form-control mb-3" name="sueldo" placeholder="Sueldo"  value="<?=$datos->sueldo?>">
             <label for="archivo" class="form-label">Archivo</label>
-            <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf">
+            <input class="form-control mb-3" type="file" name="archivo" value="<?=$datos->archivo?>" accept="image/*,.pdf">
             <div>
                 <p>
                     Dirección del archivo: <?php echo $datos->archivo ?>
