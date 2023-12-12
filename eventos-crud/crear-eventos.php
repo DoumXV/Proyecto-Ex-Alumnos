@@ -14,18 +14,21 @@ $fecha_termino=$fecha.' '.$hora_termino.':00';
 if(!empty($nombre) and !empty($ubicacion) and !empty($fecha) and !empty($hora_inicio) and !empty($hora_termino)){
     $hi=strtotime($hora_inicio);
     $hf=strtotime($hora_termino);
-    if($hi<$hf){
+    $hoy = getdate();
+    $fecha_sql = date("Y-m-d H:i:s", mktime($hoy['hours'], $hoy['minutes'], $hoy['seconds'], $hoy['mon'], $hoy['mday'], $hoy['year']));
+
+    if($hi<$hf and $fecha > $fecha_sql){
         $sql=$conexion->query("INSERT INTO eventos (nombre_evento,ubicacion,inicio,final) VALUES ('$nombre','$ubicacion','$fecha_inicio','$fecha_termino')");
         if($sql){
-            echo 'evento creado correctamente';
+            echo "<div class='alert alert-info text-center'>Evento creado .</div>";
         }else{
-            echo 'no se pudo crear el evento';
+            echo "<div class='alert alert-warning text-center'>No se pudo crear el evento.</div>";
         }
     }else{
-        echo "la hora de inicio no puede ser mayor a la final";
+        echo "<div class='alert alert-warning text-center'>Fecha u hora inválida.</div>";
     }
 }else{
-    echo "no se pueden ingresar campos vacios";
+    echo "<div class='alert alert-warning text-center'>No se pueden ingresar campos vacios.</div>";
 }
 }
 
