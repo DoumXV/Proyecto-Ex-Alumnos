@@ -21,7 +21,7 @@
 				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
 				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
                 <li><a class="linkeado" href="#">Empleos</a></li>
-				<li><a class="linkeado" href="../home/index.php">Administrador</a></li>
+				<li><a class="linkeado" href="panel-admin.php">Administrador</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -54,7 +54,7 @@
                     <td><?= $datos->email_peticion ?></td>
                     <td><?= $datos->contacto_peticion?></td>
                     <td><?= $datos->descripcion_peticion?></td>
-                    <td><img alt="" src="<?= $datos->direccion_imagen?>" class="img-thumbnail"></td>
+                    <td><img alt="" src="<?= $datos->direccion_imagen?>" class=" img-fluid" style="max-width:200px; max-height: 300px"></td>
                     <td><a onclick="return aceptar()" href="comandos/aceptar.php?id=<?=$datos->id_peticion?>" class="btn btn-success">Aceptar</a></td>
                     <td><a onclick="return eliminar()" href="comandos/rechazar.php?id=<?=$datos->id_peticion?>" class="btn btn-danger">Rechazar</a></td>
                 </tr>

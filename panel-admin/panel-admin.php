@@ -38,7 +38,7 @@
         <section class="caja-empleos">
         </section>
     </a>
-    <a href="../plantilla/plantilla.html">
+    <a href="gestion-eventos.php">
         <section class="caja-peticiones">
         </section>
     </a>
