@@ -278,6 +278,7 @@ header.abajo ul li a {
 
 /*Copyright*/
 .copyright {
+  font-family: Montserrat;
   border-top: 1px solid black;
   justify-content: center;
   display: flex;
