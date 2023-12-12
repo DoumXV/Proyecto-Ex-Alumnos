@@ -23,15 +23,18 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
 			</ul>
 		</nav>
 	</header>
+
     <section class="zona1">
-      <div class="header-difuminado mx-auto"></div>
+    <div class="header-difuminado mx-auto">
+    </div>
+    <div class="header-difuminado2 mx-auto">
+    </div>
+    <div class="escape2">
+            <h1 class="titulo2">Galeria Ex Alumnos</h1>
+            <p>Univerisdad de Atacama</p>
+        </div>
 
-      <!--<div class="h-75 d-flex flex-column align-items-center justify-content-center">
-        <h1 class="texto">Departamento de Ingenieria</h1>
-        <p class="texto">Pagina de Ex-alumnos</p>
-      </div>-->
-
-    </section>
+  </section>
 
     <!--Maglio-->
     <?php
@@ -92,7 +95,7 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
             <!-- Tarjetas -->
             <div class="col-xxl-6 g-5 col-xl-6 col-lg-6 col-md-7">
               <div class="flip-card mx-auto">
-                <div class="flip-card-inner">
+                <div class="flip-card-inner" style="border-radius: 2rem;">
                   <div class="flip-card-front">
                   <?php
                     // Verificar si la imagen principal está disponible
@@ -101,10 +104,10 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
                         $imagenSrc = $resultado->direccion_imagen;
                     } else {
                         // Si no está disponible, muestra la imagen predeterminada
-                        $imagenSrc = "../img-ex-alumnos/usuario1.png";
+                        $imagenSrc = "../img/user.png";
                     }
                     ?>
-                    <img src="<?php echo $imagenSrc; ?>" alt="../img-ex-alumnos/usuario.png" style="width:350px;height:350px;">
+                    <img src="<?php echo $imagenSrc; ?>" alt="../img-ex-alumnos/usuario.png" style="background-color: white; width:350px;height:350px; border-radius: 2rem; object-fit:cover;">
                     <h1><?php echo $resultado->nombre_usuario; ?></h1>
                   </div>
                   <div class="flip-card-back d-flex flex-column align-content-center align-items-center justify-content-center">

@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ex alumnos UDA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Plantilla</title>
 </head>
-<meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="plantilla.css">
 <body>
 	<header>
-		<a href="index.html" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
+		<a href="index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
 				<li><a class="linkeado" href="#">Inicio</a></li>
-				<li><a class="linkeado" href="#">Galeria</a></li>
-        <li><a class="linkeado" href="#">Empleos</a></li>
-				<li><a class="linkeado" href="#">Administrador</a></li>
+				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
+        <li><a class="linkeado" href="../empleos/empleos.php">Empleos</a></li>
+				<li><a class="linkeado" href="../log-admin/admin.php">Administrador</a></li>
 			</ul>
 		</nav>
 	</header>
-    <section class="zona1">
-      <div class="header-difuminado mx-auto"></div>
 
-      <!--<div class="h-75 d-flex flex-column align-items-center justify-content-center">
-        <h1 class="texto">Departamento de Ingenieria</h1>
-        <p class="texto">Pagina de Ex-alumnos</p>
-      </div>-->
+  <section class="zona1">
+    <div class="header-difuminado mx-auto">
+    </div>
+    <div class="header-difuminado2 mx-auto">
+    </div>
+    <div class="escape2">
+            <h1 class="titulo2">Plantilla</h1>
+            <p>Univerisdad de Atacama</p>
+        </div>
 
-    </section>
+  </section>
 
-    </section>
+   
+
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -43,10 +48,10 @@
             <div class="acerca mx-auto">
                 <h4 class="mt-2">Links</h4>
                 <ul>
-                    <li class="mt-4"><a href="">Académicos</a></li>
-                    <li class="mt-1"><a href="">Noticias</a></li>
-                    <li class="mt-1"><a href="">Moodle</a></li>
-                    <li class="mt-1"><a href="">Instagram</a></li>
+                    <li class="mt-4"><a href="https://diicc.uda.cl/academicos.php">Académicos</a></li>
+                    <li class="mt-1"><a href="https://diicc.uda.cl/noticias.php">Noticias</a></li>
+                    <li class="mt-1"><a href="https://www.moodle.uda.cl/">Moodle</a></li>
+                    <li class="mt-1"><a href="https://www.instagram.com/diicc_uda/">Instagram</a></li>
                 </ul>
             </div>
             <div class="mapa">
@@ -57,6 +62,7 @@
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+    
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");

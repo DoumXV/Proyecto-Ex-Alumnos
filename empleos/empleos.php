@@ -98,7 +98,7 @@ $query = $conexion->query("SELECT * FROM empleos;");
             <ul>
               <li><p>Descripción breve de la oportunidad de mentoría en desarrollo de software. Incluye requisitos y beneficios.</p></li>
               <li><p>Fecha de Inicio</p></li>
-              <li><p>Descripción breve de la oportunidad de mentoría en desarrollo de software. Incluye requisitos y beneficios.</p></li>
+              <li><p>Contacto de Académico a cargo</p></li>
             </ul>
         </div>
       </div>
@@ -120,7 +120,7 @@ $query = $conexion->query("SELECT * FROM empleos;");
               <ul>
                 <li><p>Descripción breve de la oportunidad de mentoría en Base de Datos. Incluye requisitos y beneficios.</p></li>
                 <li><p>Fecha de Inicio</p></li>
-                <li><p>Descripción breve de la oportunidad de mentoría en Base de Datos. Incluye requisitos y beneficios.</p></li>
+                <li><p>Contacto de Académico a cargo</p></li>
               </ul>
           </div>
         </div>
@@ -142,7 +142,7 @@ $query = $conexion->query("SELECT * FROM empleos;");
               <ul>
                 <li><p>Descripción breve de la oportunidad de mentoría en Seguridad Informatica. Incluye requisitos y beneficios.</p></li>
                 <li><p>Fecha de Inicio</p></li>
-                <li><p>Descripción breve de la oportunidad de mentoría en Seguridad Informatica. Incluye requisitos y beneficios.</p></li>
+                <li><p>Contacto de Académico a cargo</p></li>
               </ul>
           </div>
         </div>
@@ -164,7 +164,7 @@ $query = $conexion->query("SELECT * FROM empleos;");
               <ul>
                 <li><p>Descripción breve de la oportunidad de mentoría en Sistemas Digitales. Incluye requisitos y beneficios.</p></li>
                 <li><p>Fecha de Inicio</p></li>
-                <li><p>Descripción breve de la oportunidad de mentoría en Sistemas Digitales. Incluye requisitos y beneficios.</p></li>
+                <li><p>Contacto de Académico a cargo</p></li>
               </ul>
           </div>
         </div>

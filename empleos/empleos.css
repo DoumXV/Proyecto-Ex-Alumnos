@@ -28,7 +28,7 @@ header {
   display: flex;
   justify-content: space-around;
   transition: 0.7s;
-  padding: 30px 20px;
+  padding: 25px 20px;
   z-index: 10;
 }
 
@@ -51,7 +51,7 @@ header .logo {
 
 .header-difuminado {
   display: flex;
-  height: 10rem;
+  height: 9rem;
   position: absolute;
   justify-content: center;
   align-items: center;
@@ -424,6 +424,7 @@ it's okaish for now */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 4rem 8rem;
+  font-family: Montserrat;
 }
 
 .footer-logo img {
@@ -484,4 +485,5 @@ it's okaish for now */
   align-items: center;
   padding: 0rem 8rem;
   color: white;
+  font-family: Montserrat;
 }/*# sourceMappingURL=empleos.css.map */
