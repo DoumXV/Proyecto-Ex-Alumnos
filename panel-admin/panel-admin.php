@@ -26,12 +26,11 @@
 	</header>
     
     <section class="zona1"></section>
-
     <div class="gaaleria">
-        <a href="../home/index.php"><img class="img-galeria"  style="border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;" src="../img/alumnos.png" alt="alumnos"></a>
-        <a href="#"><img class="img-galeria" src="../img/peticiones.png" alt="aalumnos"></a>
-        <a href="#"><img class="img-galeria" src="../img/empleos.png" alt="alumnos"></a>
-        <a href="#"><img class="img-galeria"  style="border-top-right-radius: 2rem; border-bottom-right-radius: 2rem;" src="../img/eventos.png" alt="alumnos"></a>
+        <a href="#"><img class="img-galeria"  style="border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;" src="../img/alumnos.png" alt="alumnos"></a>
+        <a href="../crud-peticiones/crud-peticiones.php"><img class="img-galeria" src="../img/peticiones.png" alt="aalumnos"></a>
+        <a href="../crud-empleos/curd-empleos.php"><img class="img-galeria" src="../img/empleos.png" alt="alumnos"></a>
+        <a href="../eventos-crud/tabla-eventos.php"><img class="img-galeria"  style="border-top-right-radius: 2rem; border-bottom-right-radius: 2rem;" src="../img/eventos.png" alt="alumnos"></a>
     </div>
 
     <footer>
