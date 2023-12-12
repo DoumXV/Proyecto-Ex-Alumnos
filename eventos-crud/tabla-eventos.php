@@ -7,12 +7,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="eventos.css">
 <body>
-    <script>
-        function eliminar(){
-            var respuesta=confirm("Estas seguro de eliminar el registro");
-            return respuesta
-        }
-    </script>
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
@@ -100,7 +94,8 @@
                             <td><?= $datos->ubicacion ?></td>
                             <td><?= $datos->inicio ?></td>
                             <td><?= $datos->final ?></td>
-                            
+                            <td></td>
+                            <td><a href="eliminar-eventos.php?id=<?php echo $datos->id_evento ?>" onclick="return eliminar()" class="btn btn-danger">Eliminar</a></td>
                         </tr>
                          <?php 
                         }
@@ -140,6 +135,12 @@
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+    <script>
+        function eliminar(){
+            var respuesta=confirm("Estas seguro de eliminar el registro");
+            return respuesta
+        }
+    </script>
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
