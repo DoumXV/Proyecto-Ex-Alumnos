@@ -16,7 +16,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: black;
 }
 
 header {
@@ -100,6 +100,11 @@ header ul li a {
   transition: 0.7s;
 }
 
+header.abajo .logo,
+header.abajo ul li a {
+  color: white;
+}
+
 .zona1 {
   position: relative;
   width: 100%;
@@ -107,11 +112,6 @@ header ul li a {
   background: url(../img/administrador.png);
   background-size: cover;
   background-position: center center;
-}
-
-header.abajo .logo,
-header.abajo ul li a {
-  color: white;
 }
 
 .formulario-logeo {
@@ -284,4 +284,32 @@ header.abajo ul li a {
   align-items: center;
   padding: 0rem 8rem;
   color: white;
+}
+
+.gaaleria {
+  margin: auto;
+  margin-bottom: 4rem;
+  display: flex;
+  width: 1000px;
+  height: 500px;
+}
+
+.img-galeria {
+  width: 100%;
+  height: 500px;
+  flex-grow: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+  position: relative;
+}
+
+.img-galeria:hover {
+  cursor: crosshair;
+  margin: auto;
+  width: 120%;
+  opacity: 1;
+  filter: contrast(120%);
+  z-index: 1;
 }/*# sourceMappingURL=panel-admin.css.map */

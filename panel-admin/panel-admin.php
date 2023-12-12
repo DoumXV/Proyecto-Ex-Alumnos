@@ -8,10 +8,11 @@
 <html>
 <head>
 	<title>Panel de control de Ex-Alumnos</title>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="panel-admin.css">
 </head>
-<meta charset="UTF-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="panel-admin.css">
+
 <body>
 	<header>
 		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
@@ -23,25 +24,15 @@
 			</ul>
 		</nav>
 	</header>
-    <section class="zona1">
-    </section>
+    
+    <section class="zona1"></section>
 
-    <a href="../plantilla/plantilla.html">
-        <section class="caja-eventos">
-        </section>
-    </a>
-    <a href="../plantilla/plantilla.html">
-        <section class="caja-usuarios">
-        </section>
-    </a>
-    <a href="../plantilla/plantilla.html">
-        <section class="caja-empleos">
-        </section>
-    </a>
-    <a href="../plantilla/plantilla.html">
-        <section class="caja-peticiones">
-        </section>
-    </a>
+    <div class="gaaleria">
+        <a href="../home/index.php"><img class="img-galeria"  style="border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;" src="../img/1.png" alt="alumnos"></a>
+        <a href="#"><img class="img-galeria" src="../img/2.png" alt="alumnos"></a>
+        <a href="#"><img class="img-galeria" src="../img/3.png" alt="alumnos"></a>
+        <a href="#"><img class="img-galeria"  style="border-top-right-radius: 2rem; border-bottom-right-radius: 2rem;" src="../img/4.png" alt="alumnos"></a>
+    </div>
 
     <footer>
         <div class="contenedor-footer">
