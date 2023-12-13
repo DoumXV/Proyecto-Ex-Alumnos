@@ -33,6 +33,7 @@
             <button type="button" class="btn" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
             </button>
         </div>
+        <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
        
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
