@@ -31,7 +31,7 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
     </div>
     <div class="escape2">
             <h1 class="titulo2">Galeria Ex Alumnos</h1>
-            <p>Univerisdad de Atacama</p>
+            <p>Universidad de Atacama</p>
         </div>
 
   </section>

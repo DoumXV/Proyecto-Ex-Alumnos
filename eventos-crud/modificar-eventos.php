@@ -40,7 +40,7 @@ $hora_final = $fechaFinal->format('H:i:s');
     <form class="" method="POST" enctype="multipart/form-data">
         
             <?php include 'update-eventos.php'; ?>
-            
+            <input type="hidden" name="id_evento" value="<?php echo $id ?>">
             <label for="nombre" class="form-label">Nombre Evento</label>
             <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre del evento" value="<?php echo $datos->nombre_evento ?>">
             <label for="ubicacion" class="form-label">Ubicacion</label>

@@ -46,7 +46,7 @@ $meses = array(
     </div>
     <div class="escape2">
             <h1 class="titulo2">Pagina Ex Alumnos</h1>
-            <p>Univerisdad de Atacama</p>
+            <p>Universidad de Atacama</p>
         </div>
 
   </section>
