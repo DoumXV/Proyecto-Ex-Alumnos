@@ -28,14 +28,7 @@
 
     <section class="caja-crud" style=" height: auto;">
     <div class="container my-5">
-        <!-- Button trigger modal -->
-        <div class="d-flex align-content-center justify-content-center">
-            <button type="button" class="btn" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
-            </button>
-        </div>
-        <div class="d-flex align-content-center justify-content-center m-5">
-            <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
-        </div>
+        
        
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -98,6 +91,12 @@
             <input type="text" class="form-control" id="inputBuscarFin" placeholder="Buscar por fecha de termino" onkeyup="buscarTabla()" />
         </div>
     </div> 
+    <!-- Button trigger modal -->
+    <div class="boton-registrar d-flex align-content-center justify-content-center m-5">
+            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
+            </button>
+            <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
+    </div>
         <!--includes--> 
         <?php
         include 'crear-eventos.php';

@@ -25,23 +25,30 @@
 	</header>
     <section class="zona1">
     </section >
-    <div style="margin-top: 20px; margin-bottom: 20px">
-      <div class="row align-items-start">
-        <div class="col">
-        <input type="text" class="form-control" id="inputBuscarCodigo" placeholder="Buscar por codigo" onkeyup="buscarTabla()" />
+
+
+    <div class="tabla-filtros text-center">
+        <h2 class="mx-auto">Busquedas</h2>
+        <div class="row">
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarCodigo" placeholder="Buscar por codigo" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarEmail" placeholder="Buscar por email" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarContacto" placeholder="Buscar por contacto" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarArea" placeholder="Buscar por area de interes" onkeyup="buscarTabla()" />
+            </div>
         </div>
-        <div class="col">
-        <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
-        </div>
-        <div class="col">
-        <input type="text" class="form-control" id="inputBuscarEmail" placeholder="Buscar por email" onkeyup="buscarTabla()" />
-        </div>
-        <div class="col">
-        <input type="text" class="form-control" id="inputBuscarContacto" placeholder="Buscar por contacto" onkeyup="buscarTabla()" />
-        </div>
-        <input type="text" class="form-control" id="inputBuscarArea" placeholder="Buscar por area de interes" onkeyup="buscarTabla()" />
-        </div>
-      </div>
+    </div>
+
+
     <section class="my-5 container">
 
         <table  class="table bg-white" id="tablaPeticiones">

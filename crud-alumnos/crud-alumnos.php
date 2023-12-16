@@ -33,26 +33,30 @@
 
     <section class="caja-crud" style=" height: auto;">
 
-    <div style="margin-top: 20px; margin-bottom: 20px">
-      <div class="row align-items-start">
-        <div class="col">
-        <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
-        </div>
-        <div class="col">
-        <input type="text" class="form-control" id="inputBuscarEmail" placeholder="Buscar por email" onkeyup="buscarTabla()" />
-        </div>
-        <div class="col">
-        <input type="text" class="form-control" id="inputBuscarFecha" placeholder="Buscar por fecha de egreso" onkeyup="buscarTabla()" />
-        </div>
-        <input type="text" class="form-control" id="inputBuscarArea" placeholder="Buscar por area de interes" onkeyup="buscarTabla()" />
-        </div>
-        <div class="col">
-        <input type="text" class="form-control" id="inputBuscarTrabajo" placeholder="Buscar por trabajo actual" onkeyup="buscarTabla()" />
-        </div>
-        <div class="col">
-        <input type="text" class="form-control" id="inputBuscarContacto" placeholder="Buscar por contacto" onkeyup="buscarTabla()" />
+    <div class="tabla-filtros text-center">
+        <h2 class="mx-auto">Busquedas</h2>
+        <div class="row align-items-start">
+            <div class="col-4 g-4"">
+                <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Nombre" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control" id="inputBuscarEmail" placeholder="Email" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control" id="inputBuscarFecha" placeholder="Fecha de egreso" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col g-4">
+                <input type="text" class="form-control" id="inputBuscarArea" placeholder="Area de interes" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col g-4">
+                <input type="text" class="form-control" id="inputBuscarTrabajo" placeholder="Trabajo actual" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col g-4">
+                <input type="text" class="form-control" id="inputBuscarContacto" placeholder="Contacto" onkeyup="buscarTabla()" />
+            </div>
         </div>
     </div>
+
 
     <div class="container mt-5">        
             <div class="">

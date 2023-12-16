@@ -187,4 +187,25 @@ header.abajo ul li a {
   padding: 0rem 8rem;
   color: white;
   font-family: Montserrat;
+}
+
+.tabla-filtros {
+  margin: 4rem 8rem 0 8rem;
+}
+
+.tabla-filtros h2 {
+  margin: auto;
+}
+
+.boton-registrar {
+  margin: 2rem 30% 0 30%;
+}
+
+.btn-registrar {
+  padding: 0.7rem 0 0.7rem 0;
+  border-radius: 1rem;
+  background-color: #364c59;
+  border: 1px solid black;
+  color: white;
+  font-size: 1.5rem;
 }/*# sourceMappingURL=crud-empleos.css.map */
