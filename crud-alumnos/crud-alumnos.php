@@ -32,24 +32,49 @@
     </section>
 
     <section class="caja-crud" style=" height: auto;">
-       
+
+    <div class="tabla-filtros text-center">
+        <h2 class="mx-auto">Busquedas</h2>
+        <div class="row align-items-start">
+            <div class="col-4 g-4"">
+                <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Nombre" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control" id="inputBuscarEmail" placeholder="Email" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control" id="inputBuscarFecha" placeholder="Fecha de egreso" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col g-4">
+                <input type="text" class="form-control" id="inputBuscarArea" placeholder="Area de interes" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col g-4">
+                <input type="text" class="form-control" id="inputBuscarTrabajo" placeholder="Trabajo actual" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col g-4">
+                <input type="text" class="form-control" id="inputBuscarContacto" placeholder="Contacto" onkeyup="buscarTabla()" />
+            </div>
+        </div>
+    </div>
+
+
     <div class="container mt-5">        
             <div class="">
                 <?php
                     include '../administrador/conexion.php';
                     include 'eliminar.php';
                 ?>
-                <table class="table bg-white">
+                <table class="table bg-white" id="tablaAlumnos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
-                            <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Fecha de egreso</th>
-                            <th>Area de interes</th>
-                            <th>Descripcion</th>
-                            <th>Trabajo actual</th>
-                            <th>Imagen</th>
-                            <th>Contacto</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Fecha de egreso</th>
+                            <th scope="col">Area de interes</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Trabajo actual</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Contacto</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -116,6 +141,7 @@
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <script src="../js/busquedas-alumnos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

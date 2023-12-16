@@ -25,19 +25,42 @@
 	</header>
     <section class="zona1">
     </section >
+
+
+    <div class="tabla-filtros text-center">
+        <h2 class="mx-auto">Busquedas</h2>
+        <div class="row">
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarCodigo" placeholder="Buscar por codigo" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarEmail" placeholder="Buscar por email" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarContacto" placeholder="Buscar por contacto" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarArea" placeholder="Buscar por area de interes" onkeyup="buscarTabla()" />
+            </div>
+        </div>
+    </div>
+
+
     <section class="my-5 container">
 
-       
-        <table  class="table bg-white">
+        <table  class="table bg-white" id="tablaPeticiones">
         <thead class="table-dark table-striped text-center">
-            <th>Codigo</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Contacto</th>
-            <th>Descripcion</th>
-            <th>Imagen</th>
-            <th>Area de interes</th>
-            <th>Trabajo actual</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contacto</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Area de interes</th>
+            <th scope="col">Trabajo actual</th>
             <th></th>
             <th></th>
         </thead>
@@ -117,6 +140,7 @@
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <script src="../js/busquedas-peticiones.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

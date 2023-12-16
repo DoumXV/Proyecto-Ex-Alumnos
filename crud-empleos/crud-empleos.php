@@ -33,11 +33,7 @@
 
     <section class="caja-crud" style=" height: auto;">
     <div class="container my-5">
-        <!-- Button trigger modal -->
-        <div class="d-flex align-content-center justify-content-center">
-            <button type="button" class="btn" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Empleo
-            </button>
-        </div>
+        
         <?php 
         include("../administrador/conexion.php");
         include("registro-empleos.php");
@@ -73,20 +69,49 @@
             </div>
         </div>
         </div>
-
     </div>
+
+
+    <div class="tabla-filtros text-center">
+        <h2 class="mx-auto">Busquedas</h2>
+        <div class="row">
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarId" placeholder="Id" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarTitulo" placeholder="Titulo" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarEmpresa" placeholder="Empresa" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarCiudad" placeholder="Ciudad" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarSueldo" placeholder="Sueldo" onkeyup="buscarTabla()" />
+            </div>
+        </div>
+    </div>  
+
+    <!-- Button trigger modal -->
+    <div class="boton-registrar d-flex align-content-center ">
+            <button type="button" class="btn-registrar container-fluid" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Empleo
+            </button>
+            
+    </div>
+
     <div class="container mt-5">        
             <div class="">
-                <table class="table bg-white">
+                <table class="table bg-white" id="tablaEmpleos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
-                            <th>Id empleo</th>
-                            <th>Titulo</th>
-                            <th>Empresa</th>
-                            <th>Ciudad</th>
-                            <th>Descripcion</th>
-                            <th>Sueldo</th>
-                            <th>Archivo PDF</th>
+                            <th scope="col">Id empleo</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Empresa</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Sueldo</th>
+                            <th scope="col">Archivo PDF</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -152,6 +177,7 @@
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <script src="../js/busquedas-empleos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

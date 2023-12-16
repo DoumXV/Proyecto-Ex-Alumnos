@@ -1,7 +1,12 @@
 <?php
-    session_start();
     if(empty($_SESSION['email_admin'])){
         header("Location:../log-admin/admin.php"); 
+        }
+        $dato="";
+        if (isset($_GET["confirmacion"])) {
+            // Obtener el valor del parámetro "confirmacion"
+            $dato = $_GET["confirmacion"];
+
         }
 ?>
 
@@ -9,10 +14,11 @@
 <html>
 <head>
 	<title>Ex alumnos UDA</title>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="eventos.css">
 </head>
-<meta charset="UTF-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="eventos.css">
+
 <body>
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
@@ -28,12 +34,7 @@
 
     <section class="caja-crud" style=" height: auto;">
     <div class="container my-5">
-        <!-- Button trigger modal -->
-        <div class="d-flex align-content-center justify-content-center">
-            <button type="button" class="btn" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
-            </button>
-        </div>
-        <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
+        
        
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -73,22 +74,59 @@
             </div>
         </div>
         </div>
-
     </div>
-    <div class="container mt-5">    
+
+    <div class="container text-center">
+    <h2>Busquedas</h2>
+    <div class="row m-3">
+        <div class="col-4">
+            <input type="text" class="form-control" id="inputBuscarId" placeholder="Buscar por id" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control" id="inputBuscarUbicacion" placeholder="Buscar por ubicacion" onkeyup="buscarTabla()" />
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-6">
+            <input type="text" class="form-control" id="inputBuscarInicio" placeholder="Buscar por fecha de inicio" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col-6">
+            <input type="text" class="form-control" id="inputBuscarFin" placeholder="Buscar por fecha de termino" onkeyup="buscarTabla()" />
+        </div>
+    </div> 
+    <!-- Button trigger modal -->
+    <div class="boton-registrar d-flex align-content-center justify-content-center m-5">
+            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
+            </button>
+            <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
+    </div>
         <!--includes--> 
         <?php
         include 'crear-eventos.php';
         ?>   
             <div class="">
-                <table class="table bg-white">
+            <?php
+
+            if($dato=="2"){
+                $mensaje="<div class='alert alert-info text-center'>Evento modificado correctamente.</div>";
+            }
+            else{
+                $mensaje="";
+            }
+            echo $mensaje;
+            $dato="";
+            ?>
+                <table class="table bg-white" id="tablaEventos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
-                            <th>Id evento</th>
-                            <th>Nombre</th>
-                            <th>Ubicacion</th>
-                            <th>Fecha inicio</th>
-                            <th>Fecha fin</th>
+                            <th scope="col">Id evento</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Ubicacion</th>
+                            <th scope="col">Fecha inicio</th>
+                            <th scope="col">Fecha fin</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -158,6 +196,7 @@
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <script src="../js/busquedas-eventos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
