@@ -1,24 +1,27 @@
 function buscarTabla() {
-    var inputId, inputTitulo, inputEmpresa, inputCiudad, tabla, tr, i;
-    inputId = document.getElementById("inputBuscarId").value.toUpperCase();
-    inputTitulo = document.getElementById("inputBuscarNombre").value.toUpperCase();
-    inputEmpresa = document.getElementById("inputBuscarEmail").value.toUpperCase();
-    inputCiudad = document.getElementById("inputBuscarContacto").value.toUpperCase();
+    var inputCodigo, inputNombre, inputEmail, inputContacto,inputArea, tabla, tr, i;
+    inputCodigo = document.getElementById("inputBuscarCodigo").value.toUpperCase();
+    inputNombre = document.getElementById("inputBuscarNombre").value.toUpperCase();
+    inputEmail = document.getElementById("inputBuscarEmail").value.toUpperCase();
+    inputContacto = document.getElementById("inputBuscarContacto").value.toUpperCase();
+    inputArea = document.getElementById("inputBuscarArea").value.toUpperCase();
     tabla = document.getElementById("tablaPeticiones");
     tr = tabla.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-      var tdId = tr[i].getElementsByTagName("td")[0];
-      var tdTitulo = tr[i].getElementsByTagName("td")[1];
-      var tdEmpresa = tr[i].getElementsByTagName("td")[2];
-      var tdCiudad = tr[i].getElementsByTagName("td")[3];
+      var tdCodigo = tr[i].getElementsByTagName("td")[0];
+      var tdNombre = tr[i].getElementsByTagName("td")[1];
+      var tdEmail = tr[i].getElementsByTagName("td")[2];
+      var tdContacto = tr[i].getElementsByTagName("td")[3];
+      var tdArea = tr[i].getElementsByTagName("td")[6];
 
-      if (tdId || tdTitulo || tdEmpresa || tdCiudad ) {
+      if (tdCodigo || tdNombre || tdEmail || tdContacto || tdArea ) {
         if (
-          (tdId.textContent.toUpperCase().indexOf(inputId) > -1) &&
-          (tdTitulo.textContent.toUpperCase().indexOf(inputTitulo) > -1) &&
-          (tdEmpresa.textContent.toUpperCase().indexOf(inputEmpresa) > -1) &&
-          (tdCiudad.textContent.toUpperCase().indexOf(inputCiudad) > -1) 
+          (tdCodigo.textContent.toUpperCase().indexOf(inputCodigo) > -1) &&
+          (tdNombre.textContent.toUpperCase().indexOf(inputNombre) > -1) &&
+          (tdEmail.textContent.toUpperCase().indexOf(inputEmail) > -1) &&
+          (tdContacto.textContent.toUpperCase().indexOf(inputContacto) > -1) &&
+          (tdArea.textContent.toUpperCase().indexOf(inputArea) > -1) 
         ) {
           tr[i].style.display = "";
         } else {

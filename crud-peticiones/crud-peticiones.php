@@ -25,19 +25,35 @@
 	</header>
     <section class="zona1">
     </section >
+    <div style="margin-top: 20px; margin-bottom: 20px">
+      <div class="row align-items-start">
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarCodigo" placeholder="Buscar por codigo" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarEmail" placeholder="Buscar por email" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarContacto" placeholder="Buscar por contacto" onkeyup="buscarTabla()" />
+        </div>
+        <input type="text" class="form-control" id="inputBuscarArea" placeholder="Buscar por area de interes" onkeyup="buscarTabla()" />
+        </div>
+      </div>
     <section class="my-5 container">
 
-       
-        <table  class="table bg-white">
+        <table  class="table bg-white" id="tablaPeticiones">
         <thead class="table-dark table-striped text-center">
-            <th>Codigo</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Contacto</th>
-            <th>Descripcion</th>
-            <th>Imagen</th>
-            <th>Area de interes</th>
-            <th>Trabajo actual</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contacto</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Area de interes</th>
+            <th scope="col">Trabajo actual</th>
             <th></th>
             <th></th>
         </thead>
@@ -117,6 +133,7 @@
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <script src="../js/busquedas-peticiones.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

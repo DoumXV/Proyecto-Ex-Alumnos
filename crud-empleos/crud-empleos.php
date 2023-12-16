@@ -73,20 +73,38 @@
             </div>
         </div>
         </div>
-
     </div>
+    <div style="margin-top: 20px; margin-bottom: 20px">
+      <div class="row align-items-start">
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarId" placeholder="Buscar por id" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarTitulo" placeholder="Buscar por titulo" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarEmpresa" placeholder="Buscar por empresa" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarCiudad" placeholder="Buscar por ciudad" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarSueldo" placeholder="Buscar por sueldo" onkeyup="buscarTabla()" />
+        </div>
+      </div>
+    </div>  
     <div class="container mt-5">        
             <div class="">
-                <table class="table bg-white">
+                <table class="table bg-white" id="tablaEmpleos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
-                            <th>Id empleo</th>
-                            <th>Titulo</th>
-                            <th>Empresa</th>
-                            <th>Ciudad</th>
-                            <th>Descripcion</th>
-                            <th>Sueldo</th>
-                            <th>Archivo PDF</th>
+                            <th scope="col">Id empleo</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Empresa</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Sueldo</th>
+                            <th scope="col">Archivo PDF</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -152,6 +170,7 @@
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <script src="../js/busquedas-empleos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

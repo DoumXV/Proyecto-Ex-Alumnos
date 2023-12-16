@@ -75,20 +75,39 @@
         </div>
 
     </div>
-    <div class="container mt-5">    
+    <div class="container mt-5">
+        <div style="margin-top: 20px; margin-bottom: 20px">
+        <div class="row align-items-start">
+            <div class="col">
+            <input type="text" class="form-control" id="inputBuscarId" placeholder="Buscar por id" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col">
+            <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col">
+            <input type="text" class="form-control" id="inputBuscarUbicacion" placeholder="Buscar por ubicacion" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col">
+            <input type="text" class="form-control" id="inputBuscarInicio" placeholder="Buscar por fecha de inicio" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col">
+            <input type="text" class="form-control" id="inputBuscarFin" placeholder="Buscar por fecha de termino" onkeyup="buscarTabla()" />
+            </div>
+        </div>
+    </div>     
         <!--includes--> 
         <?php
         include 'crear-eventos.php';
         ?>   
             <div class="">
-                <table class="table bg-white">
+                <table class="table bg-white" id="tablaEventos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
-                            <th>Id evento</th>
-                            <th>Nombre</th>
-                            <th>Ubicacion</th>
-                            <th>Fecha inicio</th>
-                            <th>Fecha fin</th>
+                            <th scope="col">Id evento</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Ubicacion</th>
+                            <th scope="col">Fecha inicio</th>
+                            <th scope="col">Fecha fin</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -158,6 +177,7 @@
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <script src="../js/busquedas-eventos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
