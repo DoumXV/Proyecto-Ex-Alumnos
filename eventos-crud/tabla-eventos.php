@@ -33,7 +33,9 @@
             <button type="button" class="btn" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
             </button>
         </div>
-        <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
+        <div class="d-flex align-content-center justify-content-center m-5">
+            <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
+        </div>
        
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -73,28 +75,29 @@
             </div>
         </div>
         </div>
-
     </div>
-    <div class="container mt-5">
-        <div style="margin-top: 20px; margin-bottom: 20px">
-        <div class="row align-items-start">
-            <div class="col">
+
+    <div class="container text-center">
+    <h2>Busquedas</h2>
+    <div class="row m-3">
+        <div class="col-4">
             <input type="text" class="form-control" id="inputBuscarId" placeholder="Buscar por id" onkeyup="buscarTabla()" />
-            </div>
-            <div class="col">
-            <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
-            </div>
-            <div class="col">
-            <input type="text" class="form-control" id="inputBuscarUbicacion" placeholder="Buscar por ubicacion" onkeyup="buscarTabla()" />
-            </div>
-            <div class="col">
-            <input type="text" class="form-control" id="inputBuscarInicio" placeholder="Buscar por fecha de inicio" onkeyup="buscarTabla()" />
-            </div>
-            <div class="col">
-            <input type="text" class="form-control" id="inputBuscarFin" placeholder="Buscar por fecha de termino" onkeyup="buscarTabla()" />
-            </div>
         </div>
-    </div>     
+        <div class="col-4">
+            <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control" id="inputBuscarUbicacion" placeholder="Buscar por ubicacion" onkeyup="buscarTabla()" />
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-6">
+            <input type="text" class="form-control" id="inputBuscarInicio" placeholder="Buscar por fecha de inicio" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col-6">
+            <input type="text" class="form-control" id="inputBuscarFin" placeholder="Buscar por fecha de termino" onkeyup="buscarTabla()" />
+        </div>
+    </div> 
         <!--includes--> 
         <?php
         include 'crear-eventos.php';
