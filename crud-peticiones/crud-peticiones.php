@@ -36,6 +36,8 @@
             <th>Contacto</th>
             <th>Descripcion</th>
             <th>Imagen</th>
+            <th>Area de interes</th>
+            <th>Trabajo actual</th>
             <th></th>
             <th></th>
         </thead>
@@ -53,6 +55,8 @@
                     <td><?= $datos->contacto_peticion?></td>
                     <td><?= $datos->descripcion_peticion?></td>
                     <td><img alt="" src="<?= $datos->direccion_imagen?>" class=" img-fluid" style="max-width:200px; max-height: 300px"></td>
+                    <td><?= $datos->area_interes ?></td>
+                    <td><?= $datos->trabajo_actual ?></td>
                     <td><a onclick="return aceptar()" href="comandos/aceptar.php?id=<?=$datos->id_peticion?>" class="btn btn-success">Aceptar</a></td>
                     <td><a onclick="return eliminar()" href="comandos/rechazar.php?id=<?=$datos->id_peticion?>" class="btn btn-danger">Rechazar</a></td>
                 </tr>
