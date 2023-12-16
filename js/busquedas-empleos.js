@@ -1,27 +1,27 @@
 function buscarTabla() {
-    var inputUsuario, inputNombre, inputApellido, inputCorreo, inputFecha, tabla, tr, i;
-    inputUsuario = document.getElementById("inputBuscarUsuario").value.toUpperCase();
-    inputNombre = document.getElementById("inputBuscarNombre").value.toUpperCase();
-    inputApellido = document.getElementById("inputBuscarApellido").value.toUpperCase();
-    inputCorreo = document.getElementById("inputBuscarCorreo").value.toUpperCase();
-    inputFecha = document.getElementById("inputBuscarFecha").value.toUpperCase();
-    tabla = document.getElementById("tablaUsuarios");
+    var inputId, inputTitulo, inputEmpresa, inputCiudad, inputSueldo, tabla, tr, i;
+    inputId = document.getElementById("inputBuscarId").value.toUpperCase();
+    inputTitulo = document.getElementById("inputBuscarTitulo").value.toUpperCase();
+    inputEmpresa = document.getElementById("inputBuscarEmpresa").value.toUpperCase();
+    inputCiudad = document.getElementById("inputBuscarCiudad").value.toUpperCase();
+    inputSueldo = document.getElementById("inputBuscarSueldo").value.toUpperCase();
+    tabla = document.getElementById("tablaEmpleos");
     tr = tabla.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-      var tdUsuario = tr[i].getElementsByTagName("td")[0];
-      var tdNombre = tr[i].getElementsByTagName("td")[1];
-      var tdApellido = tr[i].getElementsByTagName("td")[2];
-      var tdCorreo = tr[i].getElementsByTagName("td")[3];
-      var tdFecha = tr[i].getElementsByTagName("td")[5];
+      var tdId = tr[i].getElementsByTagName("td")[0];
+      var tdTitulo = tr[i].getElementsByTagName("td")[1];
+      var tdEmpresa = tr[i].getElementsByTagName("td")[2];
+      var tdCiudad = tr[i].getElementsByTagName("td")[3];
+      var tdSueldo = tr[i].getElementsByTagName("td")[5];
 
-      if (tdUsuario || tdNombre || tdApellido || tdCorreo || tdFecha) {
+      if (tdId || tdTitulo || tdEmpresa || tdCiudad || tdSueldo) {
         if (
-          (tdUsuario.textContent.toUpperCase().indexOf(inputUsuario) > -1) &&
-          (tdNombre.textContent.toUpperCase().indexOf(inputNombre) > -1) &&
-          (tdApellido.textContent.toUpperCase().indexOf(inputApellido) > -1) &&
-          (tdCorreo.textContent.toUpperCase().indexOf(inputCorreo) > -1) &&
-          (tdFecha.textContent.toUpperCase().indexOf(inputFecha) > -1)
+          (tdId.textContent.toUpperCase().indexOf(inputId) > -1) &&
+          (tdTitulo.textContent.toUpperCase().indexOf(inputTitulo) > -1) &&
+          (tdEmpresa.textContent.toUpperCase().indexOf(inputEmpresa) > -1) &&
+          (tdCiudad.textContent.toUpperCase().indexOf(inputCiudad) > -1) &&
+          (tdSueldo.textContent.toUpperCase().indexOf(inputSueldo) > -1)
         ) {
           tr[i].style.display = "";
         } else {

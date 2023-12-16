@@ -69,28 +69,29 @@
         </div>
 
     </div>
+    
     <div style="margin-top: 20px; margin-bottom: 20px">
       <div class="row align-items-start">
         <div class="col">
-        <input type="text" class="form-control" id="inputBuscarUsuario" placeholder="Buscar por usuario" onkeyup="buscarTabla()" />
+        <input type="text" class="form-control" id="inputBuscarId" placeholder="Buscar por id" onkeyup="buscarTabla()" />
         </div>
         <div class="col">
-        <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+        <input type="text" class="form-control" id="inputBuscarTitulo" placeholder="Buscar por titulo" onkeyup="buscarTabla()" />
         </div>
         <div class="col">
-        <input type="text" class="form-control" id="inputBuscarApellido" placeholder="Buscar por apellido" onkeyup="buscarTabla()" />
+        <input type="text" class="form-control" id="inputBuscarEmpresa" placeholder="Buscar por empresa" onkeyup="buscarTabla()" />
         </div>
         <div class="col">
-        <input type="text" class="form-control" id="inputBuscarCorreo" placeholder="Buscar por correo" onkeyup="buscarTabla()" />
+        <input type="text" class="form-control" id="inputBuscarCiudad" placeholder="Buscar por ciudad" onkeyup="buscarTabla()" />
         </div>
         <div class="col">
-        <input type="text" class="form-control" id="inputBuscarFecha" placeholder="Buscar por fecha de nacimiento" onkeyup="buscarTabla()" />
+        <input type="text" class="form-control" id="inputBuscarSueldo" placeholder="Buscar por sueldo" onkeyup="buscarTabla()" />
         </div>
       </div>
     </div>  
     <div class="container mt-5">        
             <div class="">
-                <table class="table bg-white" id="tablaUsuarios">
+                <table class="table bg-white" id="tablaEmpleos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
                             <th scope="col">Id empleo</th>
@@ -171,7 +172,7 @@
             return respuesta
         }
     </script>
-    <script src="../js/busqueda-empleos.js"></script>
+    <script src="../js/busquedas-empleos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
