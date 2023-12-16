@@ -1,10 +1,4 @@
 <?php
-    session_start();
-    if(empty($_SESSION['email_admin'])){
-        header("Location:../log-admin/admin.php"); 
-        }
-?>
-<?php
 
 include '../administrador/conexion.php';
 if(isset($_POST['btnmodificar'])){
@@ -22,15 +16,15 @@ if(!empty($nombre) and !empty($ubicacion) and !empty($fecha) and !empty($hora_in
     if($hi<$hf){
         $sql=$conexion->query("UPDATE eventos SET nombre_evento='$nombre',ubicacion='$ubicacion',inicio='$fecha_inicio',final='$fecha_termino' WHERE id_evento=$id");
         if($sql){
-            echo 'evento modificado correctamente';
+            header("Location:tabla-eventos.php?confirmacion=2");
         }else{
-            echo 'no se pudo modificar el evento';
+            echo "<div class='alert alert-danger text-center'>No se pudo modificar el evento.</div>";
         }
     }else{
-        echo "la hora de inicio no puede ser mayor a la final";
+        echo "<div class='alert alert-warning text-center'>La hora de inicio no puede ser mayor a la final.</div>";
     }
 }else{
-    echo "no se pueden ingresar campos vacios";
+    echo "<div class='alert alert-warning text-center'>Hay algunos campos vacios.</div>";
 }
 }
 

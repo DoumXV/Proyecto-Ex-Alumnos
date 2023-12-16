@@ -200,7 +200,7 @@ $meses = array(
               <label for="formFile" class="form-label">Foto de ex-alumno</label>
               <input class="form-control" type="file" id="formFile" name="imagen_peticion" accept="image/png, image/jpeg">
             </div>
-            <button type="submit" class="btn btn-primary" style="background-color: #364c59; border: 1px solid black; font-family: Montserrat;" name="enviar_peticion">Enviar</button>
+            <button onclick="return confirmar()" type="submit" class="btn btn-primary" style="background-color: #364c59; border: 1px solid black; font-family: Montserrat;" name="enviar_peticion">Enviar</button>
           </form>
         </div>
       </div>
@@ -234,7 +234,13 @@ $meses = array(
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
-    
+
+  <script>
+      function confirmar(){
+          var respuesta=confirm("¿Estas seguro de que los datos estan correctos?");
+          return respuesta
+      }
+  </script>
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");

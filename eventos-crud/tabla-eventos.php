@@ -1,7 +1,12 @@
 <?php
-    session_start();
     if(empty($_SESSION['email_admin'])){
         header("Location:../log-admin/admin.php"); 
+        }
+        $dato="";
+        if (isset($_GET["confirmacion"])) {
+            // Obtener el valor del parámetro "confirmacion"
+            $dato = $_GET["confirmacion"];
+
         }
 ?>
 
@@ -102,6 +107,17 @@
         include 'crear-eventos.php';
         ?>   
             <div class="">
+            <?php
+
+            if($dato=="2"){
+                $mensaje="<div class='alert alert-info text-center'>Evento modificado correctamente.</div>";
+            }
+            else{
+                $mensaje="";
+            }
+            echo $mensaje;
+            $dato="";
+            ?>
                 <table class="table bg-white" id="tablaEventos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
