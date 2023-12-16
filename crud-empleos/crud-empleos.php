@@ -13,12 +13,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="crud-empleos.css">
 <body>
-    <script>
-        function eliminar(){
-            var respuesta=confirm("Estas seguro de eliminar el registro");
-            return respuesta
-        }
-    </script>
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
@@ -75,18 +69,37 @@
         </div>
 
     </div>
+    <div style="margin-top: 20px; margin-bottom: 20px">
+      <div class="row align-items-start">
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarUsuario" placeholder="Buscar por usuario" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarApellido" placeholder="Buscar por apellido" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarCorreo" placeholder="Buscar por correo" onkeyup="buscarTabla()" />
+        </div>
+        <div class="col">
+        <input type="text" class="form-control" id="inputBuscarFecha" placeholder="Buscar por fecha de nacimiento" onkeyup="buscarTabla()" />
+        </div>
+      </div>
+    </div>  
     <div class="container mt-5">        
             <div class="">
-                <table class="table bg-white">
+                <table class="table bg-white" id="tablaUsuarios">
                     <thead class="table-dark table-striped text-center">
                         <tr>
-                            <th>Id empleo</th>
-                            <th>Titulo</th>
-                            <th>Empresa</th>
-                            <th>Ciudad</th>
-                            <th>Descripcion</th>
-                            <th>Sueldo</th>
-                            <th>Archivo PDF</th>
+                            <th scope="col">Id empleo</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Empresa</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Sueldo</th>
+                            <th scope="col">Archivo PDF</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -152,6 +165,13 @@
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <script>
+        function eliminar(){
+            var respuesta=confirm("Estas seguro de eliminar el registro");
+            return respuesta
+        }
+    </script>
+    <script src="../js/busqueda-empleos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
