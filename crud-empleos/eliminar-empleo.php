@@ -1,4 +1,12 @@
 <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    
+    if(empty($_SESSION['email_admin'])){
+        header("Location:../log-admin/admin.php"); 
+        }
+
 if(!empty($_GET["id_empleo"])){
     $id_empleo=$_GET["id_empleo"];
     $sql=$conexion->query("DELETE FROM empleos WHERE id_empleo='$id_empleo'");

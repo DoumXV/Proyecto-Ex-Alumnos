@@ -10,8 +10,8 @@ $conexion = new mysqli($server,$user,$password,$db);
 if(!empty($_POST["boton_enviar"])){
     if (!empty($_POST['email_admin']) and !empty($_POST['clave_admin'])) {
         $email=$_POST['email_admin'];
-        $clave=$_POST['clave_admin'];
-        $sql=$conexion->query("SELECT * FROM administrador WHERE email_admin='$email' AND clave_admin='$clave'");
+        $clave_hash=md5($_POST['clave_admin']);
+        $sql=$conexion->query("SELECT * FROM administrador WHERE email_admin='$email' AND clave_admin='$clave_hash'");
         
         #$sql=$conexion->query("SELECT * FROM `administrador` WHERE email_admin=\'maglio@gmail.com\' AND clave_admin=\'maglio\'");
         #echo "$email"."$clave";
