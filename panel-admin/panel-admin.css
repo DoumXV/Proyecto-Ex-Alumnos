@@ -314,4 +314,40 @@ header.abajo ul li a {
   opacity: 1;
   filter: contrast(120%);
   z-index: 1;
+}
+
+.boton-peticiones {
+  top: 100;
+  height: 30px;
+  flex-grow: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 1;
+  transition: 0.5s ease;
+  position: absolute;
+  z-index: 1;
+}
+
+.boton-peticiones:hover {
+  z-index: 1;
+  top: 0;
+  cursor: crosshair;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+.peticiones {
+  flex-grow: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+  position: relative;
+}
+
+.peticiones:hover {
+  cursor: crosshair;
+  opacity: 1;
+  filter: contrast(120%);
+  z-index: 1;
 }/*# sourceMappingURL=panel-admin.css.map */

@@ -3,6 +3,24 @@
     if(empty($_SESSION['email_admin'])){
         header("Location:../log-admin/admin.php"); 
         }
+
+    include("../administrador/conexion.php");
+    $sql=$conexion->query("SELECT COUNT(*) AS total_filas FROM peticiones;");
+    // Verifica si la consulta se ejecutó correctamente
+    if ($sql) {
+        // Obtiene el resultado como un array asociativo
+        $resultado = $sql->fetch_assoc();
+
+        // Accede al valor específico del array asociativo
+        $total_filas = $resultado['total_filas'];
+
+        // Muestra el valor o haz lo que necesites con él
+    } else {
+        // Manejo de errores si la consulta falla
+        echo "Error en la consulta: " . $conexion->error;
+    }
+    
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,7 +46,19 @@
     <section class="zona1"></section>
     <div class="gaaleria">
         <a href="../crud-alumnos/crud-alumnos.php"><img class="img-galeria"  style="border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;" src="../img/alumnos.png" alt="alumnos"></a>
-        <a href="../crud-peticiones/crud-peticiones.php"><img class="img-galeria" src="../img/peticiones.png" alt="aalumnos"></a>
+        <div class="peticiones">
+            <a href="../crud-peticiones/crud-peticiones.php" class="position-relative">
+                <img class="img-galeria" src="../img/peticiones.png" alt="alumnos">
+                <?php 
+                if($resultado['total_filas']>0){
+                    echo '<button type="button" class="boton-peticiones btn btn-primary position-absolute top-0 start-100 z-1 translate-middle badge rounded-pill bg-danger" style="transform: transform: translateX(2em); transform: translateY(3in);">
+                     '.$resultado['total_filas'].'
+                     </button>';
+                }
+                else{
+                }?>
+            </a>
+        </div>
         <a href="../crud-empleos/crud-empleos.php"><img class="img-galeria" src="../img/empleos.png" alt="alumnos"></a>
         <a href="../eventos-crud/tabla-eventos.php"><img class="img-galeria"  style="border-top-right-radius: 2rem; border-bottom-right-radius: 2rem;" src="../img/eventos.png" alt="alumnos"></a>
     </div>
