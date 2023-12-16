@@ -185,6 +185,14 @@ $meses = array(
               <input type="tel" id="contacto_peticion" class="form-control" name="contacto_peticion">
             </div>
             <div class="mb-3">
+              <label for="area" class="form-label">Area de interes</label>
+              <input type="text" id="area" class="form-control" name="area">
+            </div>
+            <div class="mb-3">
+              <label for="trabajo" class="form-label">Trabajo actual</label>
+              <input type="text" id="trabajo" class="form-control" name="trabajo">
+            </div>
+            <div class="mb-3">
               <label for="descripcion_peticion" class="form-label">Descripcion del ex-alumno</label>
               <textarea class="form-control" name="descripcion_peticion" id="descripcion_peticion" rows="3"></textarea>
             </div>
