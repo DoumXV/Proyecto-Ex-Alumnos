@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if(empty($_SESSION['email_admin'])){
         header("Location:../log-admin/admin.php"); 
         }
@@ -62,14 +63,13 @@
                     <input type="time" name="inicio"  class="form-control mb-3" id="ho1">
                     <label for="ho2" class="form-label">Hora de termino</label>
                     <input type="time" name="final"  class="form-control mb-3" id="ho2">
-                    
+                    <label for="archivo" class="form-label">Archivo</label>
+                    <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf">                    
                     <div class="d-flex justify-content-center align-items-center">
-                        <button type="submit" class="btn btn-dark" name="btnregistrar" value="ok">Registrar eventos</button>
+                        <button type="submit" class="btn btn-dark me-5" name="btnregistrar" value="ok">Registrar eventos</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
             </div>
         </div>
@@ -125,6 +125,7 @@
                             <th scope="col">Id evento</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Ubicacion</th>
+                            <th scope="col">Imagen</th>
                             <th scope="col">Fecha inicio</th>
                             <th scope="col">Fecha fin</th>
                             <th></th>
@@ -141,9 +142,10 @@
                             <td><?= $datos->id_evento ?> </td>
                             <td><?= $datos->nombre_evento ?> </td>
                             <td><?= $datos->ubicacion ?></td>
+                            <td><img class="img-thumbnail" src="<?= $datos->direccion_imagen ?>" alt="" style="max-width:200px; max-height: 200px"></td>
                             <td><?= $datos->inicio ?></td>
                             <td><?= $datos->final ?></td>
-                            <td><a href="modificar-eventos.php?id=<?php echo $datos->id_evento ?>" class="btn btn-info">Modificar</a></td>
+                            <td><a href="modificar-eventos.php?id=<?php echo $datos->id_evento ?>" class="btn btn-info">Editar</a></td>
                             <td><a href="eliminar-eventos.php?id=<?php echo $datos->id_evento ?>" onclick="return eliminar()" class="btn btn-danger">Eliminar</a></td>
                         </tr>
                          <?php 

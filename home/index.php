@@ -23,9 +23,10 @@ $meses = array(
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ex alumnos UDA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
 </head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="index.css">
+
 <body>
 	<header>
 		<a href="index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
@@ -74,7 +75,7 @@ $meses = array(
           <div class="flip-card me-5">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="../img/vicente.jpeg" alt="Avatar" style="width:100%; height: 300px; object-fit: cover; ">
+                <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (2).png" alt="Avatar" style="width:100%; height: 300px; object-fit: cover; ">
                 <h1>Vicente Jaramillo</h1>
               </div>
               <div class="flip-card-back">
@@ -109,6 +110,24 @@ $meses = array(
       <h2 class="titulos2 container-fluid text-center">Eventos</h2>
       <div class="tarjetas row justify-content-center align-content-center">
         <?php while($registros=$query->fetch_object()){ ?>
+            <!-- Modal --> 
+            <?php
+              $modalID = "modal_" . preg_replace("/[^a-zA-Z0-9]/", "_", $registros->id_evento);
+            ?>
+            <div class="modal fade" id="<?php echo $modalID; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">                
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel"><?php echo $registros->nombre_evento; ?></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img class="img-thumbnail mx-auto d-block" src="<?php echo $registros->direccion_imagen ?>" alt="">
+                    </div>
+                </div>
+                </div>
+            </div>
+          <!--Tarjetas Eventos-->
             <div class="col-xxl-3 g-5 col-xl-4 col-lg-6 col-md-7">
             <div class="card1 card text-center h-auto mx-auto" style="border: 1px solid black;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
               <div class="card-header" style="background-color: #364c59; color: white;">
@@ -155,7 +174,9 @@ $meses = array(
                           </div>"; 
                   ?>
                 </div>
-                <button type="button" class="btn-calendario btn btn-dark">Mas Información</button>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#<?php echo $modalID; ?>">
+                      Mas informacion
+                    </button>
               </div>
             </div>
             </div>
@@ -177,7 +198,7 @@ $meses = array(
               <input type="text" id="nombre_peticion" class="form-control" name="nombre_peticion">
             </div>
             <div class="mb-3">
-              <label for="email_peticion" class="form-label">Email</label>
+              <label for="email_peticion" class="form-label">Correo Institucional</label>
               <input type="email" id="email_peticion" class="form-control" name="email_peticion">
             </div>
             <div class="mb-3">

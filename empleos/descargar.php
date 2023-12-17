@@ -10,7 +10,7 @@ $query = $conexion->query("SELECT * FROM empleos WHERE id_empleo = '$id'");
 
 if ($resultado = $query->fetch_object()) {
     $archivo = $resultado->archivo;
-    $ruta_archivo = "../pdf/" . $archivo;
+    $ruta_archivo = "../archivo-empleos/" . $archivo;
 
     // Verificar que el archivo exista en el servidor
     if (file_exists($ruta_archivo)) {

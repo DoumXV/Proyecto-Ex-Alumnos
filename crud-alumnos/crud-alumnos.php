@@ -82,7 +82,7 @@
                     <tbody>
                         <?php
                         include("../administrador/conexion.php");
-                        $sql=$conexion->query("SELECT * FROM usuarios");
+                        $sql=$conexion->query("SELECT * FROM alumnos");
                         while($datos=$sql->fetch_object()){
                         ?>
                         <tr class="text-center">
@@ -94,7 +94,7 @@
                             <td><?= $datos->trabajo_actual ?> </td>
                             <td><img src="<?= $datos->direccion_imagen ?>" alt="" style="max-width:200px; max-height: 300px"></td>
                             <td><?= $datos->contacto ?> </td>
-                            <th><a href="pagina-modificar.php?id_empleo=<?php echo $datos->email_usuario?>" class="btn btn-info">Editar</a></th>
+                            <th><a href="pagina-modificar.php?email_usuario=<?php echo $datos->email_usuario?>" class="btn btn-info">Editar</a></th>
                             <th><a onclick="return eliminar()" href="crud-alumnos.php?email=<?=$datos->email_usuario?>" class="btn btn-danger">Eliminar</a></th> 
                         </tr>
                          <?php 

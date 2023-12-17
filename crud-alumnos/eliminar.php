@@ -1,7 +1,7 @@
 <?php
 if(!empty($_GET["email"])){
-    $id_empleo=$_GET["email"];
-    $sql=$conexion->query("DELETE FROM usuarios WHERE email_usuario='$id_empleo'");
+    $email=$_GET["email"];
+    $sql=$conexion->query("DELETE FROM alumnos WHERE email_usuario='$email'");
     if ($sql==1) {
         echo '<div class="text-center alert alert-success">Alumno eliminado correctamente</div>';
     } else {
