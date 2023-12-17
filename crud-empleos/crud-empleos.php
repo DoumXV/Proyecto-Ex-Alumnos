@@ -125,6 +125,13 @@
         </div>
     </div>
 
+    <!-- Button trigger modal -->
+    <div class="boton-registrar d-flex align-content-center ">
+            <button type="button" class="btn-registrar container-fluid" data-bs-toggle="modal" data-bs-target="#registro">Registrar Empleo
+            </button>
+            
+    </div>
+
 
     <div class="tabla-filtros text-center">
         <h2 class="mx-auto">Busquedas</h2>
@@ -147,12 +154,6 @@
         </div>
     </div>  
 
-    <!-- Button trigger modal -->
-    <div class="boton-registrar d-flex align-content-center ">
-            <button type="button" class="btn-registrar container-fluid" data-bs-toggle="modal" data-bs-target="#registro">Registrar Empleo
-            </button>
-            
-    </div>
 
     <div class="container mt-5">        
             <div class="">
@@ -194,10 +195,13 @@
                         <div class="modal fade" id="editar<?=$datos->id_empleo?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
                             <div class="modal-body">
                             <section class="modificar d-flex flex-column align-items-center justify-content-center">
                                 <div class="">
-                                    <h5 class="text-center alert alert-secondary">Modificar Empleos</h5>
                                     <form method="POST" enctype="multipart/form-data">
                                         <label for="titulo" class="form-label">Titulo Empleo</label>
                                         <input type="text" class="form-control mb-3" name="titulo" placeholder="Titulo del empleo" value="<?=$datos->titulo?>">

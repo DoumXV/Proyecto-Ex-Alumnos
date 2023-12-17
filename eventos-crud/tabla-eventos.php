@@ -34,15 +34,85 @@
     </section>
 
     <section class="caja-crud" style=" height: auto;">
-    <div class="container my-5">
-        
-       
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="container my-5 text-center">
+        <!--includes--> 
+        <?php
+        include("../administrador/conexion.php");
+        include 'crear-eventos.php';
+        include 'update-eventos.php';
+        if($dato=="2"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'El registro fue actualizado correctamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                });
+        });
+            </script>";
+            echo $mensaje;
+        }else if($dato=="3"){
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Algo salio mal, intentelo nuevamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 2300
+                });});
+            </script>";
+            echo $mensaje;
+        }
+        else if($dato=="4"){
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Algunos campos estan vacios.',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 2300
+                });});
+            </script>";
+            echo $mensaje;
+        }
+        if($dato=="5"){
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'La hora de inicio no puede ser mayor a la final.',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 2300
+                });});
+            </script>";
+            echo $mensaje;
+        }
+        ?>  
+
+        <!-- Modal Registro -->
+        <div class="modal fade" id="registro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Registro de eventos</h1>
+                <h1 class="modal-title fs-5" id="#registro">Registro de eventos</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -76,49 +146,37 @@
         </div>
     </div>
 
-    <div class="container text-center">
-    <h2>Busquedas</h2>
-    <div class="row m-3">
-        <div class="col-4">
-            <input type="text" class="form-control" id="inputBuscarId" placeholder="Buscar por id" onkeyup="buscarTabla()" />
-        </div>
-        <div class="col-4">
-            <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
-        </div>
-        <div class="col-4">
-            <input type="text" class="form-control" id="inputBuscarUbicacion" placeholder="Buscar por ubicacion" onkeyup="buscarTabla()" />
-        </div>
-    </div>
-    <div class="row m-3">
-        <div class="col-6">
-            <input type="text" class="form-control" id="inputBuscarInicio" placeholder="Buscar por fecha de inicio" onkeyup="buscarTabla()" />
-        </div>
-        <div class="col-6">
-            <input type="text" class="form-control" id="inputBuscarFin" placeholder="Buscar por fecha de termino" onkeyup="buscarTabla()" />
-        </div>
-    </div> 
     <!-- Button trigger modal -->
     <div class="boton-registrar d-flex align-content-center justify-content-center m-5">
             <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
             </button>
             <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
     </div>
-        <!--includes--> 
-        <?php
-        include 'crear-eventos.php';
-        ?>   
-            <div class="">
-            <?php
-
-            if($dato=="2"){
-                $mensaje="<div class='alert alert-info text-center'>Evento modificado correctamente.</div>";
-            }
-            else{
-                $mensaje="";
-            }
-            echo $mensaje;
-            $dato="";
-            ?>
+    
+    <div class="tabla-filtros text-center">
+        <h2>Busquedas</h2>
+        <div class="row m-3">
+            <div class="col-4">
+                <input type="text" class="form-control" id="inputBuscarId" placeholder="Buscar por id" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4">
+                <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4">
+                <input type="text" class="form-control" id="inputBuscarUbicacion" placeholder="Buscar por ubicacion" onkeyup="buscarTabla()" />
+            </div>
+        </div>
+        <div class="row m-3">
+            <div class="col-6">
+                <input type="text" class="form-control" id="inputBuscarInicio" placeholder="Buscar por fecha de inicio" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" id="inputBuscarFin" placeholder="Buscar por fecha de termino" onkeyup="buscarTabla()" />
+            </div>
+        </div>
+    </div>
+    </div>
+ 
                 <table class="table bg-white" id="tablaEventos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
@@ -134,10 +192,14 @@
                     </thead>
                     <tbody>
                         <?php
-                        include("../administrador/conexion.php");
                         $sql=$conexion->query("SELECT * FROM eventos");
                         while($datos=$sql->fetch_object()){
                         ?>
+                        <?php 
+                        include("update-eventos.php");
+                        ?>
+                        
+                        
                         <tr class="text-center">
                             <td><?= $datos->id_evento ?> </td>
                             <td><?= $datos->nombre_evento ?> </td>
@@ -145,9 +207,63 @@
                             <td><img class="img-thumbnail" src="<?= $datos->direccion_imagen ?>" alt="" style="max-width:200px; max-height: 200px"></td>
                             <td><?= $datos->inicio ?></td>
                             <td><?= $datos->final ?></td>
-                            <td><a href="modificar-eventos.php?id=<?php echo $datos->id_evento ?>" class="btn btn-info">Editar</a></td>
+                            <th><button type="button" class="btn btn-primary" data-bs-toggle="modal" style="background-color:#364c59; color:#fff; border:1px solid black;" name="btnmodificar" data-bs-target="#editar<?=$datos->id_evento?>">Editar</button></th>
                             <td><a href="eliminar-eventos.php?id=<?php echo $datos->id_evento ?>" onclick="return eliminar()" class="btn btn-danger">Eliminar</a></td>
                         </tr>
+
+                        <!-- Modal  Editar-->
+                        <div class="modal fade" id="editar<?=$datos->id_evento?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <section class="modificar d-flex flex-column align-items-center justify-content-center">
+                                <div class="container">
+                                    
+                                <form class="formulario-modificar" method="POST" enctype="multipart/form-data">
+                                    
+                                        
+                                        <label for="nombre" class="form-label text-start">Nombre Evento</label>
+                                        <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre del evento" value="<?php echo $datos->nombre_evento ?>">
+                                        <label for="ubicacion" class="form-label">Ubicacion</label>
+                                        <select class="form-select" aria-label="Default select example" name="ubicacion" id="ubicacion">
+                                        <option value="<?php echo $datos->ubicacion ?>"><?php echo $datos->ubicacion ?></option>
+                                        <option value="Diic-1">Diic-1</option>
+                                        <option value="Diic-2">Diic-2</option>
+                                        <option value="Diic-3">Diic-3</option>
+                                        <option value="Lab-Melquiades">Lab Melquiades</option>
+                                        <option value="Lab-Olimpo">Lab Olimpo</option>
+                                        </select>
+                                        <label for="ho1" class="form-label">Fecha de evento</label>
+                                        <input type="date" class="form-control mb-3" name="fecha" placeholder="Fecha" id="ho1" value="<?php echo $fecha ?>">
+                                        <label for="ho1" class="form-label">Hora de inicio</label>
+                                        <input type="time" name="inicio"  class="form-control mb-3" id="ho1" value="<?php echo $hora_inicio ?>">
+                                        <label for="ho2" class="form-label">Hora de termino</label>
+                                        <input type="time" name="final"  class="form-control mb-3" id="ho2" value="<?php echo $hora_final ?>">
+                                        <label for="titulo" class="form-label">Imagen</label>
+                                        <input type="file" class="form-control mb-3" name="img" accept="image/*,.jpg">
+                                        <input type="hidden" name="id_evento" value="<?=$datos->id_evento?>">
+                                        <div>
+                                            <p>
+                                                Dirección del archivo: <?php echo $datos->direccion_imagen ?>
+                                            </p>
+                                        </div>
+                                        
+
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <button type="submit" class="btn btn-secondary me-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Confirmar</button>
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>  
+                                        </div>
+                                </form>
+                                </div>
+                                </section>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
                          <?php 
                         }
                         ?>
