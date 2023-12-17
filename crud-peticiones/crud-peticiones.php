@@ -53,14 +53,14 @@
 
         <table  class="table bg-white" id="tablaPeticiones">
         <thead class="table-dark table-striped text-center">
-            <th scope="col">Codigo</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Email</th>
-            <th scope="col">Contacto</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Imagen</th>
-            <th scope="col">Area de interes</th>
-            <th scope="col">Trabajo actual</th>
+            <th class="p-3" scope="col">Codigo</th>
+            <th class="p-3" scope="col">Nombre</th>
+            <th class="p-3" scope="col">Email</th>
+            <th class="p-3" scope="col">Contacto</th>
+            <th class="p-3" scope="col">Descripcion</th>
+            <th class="p-3" scope="col">Imagen</th>
+            <th class="p-3" scope="col">Area de interes</th>
+            <th class="p-3" scope="col">Trabajo actual</th>
             <th></th>
             <th></th>
         </thead>

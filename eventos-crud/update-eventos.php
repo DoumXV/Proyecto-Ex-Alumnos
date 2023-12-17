@@ -26,8 +26,6 @@ if(!empty($nombre) and !empty($ubicacion) and !empty($fecha) and !empty($hora_in
         $sql=$conexion->query("UPDATE eventos SET nombre_evento='$nombre',ubicacion='$ubicacion',direccion_imagen='$ruta_guardado',inicio='$fecha_inicio',final='$fecha_termino' WHERE id_evento='$id_evento'");
         if($sql==1){
             header("Location:tabla-eventos.php?confirmacion=2");
-            echo $fecha_inicio;
-            echo $fecha_termino;
         }else{
             header("Location:tabla-eventos.php?confirmacion=3");
         }

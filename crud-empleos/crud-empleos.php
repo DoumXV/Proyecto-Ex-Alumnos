@@ -125,12 +125,7 @@
         </div>
     </div>
 
-    <!-- Button trigger modal -->
-    <div class="boton-registrar d-flex align-content-center ">
-            <button type="button" class="btn-registrar container-fluid" data-bs-toggle="modal" data-bs-target="#registro">Registrar Empleo
-            </button>
-            
-    </div>
+    
 
 
     <div class="tabla-filtros text-center">
@@ -154,19 +149,26 @@
         </div>
     </div>  
 
+    <!-- Button trigger modal -->
+    <div class="boton-registrar d-flex align-content-center justify-content-center mt-4">
+            <button type="button" class="btn " style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#registro">Registrar Empleo
+            </button>
+            
+    </div>
+
 
     <div class="container mt-5">        
             <div class="">
                 <table class="table bg-white" id="tablaEmpleos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
-                            <th scope="col">Id empleo</th>
-                            <th scope="col">Titulo</th>
-                            <th scope="col">Empresa</th>
-                            <th scope="col">Ciudad</th>
-                            <th scope="col">Descripcion</th>
-                            <th scope="col">Sueldo</th>
-                            <th scope="col">Archivo PDF</th>
+                            <th class="p-3" scope="col">Id</th>
+                            <th class="p-3" scope="col">Titulo</th>
+                            <th class="p-3" scope="col">Empresa</th>
+                            <th class="p-3" scope="col">Ciudad</th>
+                            <th class="p-3" scope="col">Descripcion</th>
+                            <th class="p-3" scope="col">Sueldo</th>
+                            <th class="p-3" scope="col">Archivo PDF</th>
                             <th></th>
                             <th></th>
                         </tr>

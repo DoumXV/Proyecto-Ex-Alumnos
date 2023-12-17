@@ -20,14 +20,14 @@ if(!empty($_POST["btnmodificar"])){
     if(!empty($nombre) and !empty($email) and !empty($fecha) and !empty($area) and !empty($descripcion) and !empty($trabajo) and !empty($contacto) and !empty($nombre_imagen)){
         move_uploaded_file($nombre_tmp,$ruta_guardado);
         $sql=$conexion->query("UPDATE alumnos SET nombre_usuario='$nombre',email_usuario='$email',fecha_egreso='$fecha',area_interes='$area',descripcion='$descripcion',trabajo_actual='$trabajo',contacto='$contacto', direccion_imagen='$ruta_guardado' WHERE email_usuario='$email'");
-        if($sql){
-            header("location:crud-alumnos.php");
+        if($sql==1){
+            header("Location:crud-alumnos.php?confirmacion=2");
         }else{
-            echo '<div class="alert alert-danger">Error al modificar empleo</div>';
+            header("Location:crud-alumnos.php?confirmacion=3");
         }
 
     }else{
-        echo '<div class="alert alert-warning">Alguno de los campos esta vacio</div>';
+        header("Location:crud-alumnos.php?confirmacion=4");
     }
 }
 ?>

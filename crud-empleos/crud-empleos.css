@@ -189,19 +189,6 @@ header.abajo ul li a {
   font-family: Montserrat;
 }
 
-.tabla-filtros h2 {
-  margin: auto;
-}
-
-.boton-registrar {
-  margin: 2rem 30% 0 30%;
-}
-
-.btn-registrar {
-  padding: 0.7rem 0 0.7rem 0;
-  border-radius: 1rem;
-  background-color: #364c59;
-  border: 1px solid black;
-  color: white;
-  font-size: 1.5rem;
+.tabla-filtros {
+  margin: 0 5rem 0 5rem;
 }/*# sourceMappingURL=crud-empleos.css.map */

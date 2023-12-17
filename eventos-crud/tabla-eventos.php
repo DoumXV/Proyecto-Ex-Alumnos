@@ -146,46 +146,48 @@
         </div>
     </div>
 
-    <!-- Button trigger modal -->
-    <div class="boton-registrar d-flex align-content-center justify-content-center m-5">
-            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
-            </button>
-            <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
-    </div>
     
     <div class="tabla-filtros text-center">
         <h2>Busquedas</h2>
         <div class="row m-3">
             <div class="col-4">
-                <input type="text" class="form-control" id="inputBuscarId" placeholder="Buscar por id" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarId" placeholder="Buscar por id" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4">
-                <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4">
-                <input type="text" class="form-control" id="inputBuscarUbicacion" placeholder="Buscar por ubicacion" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarUbicacion" placeholder="Buscar por ubicacion" onkeyup="buscarTabla()" />
             </div>
         </div>
         <div class="row m-3">
             <div class="col-6">
-                <input type="text" class="form-control" id="inputBuscarInicio" placeholder="Buscar por fecha de inicio" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarInicio" placeholder="Buscar por fecha de inicio" onkeyup="buscarTabla()" />
             </div>
             <div class="col-6">
-                <input type="text" class="form-control" id="inputBuscarFin" placeholder="Buscar por fecha de termino" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarFin" placeholder="Buscar por fecha de termino" onkeyup="buscarTabla()" />
             </div>
         </div>
     </div>
+
+
+     <!-- Button trigger modal -->
+     <div class="boton-registrar d-flex align-content-center justify-content-center m-5">
+            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
+            </button>
+            <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
     </div>
- 
+    
+    <div class="container">
                 <table class="table bg-white" id="tablaEventos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
-                            <th scope="col">Id evento</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Ubicacion</th>
-                            <th scope="col">Imagen</th>
-                            <th scope="col">Fecha inicio</th>
-                            <th scope="col">Fecha fin</th>
+                            <th class="p-3" scope="col">Id evento</th>
+                            <th class="p-3" scope="col">Nombre</th>
+                            <th class="p-3" scope="col">Ubicacion</th>
+                            <th class="p-3" scope="col">Imagen</th>
+                            <th class="p-3" scope="col">Fecha inicio</th>
+                            <th class="p-3" scope="col">Fecha fin</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -238,9 +240,9 @@
                                         <option value="Lab-Olimpo">Lab Olimpo</option>
                                         </select>
                                         <label for="ho1" class="form-label">Fecha de evento</label>
-                                        <input type="date" class="form-control mb-3" name="fecha" placeholder="Fecha" id="ho1" value="<?php echo $fecha ?>">
+                                        <input type="date" class="form-control mb-3" name="fecha" placeholder="Fecha" id="ho1" value="<?php echo $fecha_inicio ?>">
                                         <label for="ho1" class="form-label">Hora de inicio</label>
-                                        <input type="time" name="inicio"  class="form-control mb-3" id="ho1" value="<?php echo $hora_inicio ?>">
+                                        <input type="time" name="inicio"  class="form-control mb-3" id="ho1" value="<?php echo $fecha_inicio ?>">
                                         <label for="ho2" class="form-label">Hora de termino</label>
                                         <input type="time" name="final"  class="form-control mb-3" id="ho2" value="<?php echo $hora_final ?>">
                                         <label for="titulo" class="form-label">Imagen</label>
@@ -270,6 +272,7 @@
                         
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
     </div>
