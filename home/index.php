@@ -74,7 +74,7 @@ $meses = array(
           <div class="flip-card me-5">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="../img/vicente.jpeg" alt="Avatar" style="width:100%; height: 300px; object-fit: cover; ">
+                <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (2).png" alt="Avatar" style="width:100%; height: 300px; object-fit: cover; ">
                 <h1>Vicente Jaramillo</h1>
               </div>
               <div class="flip-card-back">
@@ -121,10 +121,7 @@ $meses = array(
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <img class="img-thumbnail" src="<?php echo $registros->descripcion ?>" alt="flayer">
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <img class="img-thumbnail mx-auto d-block" src="<?php echo $registros->direccion_imagen ?>" alt="">
                     </div>
                 </div>
                 </div>

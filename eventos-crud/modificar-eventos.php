@@ -35,7 +35,8 @@ $hora_final = $fechaFinal->format('H:i:s');
     </section>
 
     <section class="caja-crud" style=" height: auto;">
-    <div class="container my-5">
+
+    <div class="formulario-modificar container my-5">
         
     <form class="" method="POST" enctype="multipart/form-data">
         
@@ -58,6 +59,13 @@ $hora_final = $fechaFinal->format('H:i:s');
             <input type="time" name="inicio"  class="form-control mb-3" id="ho1" value="<?php echo $hora_inicio ?>">
             <label for="ho2" class="form-label">Hora de termino</label>
             <input type="time" name="final"  class="form-control mb-3" id="ho2" value="<?php echo $hora_final ?>">
+            <label for="titulo" class="form-label">Imagen</label>
+            <input type="file" class="form-control mb-3" name="img" accept="image/*,.jpg">
+            <div>
+                <p>
+                    Dirección del archivo: <?php echo $datos->direccion_imagen ?>
+                </p>
+            </div>
 
             <div class="d-flex justify-content-center align-items-center">
                 <button type="submit" class="btn btn-dark" name="btnmodificar" value="ok">Modificar evento</button>

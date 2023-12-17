@@ -59,13 +59,12 @@
                     <input type="text" class="form-control mb-3" name="sueldo" placeholder="Sueldo">
                     <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf">
                     <div class="d-flex justify-content-center align-items-center">
-                        <button type="submit" class="btn btn-dark" name="btnregistrar" value="ok">Registrar empleo</button>
+                        <button type="submit" class="btn btn-dark me-5" name="btnregistrar" value="ok">Registrar empleo</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
+
             </div>
         </div>
         </div>

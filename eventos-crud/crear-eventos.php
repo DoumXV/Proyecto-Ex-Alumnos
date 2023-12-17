@@ -13,7 +13,7 @@ $fecha_termino=$fecha.' '.$hora_termino.':00';
 //archivo//
 $nombre_archivo=$_FILES['archivo']['name'];
 $ruta_archivo=$_FILES['archivo']['tmp_name'];
-$ruta_guardado="../pdf/".$nombre_archivo;
+$ruta_guardado="../flyer/".$nombre_archivo;
 
 
 
@@ -25,7 +25,7 @@ if(!empty($nombre) and !empty($ubicacion) and !empty($fecha) and !empty($hora_in
 
     if($hi<$hf and $fecha > $fecha_sql){
         move_uploaded_file($ruta_archivo,$ruta_guardado);
-        $sql=$conexion->query("INSERT INTO eventos (nombre_evento,ubicacion,descripcion,inicio,final) VALUES ('$nombre','$ubicacion','$ruta_guardado','$fecha_inicio','$fecha_termino')");
+        $sql=$conexion->query("INSERT INTO eventos (nombre_evento,ubicacion,direccion_imagen,inicio,final) VALUES ('$nombre','$ubicacion','$ruta_guardado','$fecha_inicio','$fecha_termino')");
         if($sql){
             echo "<div class='alert alert-info text-center'>Evento creado correctamente.</div>";
         }else{

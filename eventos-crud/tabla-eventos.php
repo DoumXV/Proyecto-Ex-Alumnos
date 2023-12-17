@@ -66,12 +66,10 @@
                     <label for="archivo" class="form-label">Archivo</label>
                     <input class="form-control mb-3" type="file" name="archivo" accept="image/*,.pdf">                    
                     <div class="d-flex justify-content-center align-items-center">
-                        <button type="submit" class="btn btn-dark" name="btnregistrar" value="ok">Registrar eventos</button>
+                        <button type="submit" class="btn btn-dark me-5" name="btnregistrar" value="ok">Registrar eventos</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
             </div>
         </div>
@@ -147,7 +145,7 @@
                             <td><img class="img-thumbnail" src="<?= $datos->direccion_imagen ?>" alt="" style="max-width:200px; max-height: 200px"></td>
                             <td><?= $datos->inicio ?></td>
                             <td><?= $datos->final ?></td>
-                            <td><a href="modificar-eventos.php?id=<?php echo $datos->id_evento ?>" class="btn btn-info">Modificar</a></td>
+                            <td><a href="modificar-eventos.php?id=<?php echo $datos->id_evento ?>" class="btn btn-info">Editar</a></td>
                             <td><a href="eliminar-eventos.php?id=<?php echo $datos->id_evento ?>" onclick="return eliminar()" class="btn btn-danger">Eliminar</a></td>
                         </tr>
                          <?php 
