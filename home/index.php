@@ -109,6 +109,27 @@ $meses = array(
       <h2 class="titulos2 container-fluid text-center">Eventos</h2>
       <div class="tarjetas row justify-content-center align-content-center">
         <?php while($registros=$query->fetch_object()){ ?>
+            <!-- Modal --> 
+            <?php
+              $modalID = "modal_" . preg_replace("/[^a-zA-Z0-9]/", "_", $registros->id_evento);
+            ?>
+            <div class="modal fade" id="<?php echo $modalID; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">                
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel"><?php echo $registros->nombre_evento; ?></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img class="img-thumbnail" src="<?php echo $registros->descripcion ?>" alt="flayer">
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+          <!--Tarjetas Eventos-->
             <div class="col-xxl-3 g-5 col-xl-4 col-lg-6 col-md-7">
             <div class="card1 card text-center h-auto mx-auto" style="border: 1px solid black;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
               <div class="card-header" style="background-color: #364c59; color: white;">
@@ -155,7 +176,9 @@ $meses = array(
                           </div>"; 
                   ?>
                 </div>
-                <button type="button" class="btn-calendario btn btn-dark">Mas Información</button>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#<?php echo $modalID; ?>">
+                      Mas informacion
+                    </button>
               </div>
             </div>
             </div>
