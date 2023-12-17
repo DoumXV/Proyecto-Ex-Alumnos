@@ -186,7 +186,7 @@
                             <td ><?= $datos->descripcion?></td>
                             <td><?= $datos->sueldo?></td>
                             <td><?= $datos->archivo ?></td>
-                            <th><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editar<?=$datos->id_empleo?>">Editar</button></th>
+                            <th><button type="button" class="btn btn-primary" data-bs-toggle="modal" style="background-color:#364c59; color:#fff; border:1px solid black;" name="btnmodificar" data-bs-target="#editar<?=$datos->id_empleo?>">Editar</button></th>
                             <th><a onclick="return eliminar()" href="crud-empleos.php?id_empleo=<?=$datos->id_empleo?>" class="btn btn-danger">Eliminar</a></th> 
                         </tr>
                         
@@ -194,20 +194,11 @@
                         <div class="modal fade" id="editar<?=$datos->id_empleo?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
                             <div class="modal-body">
                             <section class="modificar d-flex flex-column align-items-center justify-content-center">
                                 <div class="">
                                     <h5 class="text-center alert alert-secondary">Modificar Empleos</h5>
                                     <form method="POST" enctype="multipart/form-data">
-                                        <div>
-                                            <p>
-                                                Id de empleo a modificar: <?=$datos->id_empleo ?>
-                                            </p>
-                                        </div>
                                         <label for="titulo" class="form-label">Titulo Empleo</label>
                                         <input type="text" class="form-control mb-3" name="titulo" placeholder="Titulo del empleo" value="<?=$datos->titulo?>">
                                         <label for="empresa" class="form-label">Empresa</label>
@@ -227,8 +218,8 @@
                                             </p>
                                         </div>
                                         <div class="d-flex flex-row align-items-center justify-content-center">
-                                            <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Modificar empleo</button>
-                                            <a href="crud-empleos.php" class="btn btn-danger">Salir sin editar</a>
+                                            <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Confirmar</button>
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>  
                                         </div>
                                         
                                     </form>

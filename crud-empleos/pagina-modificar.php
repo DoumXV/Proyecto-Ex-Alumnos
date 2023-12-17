@@ -62,7 +62,7 @@ $sql=$conexion->query("SELECT * FROM empleos WHERE id_empleo='$id_empleo'");
             </div>
             <div class="d-flex flex-row align-items-center justify-content-center">
                 <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Modificar empleo</button>
-                <a href="crud-empleos.php" class="btn btn-danger">Salir sin editar</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>           
             </div>
             
             <?php
