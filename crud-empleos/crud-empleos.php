@@ -3,6 +3,12 @@
     if(empty($_SESSION['email_admin'])){
         header("Location:../log-admin/admin.php"); 
         }
+    $dato="";
+    if (isset($_GET["confirmacion"])) {
+        // Obtener el valor del parámetro "confirmacion"
+        $dato = $_GET["confirmacion"];
+
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,10 +45,59 @@
         include("registro-empleos.php");
         include("modificar-empleo.php");
         include("eliminar-empleo.php");
-        
+
+        if($dato=="2"){
+            
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'El registro fue actualizado correctamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                  });
+        });
+            </script>";
+            echo $mensaje;
+        }else if($dato=="3"){
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Algo salio mal, intentelo nuevamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 2300
+                  });});
+            </script>";
+            echo $mensaje;
+        }
+        else if($dato=="4"){
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Algunos campos estan vacios.',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 2300
+                  });});
+            </script>";
+            echo $mensaje;
+        }
         ?>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Modal REGISTRO -->
+        <div class="modal fade" id="registro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -94,7 +149,7 @@
 
     <!-- Button trigger modal -->
     <div class="boton-registrar d-flex align-content-center ">
-            <button type="button" class="btn-registrar container-fluid" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Empleo
+            <button type="button" class="btn-registrar container-fluid" data-bs-toggle="modal" data-bs-target="#registro">Registrar Empleo
             </button>
             
     </div>
@@ -117,22 +172,74 @@
                     </thead>
                     <tbody>
                         <?php
-                        include("../administrador/conexion.php");
                         $sql=$conexion->query("SELECT * FROM empleos");
                         while($datos=$sql->fetch_object()){
+                        ?>
+                        <?php 
+                            include("modificar-empleo.php");
                         ?>
                         <tr class="text-center">
                             <td><?= $datos->id_empleo ?> </td>
                             <td><?= $datos->titulo?> </td>
                             <td><?= $datos->empresa ?></td>
                             <td><?= $datos->ciudad?></td>
-                            <td><?= $datos->descripcion?></td>
+                            <td ><?= $datos->descripcion?></td>
                             <td><?= $datos->sueldo?></td>
                             <td><?= $datos->archivo ?></td>
-                            <th><a href="pagina-modificar.php?id_empleo=<?=$datos->id_empleo?>" class="btn btn-info">Editar</a></th>
+                            <th><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editar<?=$datos->id_empleo?>">Editar</button></th>
                             <th><a onclick="return eliminar()" href="crud-empleos.php?id_empleo=<?=$datos->id_empleo?>" class="btn btn-danger">Eliminar</a></th> 
                         </tr>
-                         <?php 
+                        
+                        <!-- Modal  Editar-->
+                        <div class="modal fade" id="editar<?=$datos->id_empleo?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <section class="modificar d-flex flex-column align-items-center justify-content-center">
+                                <div class="">
+                                    <h5 class="text-center alert alert-secondary">Modificar Empleos</h5>
+                                    <form method="POST" enctype="multipart/form-data">
+                                        <div>
+                                            <p>
+                                                Id de empleo a modificar: <?=$datos->id_empleo ?>
+                                            </p>
+                                        </div>
+                                        <label for="titulo" class="form-label">Titulo Empleo</label>
+                                        <input type="text" class="form-control mb-3" name="titulo" placeholder="Titulo del empleo" value="<?=$datos->titulo?>">
+                                        <label for="empresa" class="form-label">Empresa</label>
+                                        <input type="text" class="form-control mb-3" name="empresa" placeholder="Nombre de la empresa" value="<?=$datos->empresa?>">
+                                        <label for="ciudad" class="form-label">Ciudad</label>
+                                        <input type="text" class="form-control mb-3" name="ciudad" placeholder="Ciudad"  value="<?=$datos->ciudad?>">
+                                        <label for="descripcion" class="form-label">Descripcion</label>
+                                        <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del empleo"><?=$datos->descripcion?></textarea>
+                                        <label for="sueldo" class="form-label">Sueldo</label>
+                                        <input type="text" class="form-control mb-3" name="sueldo" placeholder="Sueldo"  value="<?=$datos->sueldo?>">
+                                        <label for="archivo" class="form-label">Archivo</label>
+                                        <input class="form-control mb-3" type="file" name="archivo" value="<?=$datos->archivo?>" accept="image/*,.pdf">
+                                        <input type="hidden" name="id_empleo" value="<?=$datos->id_empleo?>">
+                                        <div>
+                                            <p>
+                                                Dirección del archivo: <?php echo $datos->archivo ?>
+                                            </p>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center justify-content-center">
+                                            <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Modificar empleo</button>
+                                            <a href="crud-empleos.php" class="btn btn-danger">Salir sin editar</a>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+                                </section>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+                         <?php
                         }
                         ?>
                         
