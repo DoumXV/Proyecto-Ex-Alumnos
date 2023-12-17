@@ -20,14 +20,13 @@ if(!empty($_POST["btnmodificar"])){
         move_uploaded_file($ruta_archivo,$ruta_guardado);
         $sql=$conexion->query("UPDATE empleos SET titulo='$titulo',empresa='$empresa',ciudad='$ciudad',descripcion='$descripcion',sueldo='$sueldo',archivo='$ruta_guardado' WHERE id_empleo='$id_empleo'");
         if ($sql==1) {
-            
-            header("location:crud-empleos.php");
+            header("location:crud-empleos.php?confirmacion=2");
         } else {
-            echo '<div class="alert alert-danger">Error al modificar empleo</div>';
+            header("location:crud-empleos.php?confirmacion=3");
         }
         
     }else{
-        echo '<div class="alert alert-warning">Alguno de los campos esta vacio</div>';
+        header("location:crud-empleos.php?confirmacion=4");
     }
 }
 ?>

@@ -3,6 +3,12 @@
     if(empty($_SESSION['email_admin'])){
         header("Location:../log-admin/admin.php"); 
         }
+    $dato="";
+    if (isset($_GET["confirmacion"])) {
+        // Obtener el valor del parámetro "confirmacion"
+        $dato = $_GET["confirmacion"];
+
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,6 +69,55 @@
                 <?php
                     include '../administrador/conexion.php';
                     include 'eliminar.php';
+                    if($dato=="2"){
+                        
+                        $mensaje="
+                        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                        <script language='JavaScript'>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'El registro fue actualizado correctamente',
+                                showCancelButton: false,
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK',
+                                timer: 1800
+                            });
+                    });
+                        </script>";
+                        echo $mensaje;
+                    }else if($dato=="3"){
+                        $mensaje="
+                        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                        <script language='JavaScript'>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Algo salio mal, intentelo nuevamente',
+                                showCancelButton: false,
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK',
+                                timer: 2300
+                            });});
+                        </script>";
+                        echo $mensaje;
+                    }
+                    else if($dato=="4"){
+                        $mensaje="
+                        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                        <script language='JavaScript'>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Algunos campos estan vacios.',
+                                showCancelButton: false,
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK',
+                                timer: 2300
+                            });});
+                        </script>";
+                        echo $mensaje;
+                    }
                 ?>
                 <table class="table bg-white" id="tablaAlumnos">
                     <thead class="table-dark table-striped text-center">
@@ -84,6 +139,8 @@
                         include("../administrador/conexion.php");
                         $sql=$conexion->query("SELECT * FROM alumnos");
                         while($datos=$sql->fetch_object()){
+                        include("modificar-alumnos.php");
+                        $modalID = "modal_" . preg_replace("/[^a-zA-Z0-9]/", "_", $datos->email_usuario);
                         ?>
                         <tr class="text-center">
                             <td><?= $datos->nombre_usuario ?> </td>
@@ -94,9 +151,52 @@
                             <td><?= $datos->trabajo_actual ?> </td>
                             <td><img src="<?= $datos->direccion_imagen ?>" alt="" style="max-width:200px; max-height: 300px"></td>
                             <td><?= $datos->contacto ?> </td>
-                            <th><a href="pagina-modificar.php?email_usuario=<?php echo $datos->email_usuario?>" class="btn btn-info">Editar</a></th>
+                            <th><button type="button" class="btn btn-primary" data-bs-toggle="modal" style="background-color:#364c59; color:#fff; border:1px solid black;" name="btnmodificar" data-bs-target="#<?=$modalID?>">Editar</button></th>
                             <th><a onclick="return eliminar()" href="crud-alumnos.php?email=<?=$datos->email_usuario?>" class="btn btn-danger">Eliminar</a></th> 
                         </tr>
+
+                        <!-- Modal  Editar-->
+                        
+                        <div class="modal fade" id="<?=$modalID?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <section class="modificar d-flex flex-column align-items-center justify-content-center">
+                            <div class="container">
+                                <form method="POST" enctype="multipart/form-data">
+                                    <label for="titulo" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre" value="<?=$datos->nombre_usuario?>">
+                                    <label for="titulo" class="form-label">Email</label>
+                                    <input type="text" class="form-control mb-3" name="email" placeholder="Correo Institucional" value="<?=$datos->email_usuario?>">
+                                    <label for="titulo" class="form-label">Fecha de egreso</label>
+                                    <input type="date" class="form-control mb-3" name="fecha" placeholder="Nombre" value="<?=$datos->fecha_egreso?>">
+                                    <label for="titulo" class="form-label">Area de interes</label>
+                                    <input type="text" class="form-control mb-3" name="area" placeholder="Area de interes" value="<?=$datos->area_interes?>">
+                                    <label for="titulo" class="form-label">Descripcion</label>
+                                    <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del Alumno"><?=$datos->descripcion?></textarea>
+                                    <label for="titulo" class="form-label">Trabajo actual</label>
+                                    <input type="text" class="form-control mb-3" name="trabajo" placeholder="Trabajo actual" value="<?=$datos->trabajo_actual?>">
+                                    <label for="titulo" class="form-label">Contacto</label>
+                                    <input type="text" class="form-control mb-3" name="contacto" placeholder="Contacto" value="<?=$datos->contacto?>">
+                                    <label for="titulo" class="form-label">Imagen</label>
+                                    <input type="file" class="form-control mb-3" name="img"  accept="image/png, image/jpeg">
+                                    <div><?php echo $datos->direccion_imagen ?></div>
+                                
+                                    <div class="d-flex flex-row align-items-center justify-content-center">
+                                        <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Modificar Alumnos</button>
+                                        <a href="crud-alumnos.php" class="btn btn-danger">Salir sin editar</a>
+                                    </div>
+                                </form>
+                            </div>
+                            </section>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
                          <?php 
                         }
                         ?>

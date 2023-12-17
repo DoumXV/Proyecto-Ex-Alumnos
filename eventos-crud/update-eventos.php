@@ -1,8 +1,11 @@
 <?php
-
-include '../administrador/conexion.php';
-if(isset($_POST['btnmodificar'])){
-$id=$_POST['id_evento'];
+    if(empty($_SESSION['email_admin'])){
+        header("Location:../log-admin/admin.php"); 
+        }
+?>
+<?php
+if(!empty($_POST['btnmodificar'])){
+$id_evento=$_POST["id_evento"];
 $nombre=$_POST['nombre'];
 $ubicacion=$_POST['ubicacion'];
 $fecha=$_POST['fecha'];
@@ -20,17 +23,18 @@ if(!empty($nombre) and !empty($ubicacion) and !empty($fecha) and !empty($hora_in
     $hf=strtotime($hora_termino);
     if($hi<$hf){
         move_uploaded_file($nombre_tmp,$ruta_guardado);
-        $sql=$conexion->query("UPDATE eventos SET nombre_evento='$nombre',ubicacion='$ubicacion',direccion_imagen='$ruta_guardado',inicio='$fecha_inicio',final='$fecha_termino' WHERE id_evento=$id");
-        if($sql){
+        $sql=$conexion->query("UPDATE eventos SET nombre_evento='$nombre',ubicacion='$ubicacion',direccion_imagen='$ruta_guardado',inicio='$fecha_inicio',final='$fecha_termino' WHERE id_evento='$id_evento'");
+        if($sql==1){
             header("Location:tabla-eventos.php?confirmacion=2");
         }else{
-            echo "<div class='alert alert-danger text-center'>No se pudo modificar el evento.</div>";
+            header("Location:tabla-eventos.php?confirmacion=3");
         }
     }else{
-        echo "<div class='alert alert-warning text-center'>La hora de inicio no puede ser mayor a la final.</div>";
+        header("Location:tabla-eventos.php?confirmacion=5");
     }
 }else{
-    echo "<div class='alert alert-warning text-center'>Hay algunos campos vacios.</div>";
+    header("Location:tabla-eventos.php?confirmacion=4");
+
 }
 }
 

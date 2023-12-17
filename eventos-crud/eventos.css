@@ -195,4 +195,12 @@ header.abajo ul li a {
   padding: 0rem 8rem;
   color: white;
   font-family: Montserrat;
+}
+
+.formulario-modificar {
+  text-align: start;
+}
+
+.tabla-filtros {
+  margin: 0 5rem 0 5rem;
 }/*# sourceMappingURL=eventos.css.map */
