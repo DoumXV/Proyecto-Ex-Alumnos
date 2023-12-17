@@ -11,6 +11,17 @@ if(isset($_POST['enviar_peticion'])){
     $nombre_imagen=$_FILES['imagen_peticion']['name'];
     $ruta_imagen=$_FILES['imagen_peticion']['tmp_name'];
     $ruta_guardado="../img-ex-alumnos/".$nombre_imagen;
+
+    if (
+        !preg_match('/^[a-zA-Z]+$/', $nombre) ||
+        !is_numeric($contacto) ||
+        !preg_match('/^[a-zA-Z]+$/', $area) ||
+        !preg_match('/^[a-zA-Z]+$/', $trabajo)
+    ) {
+        echo "<div class='alert alert-warning'>Revisar los siguientes campos: nombre,area de interes,trabajo actual(solo letras) y contacto (solo numeros)</div>";
+    }else{
+    
+
     
     if (!empty($nombre) and !empty($email) and !empty($contacto) and !empty($descripcion) and !empty($ruta_imagen) and !empty($nombre_imagen)) {        
         $sql2=$conexion->query("SELECT * FROM peticiones WHERE email_peticion='$email'");
@@ -32,6 +43,7 @@ if(isset($_POST['enviar_peticion'])){
     }} else {
         echo "<div class='alert alert-warning'>No se pueden ingresar campos vacios.</div>";
     }
+}
 }
 
 ?>
