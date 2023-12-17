@@ -197,7 +197,7 @@ $meses = array(
               <input type="text" id="nombre_peticion" class="form-control" name="nombre_peticion">
             </div>
             <div class="mb-3">
-              <label for="email_peticion" class="form-label">Email</label>
+              <label for="email_peticion" class="form-label">Correo Institucional</label>
               <input type="email" id="email_peticion" class="form-control" name="email_peticion">
             </div>
             <div class="mb-3">

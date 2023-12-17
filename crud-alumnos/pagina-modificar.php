@@ -6,8 +6,8 @@
 ?>
 <?php
 include("../administrador/conexion.php");
-$id_empleo=$_GET["id_empleo"];
-$sql=$conexion->query("SELECT * FROM usuarios WHERE email_usuario='$id_empleo'");
+$email=$_GET["email_usuario"];
+$sql=$conexion->query("SELECT * FROM alumnos WHERE email_usuario='$email'");
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,10 +35,9 @@ $sql=$conexion->query("SELECT * FROM usuarios WHERE email_usuario='$id_empleo'")
         <form method="POST" enctype="multipart/form-data">
             <div class='alert alert-info'>
                 <p>
-                    Email de alumno a modificar: <?php echo $id_empleo ?>
+                    Email de alumno a modificar: <?php echo $email ?>
                 </p>
             </div>
-            <input type="hidden" name="id_empleo" value="<?=$_GET["id_empleo"]?>">
             <?php 
             include("modificar-alumnos.php");
             while($datos=$sql->fetch_object()){
@@ -46,17 +45,17 @@ $sql=$conexion->query("SELECT * FROM usuarios WHERE email_usuario='$id_empleo'")
             <label for="titulo" class="form-label">Nombre</label>
             <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre" value="<?=$datos->nombre_usuario?>">
             <label for="titulo" class="form-label">Email</label>
-            <input type="text" class="form-control mb-3" name="email" placeholder="Email" value="<?=$datos->email_usuario?>">
+            <input type="text" class="form-control mb-3" name="email" placeholder="Correo Institucional" value="<?=$datos->email_usuario?>">
             <label for="titulo" class="form-label">Fecha de egreso</label>
             <input type="date" class="form-control mb-3" name="fecha" placeholder="Nombre" value="<?=$datos->fecha_egreso?>">
             <label for="titulo" class="form-label">Area de interes</label>
             <input type="text" class="form-control mb-3" name="area" placeholder="Area de interes" value="<?=$datos->area_interes?>">
             <label for="titulo" class="form-label">Descripcion</label>
-            <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del empleo"><?=$datos->descripcion?></textarea>
+            <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del Alumno"><?=$datos->descripcion?></textarea>
             <label for="titulo" class="form-label">Trabajo actual</label>
             <input type="text" class="form-control mb-3" name="trabajo" placeholder="Trabajo actual" value="<?=$datos->trabajo_actual?>">
             <label for="titulo" class="form-label">Contacto</label>
-            <input type="text" class="form-control mb-3" name="contacto" placeholder="contacto" value="<?=$datos->contacto?>">
+            <input type="text" class="form-control mb-3" name="contacto" placeholder="Contacto" value="<?=$datos->contacto?>">
             <label for="titulo" class="form-label">Imagen</label>
             <input type="file" class="form-control mb-3" name="img"  accept="image/png, image/jpeg">
             <div><?php echo $datos->direccion_imagen ?></div>

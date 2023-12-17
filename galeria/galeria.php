@@ -1,6 +1,6 @@
 <?php
 include("alumnos.php");
-$query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND TRIM(descripcion) <> '' AND TRIM(direccion_imagen) <> '';");
+$query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND TRIM(descripcion) <> '' AND TRIM(direccion_imagen) <> '';");
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
     <?php
     #script donde se secciona de 4 en 4 registros la tabla usuarios
     $_REQUEST['nume'] = !empty($_REQUEST['nume']) ? $_REQUEST['nume'] : '1';
-    $alumnos = $conexion->query("SELECT * FROM usuarios");
+    $alumnos = $conexion->query("SELECT * FROM alumnos");
     $numero_alumnos = mysqli_num_rows($alumnos);
     $registros = 4;
     $pagina = isset($_REQUEST['nume']) ? $_REQUEST['nume'] : 1;
@@ -51,7 +51,7 @@ $query = $conexion->query("SELECT * FROM usuarios WHERE TRIM(contacto) <> '' AND
         $inicio = 0;
     }
 
-    $busqueda = $conexion->query("SELECT * FROM usuarios LIMIT $inicio, $registros");
+    $busqueda = $conexion->query("SELECT * FROM alumnos LIMIT $inicio, $registros");
     $paginas = ceil($numero_alumnos / $registros);
 ?>
 
