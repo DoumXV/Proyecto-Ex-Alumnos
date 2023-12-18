@@ -10,6 +10,13 @@ if(!empty($_POST["btnregistrar"])){
         $nombre_archivo=$_FILES['archivo']['name'];
         $ruta_archivo=$_FILES['archivo']['tmp_name'];
         $ruta_guardado="../archivos-empleos/".$nombre_archivo;
+
+    if(
+            !is_numeric($sueldo)
+    ){
+            echo '<div class="alert alert-warning text-center">El sueldo debe ser expresado solo en numeros.</div>';
+    }else{
+
     if(!empty($_POST["titulo"]) and !empty($_POST["empresa"]) and !empty($_POST["ciudad"]) and !empty($_POST["descripcion"]) and !empty($_POST["sueldo"]) and !empty($nombre_archivo)){
         
 
@@ -26,5 +33,6 @@ if(!empty($_POST["btnregistrar"])){
         echo '<div class="alert alert-warning">Alguno de los campos esta vacio</div>';
     }
 
+}
 }
 ?>
