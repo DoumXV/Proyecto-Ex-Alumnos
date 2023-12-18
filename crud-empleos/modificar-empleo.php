@@ -15,6 +15,17 @@ if(!empty($_POST["btnmodificar"])){
         $nombre_archivo=$_FILES['archivo']['name'];
         $ruta_archivo=$_FILES['archivo']['tmp_name'];
         $ruta_guardado="../archivos-empleos/".$nombre_archivo;
+
+    if (
+        !preg_match('/^[a-zA-Z\s]+$/', $ciudad)
+    ) {
+        echo "<div class='alert alert-warning'>La ciudad debe contener solo letras.</div>";
+    }elseif(
+        preg_match('/^\d+$/', $sueldo);
+    ){
+        echo "<div class='alert alert-warning'>El sueldo debe contener solo numeros.</div>";
+    }else{   
+
     if(!empty($_POST["titulo"]) and !empty($_POST["empresa"]) and !empty($_POST["ciudad"]) and !empty($_POST["descripcion"]) and !empty($_POST["sueldo"]) and !empty($nombre_archivo)){
         #ver como modificar archivos
         move_uploaded_file($ruta_archivo,$ruta_guardado);
@@ -28,5 +39,6 @@ if(!empty($_POST["btnmodificar"])){
     }else{
         header("location:crud-empleos.php?confirmacion=4");
     }
+}
 }
 ?>
