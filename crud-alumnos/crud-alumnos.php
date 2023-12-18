@@ -26,7 +26,7 @@
         }
     </script>
 	<header>
-		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
+		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
 				<li><a class="linkeado" href="../panel-admin/panel-admin.php">Panel</a></li>
@@ -40,7 +40,7 @@
     <section class="caja-crud" style=" height: auto;">
 
     <div class="tabla-filtros text-center">
-        <h2 class="mx-auto">Busquedas</h2>
+        <h2 class="titulos mx-auto">Busquedas</h2>
         <div class="row align-items-start">
             <div class="col-4 g-4"">
                 <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Nombre" onkeyup="buscarTabla()" />
@@ -210,7 +210,7 @@
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
-                <img src="../img/logo-udacorp-lineablanca.png" alt="">
+                <img src="../img/logo-udacorp-txtblanco.png" alt="">
                 <ul>
                   <li class="mt-1"><a href="">Ubícanos en
                     Copiapó, Av. Copayapu 485</a></li>

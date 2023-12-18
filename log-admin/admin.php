@@ -36,7 +36,7 @@
                           <input type="password" name="clave_admin">
                         </div>
                         <div class="d-grid gap-2 col-6 mx-auto my-3 mt-5">
-                            <input type="submit" style="background-color: black; border: 1px solid black; box-shadow: 2rem; box-shadow: 0 10px 22px 0 rgba(0,0,0,0.2);" class="btn btn-primary" name="boton_enviar" value="Iniciar Sesion">
+                            <input type="submit" style="background-color: #364c59; border: 1px solid black; box-shadow: 2rem; box-shadow: 0 10px 22px 0 rgba(0,0,0,0.2);" class="btn btn-primary" name="boton_enviar" value="Iniciar Sesion">
                         </div>
                         
                     </form>
