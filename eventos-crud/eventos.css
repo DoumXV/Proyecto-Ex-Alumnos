@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
 a:hover {
-  color: rgb(100, 100, 100);
-}
-
-.titulos {
-  font-family: Montserrat;
-  background-color: #364c59;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 * {
@@ -20,7 +14,7 @@ a:hover {
 }
 
 body {
-  background-color: white;
+  background-color: #364c59;
 }
 
 header {
@@ -36,7 +30,7 @@ header {
 }
 
 header.abajo {
-  background: rgb(26, 26, 26);
+  background: #364c59;
   padding: 15px 20px;
 }
 header.abajo a:hover {
@@ -111,9 +105,10 @@ header ul li a {
   position: relative;
   width: 100%;
   height: 90vh;
-  background: url(../img/administrador.png);
+  background: url(../img/eventos.png);
   background-size: cover;
   background-position: center center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 header.abajo .logo,
@@ -128,7 +123,8 @@ header.abajo ul li a {
 
 /*FOOTER*/
 .contenedor-footer {
-  background-color: rgb(26, 26, 26);
+  border-top: 1px solid black;
+  background-color: #364c59;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 4rem 8rem;
@@ -190,7 +186,7 @@ header.abajo ul li a {
   border-top: 1px solid black;
   justify-content: center;
   display: flex;
-  background-color: rgb(26, 26, 26);
+  background-color: #364c59;
   align-items: center;
   padding: 0rem 8rem;
   color: white;
@@ -202,5 +198,19 @@ header.abajo ul li a {
 }
 
 .tabla-filtros {
-  margin: 0 5rem 0 5rem;
+  margin: 2rem 4rem 0 4rem;
+}
+
+.tabla-filtros h2 {
+  margin: auto;
+}
+
+.titulos {
+  font-family: Montserrat;
+  background-color: #364c59;
+  color: white;
+  border-radius: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }/*# sourceMappingURL=eventos.css.map */

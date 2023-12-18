@@ -22,7 +22,7 @@
 
 <body>
 	<header>
-		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
+		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
 				<li><a class="linkeado" href="../panel-admin/panel-admin.php">Panel</a></li>
@@ -148,41 +148,40 @@
 
     
     <div class="tabla-filtros text-center">
-        <h2>Busquedas</h2>
+        <h2 class="titulos mx-auto">Busquedas</h2>
         <div class="row m-3">
-            <div class="col-4">
-                <input type="text" class="form-control text-center" id="inputBuscarId" placeholder="Buscar por id" onkeyup="buscarTabla()" />
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarId" placeholder="ID" onkeyup="buscarTabla()" />
             </div>
-            <div class="col-4">
-                <input type="text" class="form-control text-center" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarNombre" placeholder="Nombre" onkeyup="buscarTabla()" />
             </div>
-            <div class="col-4">
-                <input type="text" class="form-control text-center" id="inputBuscarUbicacion" placeholder="Buscar por ubicacion" onkeyup="buscarTabla()" />
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarUbicacion" placeholder="Ubicacion" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarInicio" placeholder="Fecha de Inicio" onkeyup="buscarTabla()" />
+            </div>
+            <div class="col-4 g-4">
+                <input type="text" class="form-control text-center" id="inputBuscarFin" placeholder="Fecha de Termino" onkeyup="buscarTabla()" />
             </div>
         </div>
-        <div class="row m-3">
-            <div class="col-6">
-                <input type="text" class="form-control text-center" id="inputBuscarInicio" placeholder="Buscar por fecha de inicio" onkeyup="buscarTabla()" />
-            </div>
-            <div class="col-6">
-                <input type="text" class="form-control text-center" id="inputBuscarFin" placeholder="Buscar por fecha de termino" onkeyup="buscarTabla()" />
-            </div>
-        </div>
+        
     </div>
 
 
      <!-- Button trigger modal -->
-     <div class="boton-registrar d-flex align-content-center justify-content-center m-5">
-            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
+     <div class="boton-registrar d-flex align-content-center justify-content-center  my-4">
+            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff; border: 2px solid black;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
             </button>
-            <a href="eliminar-caducados.php" class="btn btn-danger">Borrar eventos pasados</a>
+            <a href="eliminar-caducados.php" class="btn btn-danger" style="border: 2px solid black;">Borrar eventos pasados</a>
     </div>
     
-    <div class="container">
+    <div class="container mb-5">
                 <table class="table bg-white" id="tablaEventos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
-                            <th class="p-3" scope="col">Id evento</th>
+                            <th class="p-3" scope="col">ID</th>
                             <th class="p-3" scope="col">Nombre</th>
                             <th class="p-3" scope="col">Ubicacion</th>
                             <th class="p-3" scope="col">Imagen</th>
@@ -280,7 +279,7 @@
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
-                <img src="../img/logo-udacorp-lineablanca.png" alt="">
+                <img src="../img/logo-udacorp-txtblanco.png" alt="">
                 <ul>
                   <li class="mt-1"><a href="">Ubícanos en
                     Copiapó, Av. Copayapu 485</a></li>

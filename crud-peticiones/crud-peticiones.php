@@ -9,13 +9,13 @@
 <head>
 	<title>Panel de control de Ex-Alumnos</title>
     <meta charset="UTF-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="crud-peticiones.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="crud-peticiones.css">
 </head>
 
 <body>
 <header>
-		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
+		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
             <li><a class="linkeado" href="../panel-admin/panel-admin.php">Panel</a></li>
@@ -28,32 +28,32 @@
 
 
     <div class="tabla-filtros text-center">
-        <h2 class="mx-auto">Busquedas</h2>
+        <h2 class="titulos mx-auto">Busquedas</h2>
         <div class="row">
             <div class="col-4 g-4">
-                <input type="text" class="form-control text-center" id="inputBuscarCodigo" placeholder="Buscar por codigo" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarCodigo" placeholder="Código" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4 g-4">
-                <input type="text" class="form-control text-center" id="inputBuscarNombre" placeholder="Buscar por nombre" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarNombre" placeholder="Nombre" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4 g-4">
-                <input type="text" class="form-control text-center" id="inputBuscarEmail" placeholder="Buscar por email" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarEmail" placeholder="Correo Institucional" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4 g-4">
-                <input type="text" class="form-control text-center" id="inputBuscarContacto" placeholder="Buscar por contacto" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarContacto" placeholder="Contacto" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4 g-4">
-                <input type="text" class="form-control text-center" id="inputBuscarArea" placeholder="Buscar por area de interes" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarArea" placeholder="Área de interés" onkeyup="buscarTabla()" />
             </div>
         </div>
     </div>
 
 
     <section class="my-5 container">
-
+    <div class="table-responsive-sm">
         <table  class="table bg-white" id="tablaPeticiones">
         <thead class="table-dark table-striped text-center">
-            <th class="p-3" scope="col">Codigo</th>
+            <th class="p-3" scope="col">ID</th>
             <th class="p-3" scope="col">Nombre</th>
             <th class="p-3" scope="col">Email</th>
             <th class="p-3" scope="col">Contacto</th>
@@ -80,7 +80,7 @@
                     <td><img alt="" src="<?= $datos->direccion_imagen?>" class=" img-fluid" style="max-width:200px; max-height: 300px"></td>
                     <td><?= $datos->area_interes ?></td>
                     <td><?= $datos->trabajo_actual ?></td>
-                    <td><a onclick="return aceptar()" href="comandos/aceptar.php?id=<?=$datos->id_peticion?>" class="btn btn-success">Aceptar</a></td>
+                    <td><a onclick="return aceptar()" href="comandos/aceptar.php?id=<?=$datos->id_peticion?>" class="btn btn-success" style="background-color:#364c59; color:#fff; border:1px solid black;">Aceptar</a></td>
                     <td><a onclick="return eliminar()" href="comandos/rechazar.php?id=<?=$datos->id_peticion?>" class="btn btn-danger">Rechazar</a></td>
                 </tr>
             <?php 
@@ -88,15 +88,13 @@
             ?>
         </tbody>
     </table>
-            </div>
-
-
+    </div>
     </section>
 
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
-                <img src="../img/logo-udacorp-lineablanca.png" alt="">
+                <img src="../img/logo-udacorp-txtblanco.png" alt="">
                 <ul>
                   <li class="mt-1"><a href="">Ubícanos en
                     Copiapó, Av. Copayapu 485</a></li>

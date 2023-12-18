@@ -14,10 +14,10 @@
 <html>
 <head>
 	<title>Ex alumnos UDA</title>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="crud-alumnos.css">
 </head>
-<meta charset="UTF-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="crud-alumnos.css">
 <body>
     <script>
         function eliminar(){
@@ -26,7 +26,7 @@
         }
     </script>
 	<header>
-		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
+		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
 				<li><a class="linkeado" href="../panel-admin/panel-admin.php">Panel</a></li>
@@ -40,19 +40,19 @@
     <section class="caja-crud" style=" height: auto;">
 
     <div class="tabla-filtros text-center">
-        <h2 class="mx-auto">Busquedas</h2>
+        <h2 class="titulos mx-auto">Busquedas</h2>
         <div class="row align-items-start">
             <div class="col-4 g-4"">
                 <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Nombre" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4 g-4">
-                <input type="text" class="form-control" id="inputBuscarEmail" placeholder="Email" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control" id="inputBuscarEmail" placeholder="Correo Institucional" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4 g-4">
                 <input type="text" class="form-control" id="inputBuscarFecha" placeholder="Fecha de egreso" onkeyup="buscarTabla()" />
             </div>
             <div class="col g-4">
-                <input type="text" class="form-control" id="inputBuscarArea" placeholder="Area de interes" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control" id="inputBuscarArea" placeholder="Área de interés" onkeyup="buscarTabla()" />
             </div>
             <div class="col g-4">
                 <input type="text" class="form-control" id="inputBuscarTrabajo" placeholder="Trabajo actual" onkeyup="buscarTabla()" />
@@ -64,7 +64,7 @@
     </div>
 
 
-    <div class="container mt-5">        
+    <div class="container my-5">        
             <div class="">
                 <?php
                     include '../administrador/conexion.php';
@@ -119,14 +119,15 @@
                         echo $mensaje;
                     }
                 ?>
-                <table class="table bg-white" id="tablaAlumnos">
-                    <thead class="table-dark table-striped text-center">
+                <div class="table-responsive-sm">
+                <table class="table" id="tablaAlumnos">
+                    <thead class="table-dark table-bordered border-dark table-striped text-center">
                         <tr>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">Correo Institucional</th>
                             <th scope="col">Fecha de egreso</th>
-                            <th scope="col">Area de interes</th>
-                            <th scope="col">Descripcion</th>
+                            <th scope="col">Área de interés</th>
+                            <th scope="col">Descripción</th>
                             <th scope="col">Trabajo actual</th>
                             <th scope="col">Imagen</th>
                             <th scope="col">Contacto</th>
@@ -175,9 +176,9 @@
                                     <label for="titulo" class="form-label">Fecha de egreso</label>
                                     <input type="date" class="form-control mb-3" name="fecha" placeholder="Nombre" value="<?=$datos->fecha_egreso?>">
                                     <label for="titulo" class="form-label">Area de interes</label>
-                                    <input type="text" class="form-control mb-3" name="area" placeholder="Area de interes" value="<?=$datos->area_interes?>">
+                                    <input type="text" class="form-control mb-3" name="area" placeholder="Área de interés" value="<?=$datos->area_interes?>">
                                     <label for="titulo" class="form-label">Descripcion</label>
-                                    <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripicion del Alumno"><?=$datos->descripcion?></textarea>
+                                    <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripción del Alumno"><?=$datos->descripcion?></textarea>
                                     <label for="titulo" class="form-label">Trabajo actual</label>
                                     <input type="text" class="form-control mb-3" name="trabajo" placeholder="Trabajo actual" value="<?=$datos->trabajo_actual?>">
                                     <label for="titulo" class="form-label">Contacto</label>
@@ -203,6 +204,7 @@
                         
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>
@@ -210,7 +212,7 @@
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
-                <img src="../img/logo-udacorp-lineablanca.png" alt="">
+                <img src="../img/logo-udacorp-txtblanco.png" alt="">
                 <ul>
                   <li class="mt-1"><a href="">Ubícanos en
                     Copiapó, Av. Copayapu 485</a></li>

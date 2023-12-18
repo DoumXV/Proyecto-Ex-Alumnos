@@ -15,7 +15,7 @@
 
 <body>
 	<header>
-		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
+		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
 				<li><a class="linkeado" href="panel-admin.php">Inicio</a></li>
@@ -27,16 +27,16 @@
     
     <section class="zona1"></section>
     <div class="gaaleria">
-        <a href="../crud-alumnos/crud-alumnos.php"><img class="img-galeria"  style="border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;" src="../img/alumnos.png" alt="alumnos"></a>
-        <a href="../crud-peticiones/crud-peticiones.php"><img class="img-galeria" src="../img/peticiones.png" alt="aalumnos"></a>
-        <a href="../crud-empleos/crud-empleos.php"><img class="img-galeria" src="../img/empleos.png" alt="alumnos"></a>
-        <a href="../eventos-crud/tabla-eventos.php"><img class="img-galeria"  style="border-top-right-radius: 2rem; border-bottom-right-radius: 2rem;" src="../img/eventos.png" alt="alumnos"></a>
+        <a href="../crud-alumnos/crud-alumnos.php"><img class="img-galeria"  style="border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;" src="../img/1.png" alt="alumnos"></a>
+        <a href="../crud-peticiones/crud-peticiones.php"><img class="img-galeria" src="../img/2.png" alt="aalumnos"></a>
+        <a href="../crud-empleos/crud-empleos.php"><img class="img-galeria" src="../img/3.png" alt="alumnos"></a>
+        <a href="../eventos-crud/tabla-eventos.php"><img class="img-galeria"  style="border-top-right-radius: 2rem; border-bottom-right-radius: 2rem;" src="../img/4.png" alt="alumnos"></a>
     </div>
 
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
-                <img src="../img/logo-udacorp-lineablanca.png" alt="">
+                <img src="../img/logo-udacorp-txtblanco.png" alt="">
                 <ul>
                   <li class="mt-1"><a href="">Ubícanos en
                     Copiapó, Av. Copayapu 485</a></li>

@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title>Ex alumnos UDA</title>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="admin.css">
 </head>
-<meta charset="UTF-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="admin.css">
 <body>
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
@@ -36,7 +36,7 @@
                           <input type="password" name="clave_admin">
                         </div>
                         <div class="d-grid gap-2 col-6 mx-auto my-3 mt-5">
-                            <input type="submit" style="background-color: black; border: 1px solid black; box-shadow: 2rem; box-shadow: 0 10px 22px 0 rgba(0,0,0,0.2);" class="btn btn-primary" name="boton_enviar" value="Iniciar Sesion">
+                            <input type="submit" style="background-color: #364c59; border: 1px solid black; box-shadow: 2rem; box-shadow: 0 10px 22px 0 rgba(0,0,0,0.2);" class="btn btn-primary" name="boton_enviar" value="Iniciar Sesion">
                         </div>
                         
                     </form>
