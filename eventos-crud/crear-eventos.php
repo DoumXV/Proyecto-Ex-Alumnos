@@ -26,16 +26,16 @@ if(!empty($nombre) and !empty($ubicacion) and !empty($fecha) and !empty($hora_in
     if($hi<$hf and $fecha > $fecha_sql){
         move_uploaded_file($ruta_archivo,$ruta_guardado);
         $sql=$conexion->query("INSERT INTO eventos (nombre_evento,ubicacion,direccion_imagen,inicio,final) VALUES ('$nombre','$ubicacion','$ruta_guardado','$fecha_inicio','$fecha_termino')");
-        if($sql){
-            echo "<div class='alert alert-info text-center'>Evento creado correctamente.</div>";
+        if($sql==1){
+            header("Location:tabla-eventos.php?confirmacion=6");
         }else{
-            echo "<div class='alert alert-warning text-center'>No se pudo crear el evento.</div>";
+            header("Location:tabla-eventos.php?confirmacion=2");
         }
     }else{
-        echo "<div class='alert alert-warning text-center'>Fecha u hora inválida.</div>";
+        header("Location:tabla-eventos.php?confirmacion=5");
     }
 }else{
-    echo "<div class='alert alert-warning text-center'>No se pueden ingresar campos vacios.</div>";
+    header("Location:tabla-eventos.php?confirmacion=4");
 }
 }
 

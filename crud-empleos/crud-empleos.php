@@ -94,6 +94,23 @@
                   });});
             </script>";
             echo $mensaje;
+        }else if($dato=="5"){
+            
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Datos ingresados correctamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                  });
+        });
+            </script>";
+            echo $mensaje;
         }
         ?>
         <!-- Modal REGISTRO -->

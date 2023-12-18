@@ -16,14 +16,14 @@ if(!empty($_POST["btnregistrar"])){
         move_uploaded_file($ruta_archivo,$ruta_guardado);
         $sql=$conexion->query("INSERT INTO empleos (titulo,empresa,ciudad,descripcion,archivo,sueldo)VALUES('$titulo','$empresa','$ciudad','$descripcion','$ruta_guardado','$sueldo')");
         if ($sql==1) {
-            echo '<div class="alert alert-success">Empleo registrado correctamente</div>';
+            header("location:crud-empleos.php?confirmacion=5");
             
         } else {
-            echo '<div class="alert alert-danger">Error al registrar</div>';
+            header("location:crud-empleos.php?confirmacion=3");
         }
         
     }else{
-        echo '<div class="alert alert-warning">Alguno de los campos esta vacio</div>';
+        header("location:crud-empleos.php?confirmacion=4");
     }
 
 }

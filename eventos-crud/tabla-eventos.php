@@ -88,8 +88,7 @@
                 });});
             </script>";
             echo $mensaje;
-        }
-        if($dato=="5"){
+        }else if($dato=="5"){
             $mensaje="
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -102,6 +101,23 @@
                     confirmButtonText: 'OK',
                     timer: 2300
                 });});
+            </script>";
+            echo $mensaje;
+        }else if($dato=="5"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Datos ingresados correctamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                });
+        });
             </script>";
             echo $mensaje;
         }
@@ -172,7 +188,7 @@
 
      <!-- Button trigger modal -->
      <div class="boton-registrar d-flex align-content-center justify-content-center  my-4">
-            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff; border: 2px solid black;" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Eventos
+            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff; border: 2px solid black;" data-bs-toggle="modal" data-bs-target="#registro">Registrar Eventos
             </button>
             <a href="eliminar-caducados.php" class="btn btn-danger" style="border: 2px solid black;">Borrar eventos pasados</a>
     </div>
