@@ -53,7 +53,7 @@
     <div class="table-responsive-sm">
         <table  class="table bg-white" id="tablaPeticiones">
         <thead class="table-dark table-striped text-center">
-            <th class="p-3" scope="col">Codigo</th>
+            <th class="p-3" scope="col">ID</th>
             <th class="p-3" scope="col">Nombre</th>
             <th class="p-3" scope="col">Email</th>
             <th class="p-3" scope="col">Contacto</th>

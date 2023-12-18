@@ -26,7 +26,7 @@
         }
     </script>
 	<header>
-		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
+		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
 				<li><a class="linkeado" href="../panel-admin/panel-admin.php">Panel</a></li>
@@ -129,10 +129,10 @@
 
 
     <div class="tabla-filtros text-center">
-        <h2 class="mx-auto">Busquedas</h2>
+        <h2 class="titulos mx-auto">Busquedas</h2>
         <div class="row">
             <div class="col-4 g-4">
-                <input type="text" class="form-control text-center" id="inputBuscarId" placeholder="Id" onkeyup="buscarTabla()" />
+                <input type="text" class="form-control text-center" id="inputBuscarId" placeholder="ID" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4 g-4">
                 <input type="text" class="form-control text-center" id="inputBuscarTitulo" placeholder="Titulo" onkeyup="buscarTabla()" />
@@ -140,29 +140,29 @@
             <div class="col-4 g-4">
                 <input type="text" class="form-control text-center" id="inputBuscarEmpresa" placeholder="Empresa" onkeyup="buscarTabla()" />
             </div>
-            <div class="col g-4">
+            <div class="col-4 g-4">
                 <input type="text" class="form-control text-center" id="inputBuscarCiudad" placeholder="Ciudad" onkeyup="buscarTabla()" />
             </div>
-            <div class="col g-4">
+            <div class="col-4 g-4">
                 <input type="text" class="form-control text-center" id="inputBuscarSueldo" placeholder="Sueldo" onkeyup="buscarTabla()" />
             </div>
         </div>
     </div>  
 
     <!-- Button trigger modal -->
-    <div class="boton-registrar d-flex align-content-center justify-content-center mt-4">
-            <button type="button" class="btn " style="background-color:#364c59; color:#fff;" data-bs-toggle="modal" data-bs-target="#registro">Registrar Empleo
+    <div class="boton-registrar d-flex align-content-center justify-content-end mt-4">
+            <button type="button" class="btn btn-primary" style="margin-right:45%; background-color:#364c59; color:#fff; border: 2px solid black;" data-bs-toggle="modal" data-bs-target="#registro">Registrar Empleo
             </button>
             
     </div>
 
 
-    <div class="container mt-5">        
+    <div class="container mt-3 mb-5">        
             <div class="">
                 <table class="table bg-white" id="tablaEmpleos">
                     <thead class="table-dark table-striped text-center">
                         <tr>
-                            <th class="p-3" scope="col">Id</th>
+                            <th class="p-3" scope="col">ID</th>
                             <th class="p-3" scope="col">Titulo</th>
                             <th class="p-3" scope="col">Empresa</th>
                             <th class="p-3" scope="col">Ciudad</th>
@@ -249,7 +249,7 @@
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
-                <img src="../img/logo-udacorp-lineablanca.png" alt="">
+                <img src="../img/logo-udacorp-txtblanco.png" alt="">
                 <ul>
                   <li class="mt-1"><a href="">Ubícanos en
                     Copiapó, Av. Copayapu 485</a></li>
