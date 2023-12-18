@@ -3,11 +3,10 @@ $color-verde:#364c59;
 $color-amarillo: #dbca11;
 $letra-titulos:Montserrat;
 
-.titulos{
-  font-family: $letra-titulos;
-  background-color: $color-verde;
-  color: white;
+a:hover{
+  color: rgb(0, 0, 0);
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -17,7 +16,7 @@ $letra-titulos:Montserrat;
   font-family: $letra-titulos;
 }
 body{
-  background-color: white;
+  background-color: $color-verde;
 }
 
 header{
@@ -34,8 +33,11 @@ header{
 }
 
 header.abajo{
-    background: rgb(26, 26, 26);
+    background: $color-verde;
     padding: 15px 20px;
+    a:hover{
+      color: rgb(0, 0, 0);
+  }
 }
 header .logo{
     position: relative;
@@ -102,9 +104,10 @@ header ul li a{
     position: relative;
     width: 100%;
     height: 90vh;
-    background: url(../img/administrador.png);
+    background: url(../img/peticiones.png);
     background-size: cover;
     background-position: center center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 header.abajo .logo,
@@ -184,38 +187,12 @@ header.abajo ul li a{
   background-color: var(--primary-color);
   color: var(--dark-color);
 }
-//cajas
-.caja-eventos{
-    width: 100%;
-    height: 550px;
-    background: url(../img/gestion-eventos.png);
-    background-size: cover;
-    background-position: center center;
-}
-.caja-usuarios{
-    width: 100%;
-    height: 550px;
-    background: url(../img/gestion-usuarios.png);
-    background-size: cover;
-    background-position: center center;
-}
-.caja-empleos{
-    width: 100%;
-    height: 550px;
-    background: url(../img/gestion-empleos.png);
-    background-size: cover;
-    background-position: center center;
-}
-.caja-peticiones{
-    width: 100%;
-    height: 550px;
-    background: url(../img/gestion-peticiones.png);
-    background-size: cover;
-    background-position: center center;
-}
+
+
 /*FOOTER*/
 .contenedor-footer {
-    background-color: rgb(26, 26, 26);
+    border-top: 1px solid black;
+    background-color: $color-verde;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 4rem 8rem;
@@ -246,6 +223,7 @@ header.abajo ul li a{
 
   .acerca li a:hover, .footer-logo li a:hover{
     color: black;
+    transition: .7s;
   }
   
   .acerca h4 {
@@ -277,7 +255,7 @@ header.abajo ul li a{
   border-top: 1px solid black;
   justify-content: center;
   display: flex;
-  background-color: rgb(26, 26, 26);
+  background-color: $color-verde;
   align-items: center;
   padding: 0rem 8rem;
   color: white;
@@ -289,4 +267,14 @@ header.abajo ul li a{
 
 .tabla-filtros h2{
   margin: auto;
+}
+
+.titulos{
+  font-family: Montserrat;
+  background-color: $color-verde;
+  color: white;
+  border-radius: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }

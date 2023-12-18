@@ -2,7 +2,7 @@ function buscarTabla() {
     var inputNombre, inputEmail, inputFecha,inputArea,inputActual,inputContacto, tabla, tr, i;
     inputNombre = document.getElementById("inputBuscarNombre").value.toUpperCase();
     inputEmail = document.getElementById("inputBuscarEmail").value.toUpperCase();
-    inputFecha = document.getElementById("inputBuscarContacto").value.toUpperCase();
+    inputFecha = document.getElementById("inputBuscarFecha").value.toUpperCase();
     inputArea = document.getElementById("inputBuscarArea").value.toUpperCase();
     inputActual = document.getElementById("inputBuscarTrabajo").value.toUpperCase();
     inputContacto = document.getElementById("inputBuscarContacto").value.toUpperCase();
