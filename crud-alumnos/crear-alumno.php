@@ -24,10 +24,9 @@ if (
     echo "<div class='alert alert-warning'>El nombre debe contener solo letras.</div>";
 }
 else if (
-    
-    !preg_match('/^\+56 9\s?\d{8}$/', $contacto)
+    !preg_match('/^\+56\s?9\s?\d{4}\s?\d{4}$/', $contacto)
 ) {
-    echo "<div class='alert alert-warning'>El formato del contacto es: +569 o +56 9.</div>";
+    echo "<div class='alert alert-warning'>El formato del contacto es: +56 9 xxxx xxxx (los espacios son opcionales).</div>";
 }
 else if(
     !preg_match('/^[a-zA-Z\s]+$/', $area)

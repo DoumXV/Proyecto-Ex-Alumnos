@@ -125,7 +125,7 @@
                 <?php
 
                     include 'crear-alumno.php';
-                
+                    include("modificar-alumnos.php");
                 ?>
 
                 <div class="boton-registrar d-flex align-content-center justify-content-center  my-4">
@@ -193,7 +193,6 @@
                         include("../administrador/conexion.php");
                         $sql=$conexion->query("SELECT * FROM alumnos");
                         while($datos=$sql->fetch_object()){
-                        include("modificar-alumnos.php");
                         $modalID = "modal_" . preg_replace("/[^a-zA-Z0-9]/", "_", $datos->email_usuario);
                         ?>
                         <tr class="text-center">
