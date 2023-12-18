@@ -39,10 +39,12 @@
 
     <section class="caja-crud" style=" height: auto;">
 
+    
+
     <div class="tabla-filtros text-center">
         <h2 class="titulos mx-auto">Busquedas</h2>
         <div class="row align-items-start">
-            <div class="col-4 g-4"">
+            <div class="col-4 g-4">
                 <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Nombre" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4 g-4">
@@ -119,6 +121,57 @@
                         echo $mensaje;
                     }
                 ?>
+                
+                <?php
+
+                    include 'crear-alumno.php';
+                
+                ?>
+
+                <div class="boton-registrar d-flex align-content-center justify-content-center  my-4">
+                            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff; border: 2px solid black;" data-bs-toggle="modal" data-bs-target="#registro">Registrar Eventos
+                            </button>
+                </div>
+
+            <div class="modal fade" id="registro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                <form method="POST" enctype="multipart/form-data">
+                                    <label for="titulo" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control mb-3" name="nombre1" placeholder="Nombre">
+                                    <label for="titulo" class="form-label">Email</label>
+                                    <input type="email" class="form-control mb-3" name="email1" placeholder="Correo Institucional">
+                                    <label for="titulo" class="form-label">Fecha de egreso</label>
+                                    <input type="date" class="form-control mb-3" name="fecha1" placeholder="Nombre">
+                                    <label for="titulo" class="form-label">Area de interes</label>
+                                    <input type="text" class="form-control mb-3" name="area1" placeholder="Area de interes" >
+                                    <label for="titulo" class="form-label">Descripcion</label>
+                                    <textarea class="form-control mb-3" name="descripcion1" rows="3" placeholder="Descripicion del Alumno"></textarea>
+                                    <label for="titulo" class="form-label">Trabajo actual</label>
+                                    <input type="text" class="form-control mb-3" name="trabajo1" placeholder="Trabajo actual" >
+                                    <label for="titulo" class="form-label">Contacto</label>
+                                    <input type="text" class="form-control mb-3" name="contacto1" placeholder="Contacto">
+                                    <label for="titulo" class="form-label">Imagen</label>
+                                    <input type="file" class="form-control mb-3" name="img1"  accept="image/png, image/jpeg">
+                                    <button type="submit" class="btn btn-success" name="crear">Registrar</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+
                 <div class="table-responsive-sm">
                 <table class="table" id="tablaAlumnos">
                     <thead class="table-dark table-bordered border-dark table-striped text-center">
