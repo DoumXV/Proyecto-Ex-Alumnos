@@ -83,7 +83,7 @@
                                     <label for="titulo" class="form-label">Nombre</label>
                                     <input type="text" class="form-control mb-3" name="nombre1" placeholder="Nombre">
                                     <label for="titulo" class="form-label">Email</label>
-                                    <input type="text" class="form-control mb-3" name="email1" placeholder="Correo Institucional">
+                                    <input type="email" class="form-control mb-3" name="email1" placeholder="Correo Institucional">
                                     <label for="titulo" class="form-label">Fecha de egreso</label>
                                     <input type="date" class="form-control mb-3" name="fecha1" placeholder="Nombre">
                                     <label for="titulo" class="form-label">Area de interes</label>
@@ -217,7 +217,7 @@
                                     <label for="titulo" class="form-label">Nombre</label>
                                     <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre" value="<?=$datos->nombre_usuario?>">
                                     <label for="titulo" class="form-label">Email</label>
-                                    <input type="text" class="form-control mb-3" name="email" placeholder="Correo Institucional" value="<?=$datos->email_usuario?>">
+                                    <input type="email" class="form-control mb-3" name="email" placeholder="Correo Institucional" value="<?=$datos->email_usuario?>">
                                     <label for="titulo" class="form-label">Fecha de egreso</label>
                                     <input type="date" class="form-control mb-3" name="fecha" placeholder="Nombre" value="<?=$datos->fecha_egreso?>">
                                     <label for="titulo" class="form-label">Area de interes</label>
