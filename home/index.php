@@ -62,9 +62,8 @@ $meses = array(
                 <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (1).png" alt="Avatar" style="width:300px;height:300px;">
                 <h1>Francisca Mercado</h1>
               </div>
-              <div class="flip-card-back">
-                <h1>Francisca Andrea Mercado Arancibia</h1>
-                <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
+              <div class="flip-card-back d-flex">
+                <a type="button" class="btn btn-dark mx-auto my-auto" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
           </div>
@@ -76,9 +75,8 @@ $meses = array(
                 <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (2).png" alt="Avatar" style="width:100%; height: 300px; object-fit: cover; ">
                 <h1>Alejandro Cerda</h1>
               </div>
-              <div class="flip-card-back">
-                <h1>Alejandro Felipe Cerda Soto</h1>
-                <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
+              <div class="flip-card-back d-flex">
+                <a type="button" class="btn btn-dark my-auto mx-auto" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
           </div>
@@ -90,9 +88,8 @@ $meses = array(
                 <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (3).png" alt="Avatar" style="width:300px;height:300px;">
                 <h1>Gianina Madrigal</h1>
               </div>
-              <div class="flip-card-back">
-                <h1>Gianina Amalia Madrigal López</h1>
-                <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
+              <div class="flip-card-back d-flex">
+                <a type="button" class="btn btn-dark my-auto mx-auto" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
           </div>
