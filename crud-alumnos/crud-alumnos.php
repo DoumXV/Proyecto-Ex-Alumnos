@@ -300,7 +300,7 @@
                                     <label for="nombre" class="form-label">Nombre</label>
                                     <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre" value="<?=$datos->nombre_usuario?>">
                                     <label for="email" class="form-label">Correo Institucional</label>
-                                    <input type="text" class="form-control mb-3" name="email" placeholder="example@alumnos.uda.cl" value="<?=$datos->email_usuario?>">
+                                    <input type="text" class="form-control mb-3" name="email" placeholder="example@alumnos.uda.cl" value="<?=$datos->email_usuario?>" disabled>
                                     <label for="fecha" class="form-label">Fecha de egreso</label>
                                     <input type="date" class="form-control mb-3" name="fecha" placeholder="Nombre" value="<?=$datos->fecha_egreso?>">
                                     <label for="area" class="form-label">Area de interes</label>

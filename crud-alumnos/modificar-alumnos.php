@@ -19,33 +19,40 @@ if(!empty($_POST["btnmodificar"])){
     $ruta_guardado="../img-ex-alumnos/".$nombre_imagen;
 
 
-    $fechaIngresadaObj = DateTime::createFromFormat('d-m-y', $fecha);
-    $fechaActualObj = new DateTime();
+    $fechaActual = date('Y-m-d');
+    $errores = array();
 
     if (
         !preg_match('/^[a-zA-Z\s]+$/', $nombre)
     ) {
-        echo "<div class='alert alert-warning'>El nombre debe contener solo letras.</div>";
+        $errores[] = "El nombre debe contener solo letras.";
     }
-    else if (
+    if (
         !preg_match('/^\+56\s?9\s?\d{4}\s?\d{4}$/', $contacto)
     ) {
-        echo "<div class='alert alert-warning'>El formato del contacto es: +56 9 xxxx xxxx (los espacios son opcionales).</div>";
+        $errores[] = "El formato del contacto es: +56 9 xxxx xxxx (los espacios son opcionales).";
     }
-    else if(
+    if(
         !preg_match('/^[a-zA-Z\s]+$/', $area)
     ){
-        echo "<div class='alert alert-warning'>El area de interes debe contener solo letras.</div>";
+        $errores[] = "El área de interés debe contener solo letras.";
     }
-    else if(
+    if(
         !preg_match('/^[a-zA-Z\s]+$/', $trabajo)
     ){
-        echo "<div class='alert alert-warning'>El trabajo actual debe contener solo letras.</div>";
+        $errores[] = "El trabajo actual debe contener solo letras.";
     }
-    else if ($fechaIngresadaObj > $fechaActualObj) {
-        echo "<div class='alert alert-warning'>La fecha ingresada es posterior a la fecha actual.</div>";
+    if ($fecha > $fechaActual) {
+        $errores[] = "La fecha ingresada es posterior a la fecha actual.";
     }
-    else{
+
+    // Mostrar errores
+    if (!empty($errores)) {
+        foreach ($errores as $error) {
+            echo "<div class='alert alert-warning'>$error</div>";
+        }
+    }else{
+   
 
     if(!empty($nombre) and !empty($email) and !empty($fecha) and !empty($area) and !empty($descripcion) and !empty($trabajo) and !empty($contacto) and !empty($nombre_imagen)){
         move_uploaded_file($nombre_tmp,$ruta_guardado);

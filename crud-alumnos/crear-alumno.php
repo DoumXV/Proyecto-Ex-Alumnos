@@ -16,8 +16,7 @@ if(isset($_POST['crear'])){
     $ruta_img=$_FILES['img1']['tmp_name'];
     $ruta_guardado="../img-ex-alumnos/".$nombre_img;
 
-    $fechaIngresadaObj = DateTime::createFromFormat('d-m-y', $fecha);
-    $fechaActualObj = new DateTime();
+    $fechaActual = date('Y-m-d');
 
     $errores = array();
 
@@ -36,8 +35,7 @@ if(isset($_POST['crear'])){
     if (!preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜ,.\s]+$/', $trabajo)){
         $errores[] = "El trabajo actual debe contener solo letras.";
     }
-
-    if ($fechaIngresadaObj > $fechaActualObj) {
+    if ($fecha > $fechaActual) {
         $errores[] = "La fecha ingresada es posterior a la fecha actual.";
     }
 
