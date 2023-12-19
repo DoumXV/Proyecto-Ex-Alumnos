@@ -200,7 +200,7 @@
                 ?>
 
                 <div class="boton-registrar d-flex align-content-center justify-content-center  my-4">
-                            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff; border: 2px solid black;" data-bs-toggle="modal" data-bs-target="#registro">Registrar Eventos
+                            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff; border: 2px solid black;" data-bs-toggle="modal" data-bs-target="#registro">Registrar Alumnos
                             </button>
                 </div>
 
@@ -208,7 +208,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar Almuno</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -316,7 +316,7 @@
                                     <div><?php echo $datos->direccion_imagen ?></div>
                                 
                                     <div class="d-flex flex-row align-items-center justify-content-center">
-                                        <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Modificar Alumnos</button>
+                                        <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Editar</button>
                                         <a href="crud-alumnos.php" class="btn btn-danger">Salir sin editar</a>
                                     </div>
                                 </form>
