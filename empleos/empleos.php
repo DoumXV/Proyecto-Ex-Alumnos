@@ -58,7 +58,7 @@ $query = $conexion->query("SELECT * FROM empleos;");
                                       <img class="w-25" src="../img/icons8-banknotes-50.png" alt="money">
                                       <p class="card-text ms-1">Sueldo</p>
                                     </div>
-                                    <h5 class="card-title"><?php echo $resultado->sueldo; ?></h5>
+                                    <h5 class="card-title"><?php echo "$".$resultado->sueldo; ?></h5>
                                   </div>
                                   <a class="btn btn-dark text-center align-self-center py-2" href="descargar.php?id_empleo=<?php echo $resultado->id_empleo;?>">Postular</a>
                                 </div>
