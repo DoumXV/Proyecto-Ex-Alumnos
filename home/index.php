@@ -64,8 +64,6 @@ $meses = array(
               </div>
               <div class="flip-card-back">
                 <h1>Francisca Andrea Mercado Arancibia</h1>
-                <p>+56 9 8291 1314</p>
-                <p>Analisis de Datos</p>
                 <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
@@ -80,8 +78,6 @@ $meses = array(
               </div>
               <div class="flip-card-back">
                 <h1>Alejandro Felipe Cerda Soto</h1>
-                <p>+56 9 5806 6626</p>
-                <p>Inteligencia Artificial</p>
                 <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
@@ -96,8 +92,6 @@ $meses = array(
               </div>
               <div class="flip-card-back">
                 <h1>Gianina Amalia Madrigal López</h1>
-                <p>+56 9 8172 5323</p>
-                <p>Tecnologias de la Información</p>
                 <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
