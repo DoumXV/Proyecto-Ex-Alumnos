@@ -7,7 +7,7 @@
 if(!empty($_POST["btnmodificar"])){
     include '../administrador/conexion.php';
     $nombre=$_POST['nombre'];
-    $email=$_POST['email'];
+    $email=$_POST['email_oculto'];
     $fecha=$_POST['fecha'];
     $area=$_POST['area'];
     $descripcion=$_POST['descripcion'];
@@ -18,13 +18,10 @@ if(!empty($_POST["btnmodificar"])){
     $nombre_tmp=$_FILES['img']['tmp_name'];
     $ruta_guardado="../img-ex-alumnos/".$nombre_imagen;
 
-
     $fechaActual = date('Y-m-d');
     $errores = array();
 
-    if (
-        !preg_match('/^[a-zA-Z\s]+$/', $nombre)
-    ) {
+    if (!preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜ,.\s]+$/', $nombre)) {
         $errores[] = "El nombre debe contener solo letras.";
     }
     if (

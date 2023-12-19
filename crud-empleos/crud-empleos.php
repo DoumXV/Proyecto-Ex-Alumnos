@@ -63,6 +63,9 @@
         });
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
         }else if($dato=="3"){
             $mensaje="
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -78,6 +81,9 @@
                   });});
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
         }
         else if($dato=="4"){
             $mensaje="
@@ -94,6 +100,9 @@
                   });});
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
         }else if($dato=="5"){
             
             $mensaje="
@@ -111,6 +120,9 @@
         });
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
         }else if($dato=="6"){
             $mensaje="
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -118,7 +130,7 @@
             document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Algunos .',
+                    title: 'No es posible subir el archivo seleccionado.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK',
@@ -126,6 +138,29 @@
                   });});
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
+        }else if($dato=="7"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Datos eliminados correctamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                });
+        });
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
         }
         ?>
         <!-- Modal REGISTRO -->

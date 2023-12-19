@@ -108,7 +108,7 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
                         $imagenSrc = "../img/user.png";
                     }
                     ?>
-                    <img src="<?php echo $imagenSrc; ?>" alt="../img-ex-alumnos/usuario.png" style="background-color: white; width:350px;height:350px; border-radius: 2rem; object-fit:cover;">
+                    <img src="<?php echo $imagenSrc; ?>" alt="../img-ex-alumnos/usuario.png" style="background-color: white; width:350px;height:400px; border-radius: 2rem; object-fit:cover;">
                     <h1><?php echo $resultado->nombre_usuario; ?></h1>
                   </div>
                   <div class="flip-card-back d-flex flex-column align-content-center align-items-center justify-content-center">

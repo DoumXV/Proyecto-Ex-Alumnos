@@ -230,12 +230,11 @@
                                     <input type="text" id="contacto1" class="form-control mb-3" name="contacto1" placeholder="+56 9 xxxx xxxx">
                                     <label for="img1" class="form-label">Imagen</label>
                                     <input type="file" id="img1" class="form-control mb-3" name="img1"  accept="image/png, image/jpeg">
-                                    <button type="submit" class="btn btn-success" name="crear">Registrar</button>
+                                    
+                                    <div class="d-flex flex-row align-items-center justify-content-center">
+                                        <button type="submit" class="btn btn-success m-3" style="background-color:#364c59; color:#fff;" name="crear">Registrar</button>  
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>                                    </div>
                     </form>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
                 </div>
             </div>
@@ -267,21 +266,21 @@
                         $modalID = "modal_" . preg_replace("/[^a-zA-Z0-9]/", "_", $datos->email_usuario);
                         ?>
                         <tr class="text-center">
-    <td style="width: 200px; max-height: 50px; overflow-y: auto;"><?= $datos->nombre_usuario ?></td>
-    <td style="width: 100px; max-height: 50px; overflow-y: auto;"><textarea style="border:none;" readonly id="exampleFormControlTextarea1" rows="3"><?= $datos->email_usuario ?></textarea></td>
-    <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->fecha_egreso ?></td>
-    <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->area_interes ?></td>
-    <td style="width: 100px; max-height: 50px; overflow-y: auto;"><textarea style="border:none;" readonly id="exampleFormControlTextarea1" rows="3"><?= $datos->descripcion ?></textarea></td>
-    <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->trabajo_actual ?></td>
-    <td style="width: 120px; max-height: 50px; overflow-y: auto;"><img src="<?= $datos->direccion_imagen ?>" alt="" style="max-width:100%; max-height: 100%;"></td>
-    <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->contacto ?></td>
-    <th style="width: 100px;">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="background-color:#364c59; color:#fff; border:2px solid black;" name="btnmodificar" data-bs-target="#<?=$modalID?>">Editar</button>
-    </th>
-    <th style="width: 100px;">
-        <a onclick="return eliminar()" href="crud-alumnos.php?email=<?=$datos->email_usuario?>" style="border:2px solid black;" class="btn btn-danger">Eliminar</a>
-    </th> 
-</tr>
+                            <td style="width: 200px; max-height: 50px; overflow-y: auto;"><?= $datos->nombre_usuario ?></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><textarea style="border:none;" readonly id="exampleFormControlTextarea1" rows="3"><?= $datos->email_usuario ?></textarea></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->fecha_egreso ?></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->area_interes ?></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><textarea style="border:none;" readonly id="exampleFormControlTextarea1" rows="3"><?= $datos->descripcion ?></textarea></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->trabajo_actual ?></td>
+                            <td style="width: 120px; max-height: 50px; overflow-y: auto;"><img src="<?= $datos->direccion_imagen ?>" alt="" style="max-width:100%; max-height: 100%;"></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->contacto ?></td>
+                            <th style="width: 100px;">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="background-color:#364c59; color:#fff; border:2px solid black;" name="btnmodificar" data-bs-target="#<?=$modalID?>">Editar</button>
+                            </th>
+                            <th style="width: 100px;">
+                                <a onclick="return eliminar()" href="crud-alumnos.php?email=<?=$datos->email_usuario?>" style="border:2px solid black;" class="btn btn-danger">Eliminar</a>
+                            </th> 
+                        </tr>
 
 
                         <!-- Modal  Editar-->
@@ -301,6 +300,7 @@
                                     <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre" value="<?=$datos->nombre_usuario?>">
                                     <label for="email" class="form-label">Correo Institucional</label>
                                     <input type="text" class="form-control mb-3" name="email" placeholder="example@alumnos.uda.cl" value="<?=$datos->email_usuario?>" disabled>
+                                    <input type="hidden" name="email_oculto" value="<?=$datos->email_usuario?>">
                                     <label for="fecha" class="form-label">Fecha de egreso</label>
                                     <input type="date" class="form-control mb-3" name="fecha" placeholder="Nombre" value="<?=$datos->fecha_egreso?>">
                                     <label for="area" class="form-label">Area de interes</label>

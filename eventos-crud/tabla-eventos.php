@@ -57,6 +57,9 @@
         });
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
         }else if($dato=="3"){
             $mensaje="
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -72,6 +75,9 @@
                 });});
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
         }
         else if($dato=="4"){
             $mensaje="
@@ -88,6 +94,9 @@
                 });});
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
         }else if($dato=="5"){
             $mensaje="
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -103,6 +112,9 @@
                 });});
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
         }else if($dato=="6"){
                         
             $mensaje="
@@ -120,6 +132,9 @@
         });
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
         }
         else if($dato=="7"){
                         
@@ -138,6 +153,50 @@
         });
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
+        }else if($dato=="8"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Datos eliminados correctamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                });
+        });
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
+        }
+        else if($dato=="9"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Eventos pasados eliminados correctamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 2000
+                });
+        });
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 2000);'; // Redirigir después de 3s
+            echo '</script>';
         }
         ?>  
 
