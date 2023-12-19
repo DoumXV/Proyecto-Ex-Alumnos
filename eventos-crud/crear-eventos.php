@@ -15,28 +15,32 @@ $nombre_archivo=$_FILES['archivo']['name'];
 $ruta_archivo=$_FILES['archivo']['tmp_name'];
 $ruta_guardado="../flyer/".$nombre_archivo;
 
+$fechaActual = date('Y-m-d');
 
 
 if(!empty($nombre) and !empty($ubicacion) and !empty($fecha) and !empty($hora_inicio) and !empty($hora_termino) and !empty($nombre_archivo)){
     $hi=strtotime($hora_inicio);
     $hf=strtotime($hora_termino);
-    $hoy = getdate();
-    $fecha_sql = date("Y-m-d H:i:s", mktime($hoy['hours'], $hoy['minutes'], $hoy['seconds'], $hoy['mon'], $hoy['mday'], $hoy['year']));
-
-    if($hi<$hf and $fecha > $fecha_sql){
-        move_uploaded_file($ruta_archivo,$ruta_guardado);
-        $sql=$conexion->query("INSERT INTO eventos (nombre_evento,ubicacion,direccion_imagen,inicio,final) VALUES ('$nombre','$ubicacion','$ruta_guardado','$fecha_inicio','$fecha_termino')");
-        if($sql==1){
-            header("Location:tabla-eventos.php?confirmacion=6");
+    if($fecha>=$fechaActual){
+        if($hi<$hf){
+            move_uploaded_file($ruta_archivo,$ruta_guardado);
+            $sql=$conexion->query("INSERT INTO eventos (nombre_evento,ubicacion,direccion_imagen,inicio,final) VALUES ('$nombre','$ubicacion','$ruta_guardado','$fecha_inicio','$fecha_termino')");
+            if($sql==1){
+                header("Location:tabla-eventos.php?confirmacion=6");
+            }else{
+                header("Location:tabla-eventos.php?confirmacion=2");
+            }
         }else{
-            header("Location:tabla-eventos.php?confirmacion=2");
+            header("Location:tabla-eventos.php?confirmacion=5");
         }
     }else{
-        header("Location:tabla-eventos.php?confirmacion=5");
+        header("Location:tabla-eventos.php?confirmacion=7");
     }
 }else{
     header("Location:tabla-eventos.php?confirmacion=4");
 }
+
+
 }
 
 
