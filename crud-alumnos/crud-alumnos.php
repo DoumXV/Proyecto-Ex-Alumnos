@@ -39,10 +39,12 @@
 
     <section class="caja-crud" style=" height: auto;">
 
+    
+
     <div class="tabla-filtros text-center">
         <h2 class="titulos mx-auto">Busquedas</h2>
         <div class="row align-items-start">
-            <div class="col-4 g-4"">
+            <div class="col-4 g-4">
                 <input type="text" class="form-control" id="inputBuscarNombre" placeholder="Nombre" onkeyup="buscarTabla()" />
             </div>
             <div class="col-4 g-4">
@@ -86,6 +88,9 @@
                     });
                         </script>";
                         echo $mensaje;
+                        echo '<script>';
+                        echo 'setTimeout(function(){ window.location.href = "crud-alumnos.php"; }, 1800);'; // Redirigir después de 3s
+                        echo '</script>';
                     }else if($dato=="3"){
                         $mensaje="
                         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -101,6 +106,9 @@
                             });});
                         </script>";
                         echo $mensaje;
+                        echo '<script>';
+                        echo 'setTimeout(function(){ window.location.href = "crud-alumnos.php"; }, 2300);'; // Redirigir después de 3s
+                        echo '</script>';
                     }
                     else if($dato=="4"){
                         $mensaje="
@@ -117,8 +125,123 @@
                             });});
                         </script>";
                         echo $mensaje;
+                        echo '<script>';
+                        echo 'setTimeout(function(){ window.location.href = "crud-alumnos.php"; }, 2300);'; // Redirigir después de 3s
+                        echo '</script>';
                     }
+                    else if($dato=="5"){
+                        $mensaje="
+                        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                        <script language='JavaScript'>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Este correo ya se encuentra ingresado.',
+                                showCancelButton: false,
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK',
+                                timer: 2300
+                            });});
+                        </script>";
+                        echo $mensaje;
+                        echo '<script>';
+                        echo 'setTimeout(function(){ window.location.href = "crud-alumnos.php"; }, 2300);'; // Redirigir después de 3s
+                        echo '</script>';
+                    }
+                    else if($dato=="6"){
+                        
+                        $mensaje="
+                        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                        <script language='JavaScript'>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Datos ingresados correctamente',
+                                showCancelButton: false,
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK',
+                                timer: 1800
+                            });
+                    });
+                        </script>";
+                        echo $mensaje;
+                        echo '<script>';
+                        echo 'setTimeout(function(){ window.location.href = "crud-alumnos.php"; }, 1800);'; // Redirigir después de 3s
+                        echo '</script>';
+                    }
+                    else if($dato=="7"){
+                        
+                        $mensaje="
+                        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                        <script language='JavaScript'>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Datos eliminados correctamente',
+                                showCancelButton: false,
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK',
+                                timer: 1800
+                            });
+                    });
+                        </script>";
+                        echo $mensaje;
+                        echo '<script>';
+                        echo 'setTimeout(function(){ window.location.href = "crud-alumnos.php"; }, 1800);'; // Redirigir después de 3s
+                        echo '</script>';
+                    }
+                    
+                    
                 ?>
+                
+                <?php
+                    include ("crear-alumno.php");
+                    include("modificar-alumnos.php");
+                ?>
+
+                <div class="boton-registrar d-flex align-content-center justify-content-center  my-4">
+                            <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff; border: 2px solid black;" data-bs-toggle="modal" data-bs-target="#registro">Registrar Alumnos
+                            </button>
+                </div>
+
+            <div class="modal fade" id="registro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar Almuno</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                <form method="POST" enctype="multipart/form-data">
+                                    <label for="nombre1" class="form-label">Nombre</label>
+                                    <input type="text" id="nombre1" class="form-control mb-3" name="nombre1" placeholder="Nombre">
+                                    <label for="email1" class="form-label">Email</label>
+                                    <input type="email" id="email1" class="form-control mb-3" name="email1" placeholder="Correo Institucional">
+                                    <label for="fecha1" class="form-label">Fecha de egreso</label>
+                                    <input type="date" id="fecha1" class="form-control mb-3" name="fecha1" placeholder="Nombre">
+                                    <label for="area1" class="form-label">Area de interes</label>
+                                    <input type="text" id="area1" class="form-control mb-3" name="area1" placeholder="Area de interes" >
+                                    <label for="descripcion1" class="form-label">Descripcion</label>
+                                    <textarea class="form-control mb-3" id="descripcion1" name="descripcion1" rows="3" placeholder="Descripcion del Alumno"></textarea>
+                                    <label for="trabajo1" class="form-label">Trabajo actual</label>
+                                    <input type="text" id="trabajo1" class="form-control mb-3" name="trabajo1" placeholder="Trabajo actual" >
+                                    <label for="contacto1" class="form-label">Telefono</label>
+                                    <input type="text" id="contacto1" class="form-control mb-3" name="contacto1" placeholder="+56 9 xxxx xxxx">
+                                    <label for="img1" class="form-label">Imagen</label>
+                                    <input type="file" id="img1" class="form-control mb-3" name="img1"  accept="image/png, image/jpeg">
+                                    
+                                    <div class="d-flex flex-row align-items-center justify-content-center">
+                                        <button type="submit" class="btn btn-success m-3" style="background-color:#364c59; color:#fff;" name="crear">Registrar</button>  
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>                                    </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+
                 <div class="table-responsive-sm">
                 <table class="table" id="tablaAlumnos">
                     <thead class="table-dark table-bordered border-dark table-striped text-center">
@@ -140,21 +263,25 @@
                         include("../administrador/conexion.php");
                         $sql=$conexion->query("SELECT * FROM alumnos");
                         while($datos=$sql->fetch_object()){
-                        include("modificar-alumnos.php");
                         $modalID = "modal_" . preg_replace("/[^a-zA-Z0-9]/", "_", $datos->email_usuario);
                         ?>
                         <tr class="text-center">
-                            <td><?= $datos->nombre_usuario ?> </td>
-                            <td><?= $datos->email_usuario ?> </td>
-                            <td><?= $datos->fecha_egreso ?> </td>
-                            <td><?= $datos->area_interes ?> </td>
-                            <td><?= $datos->descripcion ?> </td>
-                            <td><?= $datos->trabajo_actual ?> </td>
-                            <td><img src="<?= $datos->direccion_imagen ?>" alt="" style="max-width:200px; max-height: 300px"></td>
-                            <td><?= $datos->contacto ?> </td>
-                            <th><button type="button" class="btn btn-primary" data-bs-toggle="modal" style="background-color:#364c59; color:#fff; border:1px solid black;" name="btnmodificar" data-bs-target="#<?=$modalID?>">Editar</button></th>
-                            <th><a onclick="return eliminar()" href="crud-alumnos.php?email=<?=$datos->email_usuario?>" class="btn btn-danger">Eliminar</a></th> 
+                            <td style="width: 200px; max-height: 50px; overflow-y: auto;"><?= $datos->nombre_usuario ?></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><textarea style="border:none;" readonly id="exampleFormControlTextarea1" rows="3"><?= $datos->email_usuario ?></textarea></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->fecha_egreso ?></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->area_interes ?></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><textarea style="border:none;" readonly id="exampleFormControlTextarea1" rows="3"><?= $datos->descripcion ?></textarea></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->trabajo_actual ?></td>
+                            <td style="width: 120px; max-height: 50px; overflow-y: auto;"><img src="<?= $datos->direccion_imagen ?>" alt="" style="max-width:100%; max-height: 100%;"></td>
+                            <td style="width: 100px; max-height: 50px; overflow-y: auto;"><?= $datos->contacto ?></td>
+                            <th style="width: 100px;">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="background-color:#364c59; color:#fff; border:2px solid black;" name="btnmodificar" data-bs-target="#<?=$modalID?>">Editar</button>
+                            </th>
+                            <th style="width: 100px;">
+                                <a onclick="return eliminar()" href="crud-alumnos.php?email=<?=$datos->email_usuario?>" style="border:2px solid black;" class="btn btn-danger">Eliminar</a>
+                            </th> 
                         </tr>
+
 
                         <!-- Modal  Editar-->
                         
@@ -169,26 +296,27 @@
                             <section class="modificar d-flex flex-column align-items-center justify-content-center">
                             <div class="container">
                                 <form method="POST" enctype="multipart/form-data">
-                                    <label for="titulo" class="form-label">Nombre</label>
+                                    <label for="nombre" class="form-label">Nombre</label>
                                     <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre" value="<?=$datos->nombre_usuario?>">
-                                    <label for="titulo" class="form-label">Email</label>
-                                    <input type="text" class="form-control mb-3" name="email" placeholder="Correo Institucional" value="<?=$datos->email_usuario?>">
-                                    <label for="titulo" class="form-label">Fecha de egreso</label>
+                                    <label for="email" class="form-label">Correo Institucional</label>
+                                    <input type="text" class="form-control mb-3" name="email" placeholder="example@alumnos.uda.cl" value="<?=$datos->email_usuario?>" disabled>
+                                    <input type="hidden" name="email_oculto" value="<?=$datos->email_usuario?>">
+                                    <label for="fecha" class="form-label">Fecha de egreso</label>
                                     <input type="date" class="form-control mb-3" name="fecha" placeholder="Nombre" value="<?=$datos->fecha_egreso?>">
-                                    <label for="titulo" class="form-label">Area de interes</label>
+                                    <label for="area" class="form-label">Area de interes</label>
                                     <input type="text" class="form-control mb-3" name="area" placeholder="Área de interés" value="<?=$datos->area_interes?>">
-                                    <label for="titulo" class="form-label">Descripcion</label>
+                                    <label for="descripcion" class="form-label">Descripcion</label>
                                     <textarea class="form-control mb-3" name="descripcion" rows="3" placeholder="Descripción del Alumno"><?=$datos->descripcion?></textarea>
-                                    <label for="titulo" class="form-label">Trabajo actual</label>
+                                    <label for="trabajo" class="form-label">Trabajo actual</label>
                                     <input type="text" class="form-control mb-3" name="trabajo" placeholder="Trabajo actual" value="<?=$datos->trabajo_actual?>">
-                                    <label for="titulo" class="form-label">Contacto</label>
-                                    <input type="text" class="form-control mb-3" name="contacto" placeholder="Contacto" value="<?=$datos->contacto?>">
-                                    <label for="titulo" class="form-label">Imagen</label>
+                                    <label for="contacto" class="form-label">Telefono (+56 9 xxxx xxxx)</label>
+                                    <input type="text" class="form-control mb-3" name="contacto" placeholder="Telefono (+56 9 xxxx xxxx)" value="<?=$datos->contacto?>">
+                                    <label for="img" class="form-label">Imagen</label>
                                     <input type="file" class="form-control mb-3" name="img"  accept="image/png, image/jpeg">
                                     <div><?php echo $datos->direccion_imagen ?></div>
                                 
                                     <div class="d-flex flex-row align-items-center justify-content-center">
-                                        <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Modificar Alumnos</button>
+                                        <button type="submit" class="btn m-3" style="background-color:#364c59; color:#fff;" name="btnmodificar" value="ok">Editar</button>
                                         <a href="crud-alumnos.php" class="btn btn-danger">Salir sin editar</a>
                                     </div>
                                 </form>

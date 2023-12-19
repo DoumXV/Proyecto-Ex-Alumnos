@@ -57,6 +57,9 @@
         });
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
         }else if($dato=="3"){
             $mensaje="
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -72,6 +75,9 @@
                 });});
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
         }
         else if($dato=="4"){
             $mensaje="
@@ -88,6 +94,9 @@
                 });});
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
         }else if($dato=="5"){
             $mensaje="
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -103,7 +112,10 @@
                 });});
             </script>";
             echo $mensaje;
-        }else if($dato=="5"){
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
+        }else if($dato=="6"){
                         
             $mensaje="
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -120,6 +132,71 @@
         });
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
+        }
+        else if($dato=="7"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Fecha incorrecta, no puede ser una fecha pasada',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                });
+        });
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
+        }else if($dato=="8"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Datos eliminados correctamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                });
+        });
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
+        }
+        else if($dato=="9"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Eventos pasados eliminados correctamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 2000
+                });
+        });
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "tabla-eventos.php"; }, 2000);'; // Redirigir después de 3s
+            echo '</script>';
         }
         ?>  
 
@@ -214,6 +291,13 @@
                         ?>
                         <?php 
                         include("update-eventos.php");
+                        $fechaInicio = new DateTime($datos->inicio);
+                        $fechaFin = new DateTime($datos->final);
+
+                        $fechaInicioSoloFecha = $fechaInicio->format('Y-m-d');
+
+                        $horasFechaInicio = $fechaInicio->format('H:i:s');
+                        $horasFechaFin = $fechaFin->format('H:i:s');
                         ?>
                         
                         
@@ -255,11 +339,11 @@
                                         <option value="Lab-Olimpo">Lab Olimpo</option>
                                         </select>
                                         <label for="ho1" class="form-label">Fecha de evento</label>
-                                        <input type="date" class="form-control mb-3" name="fecha" placeholder="Fecha" id="ho1" value="<?php echo $fecha_inicio ?>">
+                                        <input type="date" class="form-control mb-3" name="fecha" placeholder="Fecha" id="ho1" value="<?php echo $fechaInicioSoloFecha ?>">
                                         <label for="ho1" class="form-label">Hora de inicio</label>
-                                        <input type="time" name="inicio"  class="form-control mb-3" id="ho1" value="<?php echo $fecha_inicio ?>">
+                                        <input type="time" name="inicio"  class="form-control mb-3" id="ho1" value="<?php echo $horasFechaInicio ?>">
                                         <label for="ho2" class="form-label">Hora de termino</label>
-                                        <input type="time" name="final"  class="form-control mb-3" id="ho2" value="<?php echo $hora_final ?>">
+                                        <input type="time" name="final"  class="form-control mb-3" id="ho2" value="<?php echo $horasFechaFin ?>">
                                         <label for="titulo" class="form-label">Imagen</label>
                                         <input type="file" class="form-control mb-3" name="img" accept="image/*,.jpg">
                                         <input type="hidden" name="id_evento" value="<?=$datos->id_evento?>">

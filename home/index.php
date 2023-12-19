@@ -60,13 +60,10 @@ $meses = array(
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (1).png" alt="Avatar" style="width:300px;height:300px;">
-                <h1>Violeta Rodriguez</h1>
+                <h1>Francisca Mercado</h1>
               </div>
-              <div class="flip-card-back">
-                <h1>Violeta Rodriguez</h1>
-                <p>+56 9 8291 1314</p>
-                <p>Analisis de Datos</p>
-                <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
+              <div class="flip-card-back d-flex">
+                <a type="button" class="btn btn-dark mx-auto my-auto" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
           </div>
@@ -76,13 +73,10 @@ $meses = array(
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (2).png" alt="Avatar" style="width:100%; height: 300px; object-fit: cover; ">
-                <h1>Vicente Jaramillo</h1>
+                <h1>Alejandro Cerda</h1>
               </div>
-              <div class="flip-card-back">
-                <h1>Vicente Jaramillo</h1>
-                <p>+56 9 5806 6626</p>
-                <p>Inteligencia Artificial</p>
-                <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
+              <div class="flip-card-back d-flex">
+                <a type="button" class="btn btn-dark my-auto mx-auto" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
           </div>
@@ -92,13 +86,10 @@ $meses = array(
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <img src="../img/foto-individual-para-foto-de-perfil-de-equipo-de-p-upscaled (3).png" alt="Avatar" style="width:300px;height:300px;">
-                <h1>Andrea Gonzalez</h1>
+                <h1>Gianina Madrigal</h1>
               </div>
-              <div class="flip-card-back">
-                <h1>Andrea Gonzalez</h1>
-                <p>+56 9 8172 5323</p>
-                <p>Tecnologias de la Información</p>
-                <a type="button" class="btn btn-dark" href="../galeria/galeria.php">Mas informacion</a>
+              <div class="flip-card-back d-flex">
+                <a type="button" class="btn btn-dark my-auto mx-auto" href="../galeria/galeria.php">Mas informacion</a>
               </div>
             </div>
           </div>
@@ -194,28 +185,28 @@ $meses = array(
             ?>
           <form action="" class="w-75" method="post" enctype="multipart/form-data">
             <div class="mb-3">
-              <label for="nombre_peticion" class="form-label">Nombre Completo</label>
-              <input type="text" id="nombre_peticion" class="form-control" name="nombre_peticion">
+              <label for="nombre_peticion" class="form-label">Nombre completo</label>
+              <input type="text" id="nombre_peticion"  class="form-control" name="nombre_peticion">
             </div>
             <div class="mb-3">
-              <label for="email_peticion" class="form-label">Correo Institucional</label>
-              <input type="email" id="email_peticion" class="form-control" name="email_peticion">
+              <label for="email_peticion" class="form-label">Correo institucional</label>
+              <input type="email" id="email_peticion" placeholder="ejemplo@alumnos.uda.cl" class="form-control" name="email_peticion">
             </div>
             <div class="mb-3">
               <label for="contacto_peticion" class="form-label">Numero de contacto</label>
-              <input type="tel" id="contacto_peticion" class="form-control" name="contacto_peticion">
+              <input type="tel" id="contacto_peticion" placeholder="+56 9 xxxx xxxx" class="form-control" name="contacto_peticion">
             </div>
             <div class="mb-3">
-              <label for="area" class="form-label">Area de interes</label>
-              <input type="text" id="area" class="form-control" name="area">
+              <label for="area" class="form-label">Área de interés</label>
+              <input type="text" id="area"  class="form-control" name="area">
             </div>
             <div class="mb-3">
               <label for="trabajo" class="form-label">Trabajo actual</label>
-              <input type="text" id="trabajo" class="form-control" name="trabajo">
+              <input type="text" id="trabajo"  class="form-control" name="trabajo">
             </div>
             <div class="mb-3">
-              <label for="descripcion_peticion" class="form-label">Descripcion del ex-alumno</label>
-              <textarea class="form-control" name="descripcion_peticion" id="descripcion_peticion" rows="3"></textarea>
+              <label for="descripcion_peticion" class="form-label">Descripción del ex-alumno</label>
+              <textarea class="form-control"  name="descripcion_peticion" id="descripcion_peticion" rows="3"></textarea>
             </div>
             <div class="mb-3">
               <label for="formFile" class="form-label">Foto de ex-alumno</label>

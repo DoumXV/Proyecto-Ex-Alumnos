@@ -63,6 +63,9 @@
         });
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
         }else if($dato=="3"){
             $mensaje="
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -78,6 +81,9 @@
                   });});
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
         }
         else if($dato=="4"){
             $mensaje="
@@ -94,6 +100,9 @@
                   });});
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
         }else if($dato=="5"){
             
             $mensaje="
@@ -111,6 +120,47 @@
         });
             </script>";
             echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
+        }else if($dato=="6"){
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'No es posible subir el archivo seleccionado.',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 2300
+                  });});
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
+        }else if($dato=="7"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Datos eliminados correctamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                });
+        });
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-empleos.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
         }
         ?>
         <!-- Modal REGISTRO -->
@@ -195,16 +245,13 @@
                         $sql=$conexion->query("SELECT * FROM empleos");
                         while($datos=$sql->fetch_object()){
                         ?>
-                        <?php 
-                            include("modificar-empleo.php");
-                        ?>
                         <tr class="text-center">
                             <td><?= $datos->id_empleo ?> </td>
                             <td><?= $datos->titulo?> </td>
                             <td><?= $datos->empresa ?></td>
                             <td><?= $datos->ciudad?></td>
                             <td ><?= $datos->descripcion?></td>
-                            <td><?= $datos->sueldo?></td>
+                            <td><?= "$".$datos->sueldo?></td>
                             <td><?= $datos->archivo ?></td>
                             <th><button type="button" class="btn btn-primary" data-bs-toggle="modal" style="background-color:#364c59; color:#fff; border:1px solid black;" name="btnmodificar" data-bs-target="#editar<?=$datos->id_empleo?>">Editar</button></th>
                             <th><a onclick="return eliminar()" href="crud-empleos.php?id_empleo=<?=$datos->id_empleo?>" class="btn btn-danger">Eliminar</a></th> 
