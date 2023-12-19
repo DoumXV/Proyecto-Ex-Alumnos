@@ -1,12 +1,14 @@
+<!----------------------------Pagina de logueo del administrador----------------------------->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ex alumnos UDA</title>
+	<title>Administrador Ex-alumnos</title>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+    <!---------------------------------Barra de navegacion---------------------------------->
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
@@ -14,12 +16,17 @@
 				<li><a class="linkeado" href="../home/index.php">Inicio</a></li>
 				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
                 <li><a class="linkeado" href="../empleos/empleos.php">Empleos</a></li>
-				<li><a class="linkeado" href="#">Administrador</a></li>
+				<li><a class="linkeado" href="admin.php">Administrador</a></li>
 			</ul>
 		</nav>
 	</header>
-    <section class="zona1">
-    </section>
+    <!-------------------------------------------------------------------------------------->
+
+    <!--------------------Banner con imagen de pagina administrador------------------------->
+    <section class="zona1"></section>
+    <!-------------------------------------------------------------------------------------->
+
+    <!---------------------------Seccion formulario de logeo-------------------------------->
     <section class="formulario-logeo">
         <section class="container-login">
             <div class="form">
@@ -38,13 +45,14 @@
                         <div class="d-grid gap-2 col-6 mx-auto my-3 mt-5">
                             <input type="submit" style="background-color: #364c59; border: 1px solid black; box-shadow: 2rem; box-shadow: 0 10px 22px 0 rgba(0,0,0,0.2);" class="btn btn-primary" name="boton_enviar" value="Iniciar Sesion">
                         </div>
-                        
                     </form>
                 </div>
             </div>
         </section>
     </section>
-    </section>
+    <!-------------------------------------------------------------------------------------->
+
+    <!--------------------------------------Footer------------------------------------------>
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -73,12 +81,19 @@
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------Script para el scroll de la nav-bar--------------------------->
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <!-------------------------------------------------------------------------------------->
+  
+    <!------------------------Script para el bootstrap-------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------->
 </body>
 </html>

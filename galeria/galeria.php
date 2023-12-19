@@ -1,18 +1,18 @@
 <?php
 include("alumnos.php");
-$query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND TRIM(descripcion) <> '' AND TRIM(direccion_imagen) <> '';");
 ?>
-
+<!--------------------------------Galeria para ex-alumnos-------------------------------------->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-	<title>Ex alumnos UDA</title>
+	<title>Galeria ex alumnos UDA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="galeria.css">
 </head>
 
 <body>
+    <!-------------------------------Barra de navegacion--------------------------------->
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
@@ -24,39 +24,39 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
 			</ul>
 		</nav>
 	</header>
+    <!-------------------------------------------------------------------------------------->
 
+    <!--------------Banner con imagen del DIICC  + Departamento de matematicas-------------->
     <section class="zona1">
-    <div class="header-difuminado mx-auto">
-    </div>
-    <div class="header-difuminado2 mx-auto">
-    </div>
-    <div class="escape2">
+        <div class="header-difuminado mx-auto"></div>
+        <div class="header-difuminado2 mx-auto"></div>
+        <div class="escape2">
             <h1 class="titulo2">Galeria Ex Alumnos</h1>
             <p>Universidad de Atacama</p>
         </div>
+    </section>
+    <!-------------------------------------------------------------------------------------->
 
-  </section>
-
-    <!--Maglio-->
+    <!------------------Codigo php para la paginacion de la galeria------------------------->
     <?php
-    #script donde se secciona de 4 en 4 registros la tabla usuarios
+                #script donde se secciona de 4 en 4 registros la tabla usuarios
     $_REQUEST['nume'] = !empty($_REQUEST['nume']) ? $_REQUEST['nume'] : '1';
     $alumnos = $conexion->query("SELECT * FROM alumnos");
     $numero_alumnos = mysqli_num_rows($alumnos);
     $registros = 4;
     $pagina = isset($_REQUEST['nume']) ? $_REQUEST['nume'] : 1;
-
     if(is_numeric($pagina)){
         $inicio = (($pagina - 1) * $registros);
     } else {
         $inicio = 0;
     }
-
     $busqueda = $conexion->query("SELECT * FROM alumnos LIMIT $inicio, $registros");
     $paginas = ceil($numero_alumnos / $registros);
-?>
+    ?>
+    <!-------------------------------------------------------------------------------------->
 
-<section class="galeria">
+    <!-----------------Seccion tarjetas ex alumnos junto con la paginacion------------------>
+    <section class="galeria">
         <h2 class="titulos container-fluid text-center">Galeria de Ex-Alumnos</h2>
         <div class="tarjetas row ">
         <?php while ($resultado = $busqueda->fetch_object()) { ?>
@@ -91,7 +91,7 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
                   $dia = $fechaObj->format('d');
                   $mes = $fechaObj->format('m');
                   $hora = $fechaObj->format('H:i');
-                ?>
+            ?>
 
             <!-- Tarjetas -->
             <div class="col-xxl-6 g-5 col-xl-6 col-lg-6 col-md-7">
@@ -121,38 +121,39 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
                     </button>
 
                     </div>
-                    </div>
                 </div>
             </div>
-            <?php } ?>
+        </div>
+        <?php } ?>
+    <!------------------------------------Codigo para la paginacion----------------------------------------->
+        <div class="container-fluid">
+            <div class="tarjetas row justify-content-center align-content-center">
+                <div class="col-12">
+                    <ul class="pagination justify-content-center mt-5">
+                        <?php
+                        #script de la paginacion de los ex-alumnos
+                        if ($_REQUEST['nume'] > 1) {
+                            $ant = $_REQUEST['nume'] - 1;
+                            echo "<li class='page-item'><a class='page-link' style='color: white; background-color: #364c59;' aria-label='Previous' href='galeria.php?nume=" . $ant . "'><span aria-hidden='true' style: background-color: white;>&laquo;</span><span style='color: white; background-color: #364c59;' class='sr-only'>Anterior</span></a></li>";
+                        } else {
+                            echo "";
+                        }
 
-<div class="container-fluid">
-    <div class="tarjetas row justify-content-center align-content-center">
-        <div class="col-12">
-        <ul class="pagination justify-content-center mt-5">
-            <?php
-            #script de la paginacion de los ex-alumnos
-            if ($_REQUEST['nume'] > 1) {
-                $ant = $_REQUEST['nume'] - 1;
-                echo "<li class='page-item'><a class='page-link' style='color: white; background-color: #364c59;' aria-label='Previous' href='galeria.php?nume=" . $ant . "'><span aria-hidden='true' style: background-color: white;>&laquo;</span><span style='color: white; background-color: #364c59;' class='sr-only'>Anterior</span></a></li>";
-            } else {
-                echo "";
-            }
-
-            for ($i = 1; $i <= $paginas; $i++) {
-                $activeClass = ($i == $_REQUEST['nume']) ? 'active' : '';
-                echo "<li class='page-item $activeClass' style: background-color: white;><a class='page-link' style='color: white; background-color: #364c59;border: 1px solid black;' href='galeria.php?nume=$i'>$i</a></li>";
-            }
-            
-            $sig = ($_REQUEST['nume'] < $paginas) ? $_REQUEST['nume'] + 1 : $paginas;
-            echo "<li class='page-item'><a style='color: white; background-color: #364c59;' class='page-link' aria-label='Next' href='galeria.php?nume=" . $sig . "'><span style='color: white;' aria-hidden='true'>&raquo;</span><span class='sr-only'>Siguiente</span></a></li>";
-            ?>
-        </ul>
-
+                        for ($i = 1; $i <= $paginas; $i++) {
+                            $activeClass = ($i == $_REQUEST['nume']) ? 'active' : '';
+                            echo "<li class='page-item $activeClass' style: background-color: white;><a class='page-link' style='color: white; background-color: #364c59;border: 1px solid black;' href='galeria.php?nume=$i'>$i</a></li>";
+                        }
+                        
+                        $sig = ($_REQUEST['nume'] < $paginas) ? $_REQUEST['nume'] + 1 : $paginas;
+                        echo "<li class='page-item'><a style='color: white; background-color: #364c59;' class='page-link' aria-label='Next' href='galeria.php?nume=" . $sig . "'><span style='color: white;' aria-hidden='true'>&raquo;</span><span class='sr-only'>Siguiente</span></a></li>";
+                        ?>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
+    <!-------------------------------------------------------------------------------------->
+    <!--------------------------------------Footer------------------------------------------>
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -181,12 +182,19 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------Script para el scroll de la nav-bar--------------------------->
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------Script para el bootstrap-------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------->
 </body>
 </html>

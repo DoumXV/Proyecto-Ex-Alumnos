@@ -1,3 +1,4 @@
+<!--------------Lista para separar los meses de la fecha de los eventos------------------>
 <?php
 include("../calendario/calendario.php");
 $query=$conexion->query("SELECT * FROM eventos WHERE inicio >= now()");
@@ -16,7 +17,7 @@ $meses = array(
   12 => "Diciembre"
 );
 ?>
-
+<!--------------------------------Pagina de incio-------------------------------------->
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +27,8 @@ $meses = array(
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
+  <!-------------------------------Barra de navegacion--------------------------------->
 	<header>
 		<a href="index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
@@ -39,18 +40,20 @@ $meses = array(
 			</ul>
 		</nav>
 	</header>
+<!-------------------------------------------------------------------------------------->
 
+<!---------------------------Banner con imagen del DIICC-------------------------------->
   <section class="zona1">
-    <div class="header-difuminado mx-auto">
-    </div>
-    <div class="header-difuminado2 mx-auto">
-    </div>
+    <div class="header-difuminado mx-auto"></div>
+    <div class="header-difuminado2 mx-auto"></div>
     <div class="escape2">
             <h1 class="titulo2">Pagina Ex Alumnos</h1>
             <p>Universidad de Atacama</p>
-        </div>
-
+    </div>
   </section>
+  <!------------------------------------------------------------------------------------>
+
+<!---------------------------Tarjetas de alumnos destacados-------------------------------->
 
     <section class="recientes h-auto">
       <h2 class="titulos container-fluid text-center">Ex-Alumnos destacados</h2>
@@ -106,6 +109,8 @@ $meses = array(
       </div>
     </section>
 
+    <!-------------------------------------------------------------------------------------->
+    <!------------------------------Seccion de eventos-------------------------------------->
     <section class="calendario">
       <h2 class="titulos2 container-fluid text-center">Eventos</h2>
       <div class="tarjetas row justify-content-center align-content-center">
@@ -183,6 +188,8 @@ $meses = array(
         <?php } ?>
       </div>
     </section>
+    <!-------------------------------------------------------------------------------------->
+    <!-----------------------Seccion formulario para ex-alumnos----------------------------->
 
     <section class="formulario-caja">
       <h2 class="titulos2 container-fluid text-center">Formulario</h2>
@@ -226,7 +233,8 @@ $meses = array(
         </div>
       </div>
     </section>
-
+    <!-------------------------------------------------------------------------------------->
+    <!---------------------------------------Footer----------------------------------------->
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -255,19 +263,28 @@ $meses = array(
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+    <!-------------------------------------------------------------------------------------->
 
+  <!------------------------Script para doble confirmacion-------------------------------->
   <script>
       function confirmar(){
           var respuesta=confirm("¿Estas seguro de que los datos estan correctos?");
           return respuesta
       }
   </script>
+  <!-------------------------------------------------------------------------------------->
+
+  <!------------------------Script para el scroll de la nav-bar--------------------------->
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-------------------------------------------------------------------------------------->
+  
+  <!------------------------Script para el bootstrap-------------------------------------->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-------------------------------------------------------------------------------------->
 </body>
 </html>

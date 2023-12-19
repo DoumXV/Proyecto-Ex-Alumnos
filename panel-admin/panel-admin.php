@@ -4,6 +4,7 @@
         header("Location:../log-admin/admin.php"); 
         }
 ?>
+<!-----------------------------Pagina de inicio para los CRUDS----------------------------->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,7 @@
 </head>
 
 <body>
+    <!---------------------------------Barra de navegacion---------------------------------->
 	<header>
 		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
@@ -24,15 +26,22 @@
 			</ul>
 		</nav>
 	</header>
-    
+    <!-------------------------------------------------------------------------------------->
+
+    <!--------------------Banner con imagen de pagina administrador------------------------->
     <section class="zona1"></section>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------Links para los diferentes cruds------------------------------->
     <div class="gaaleria">
         <a href="../crud-alumnos/crud-alumnos.php"><img class="img-galeria"  style="border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;" src="../img/1.png" alt="alumnos"></a>
         <a href="../crud-peticiones/crud-peticiones.php"><img class="img-galeria" src="../img/2.png" alt="aalumnos"></a>
         <a href="../crud-empleos/crud-empleos.php"><img class="img-galeria" src="../img/3.png" alt="alumnos"></a>
         <a href="../eventos-crud/tabla-eventos.php"><img class="img-galeria"  style="border-top-right-radius: 2rem; border-bottom-right-radius: 2rem;" src="../img/4.png" alt="alumnos"></a>
     </div>
+    <!-------------------------------------------------------------------------------------->
 
+    <!--------------------------------------Footer------------------------------------------>
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -61,12 +70,19 @@
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------Script para el scroll de la nav-bar--------------------------->
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <!-------------------------------------------------------------------------------------->
+  
+    <!------------------------Script para el bootstrap-------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------->
 </body>
 </html>

@@ -11,5 +11,4 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
 
 $registros=$query->fetch_object();
 
-
 ?>
