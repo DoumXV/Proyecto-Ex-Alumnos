@@ -14,9 +14,9 @@ if(!empty($id)){
     if($sql){
     $sql2=$conexion->query("DELETE FROM peticiones WHERE id_peticion=$id");
     if($sql2){
-        header('location:../crud-peticiones.php');
+        header("Location:../crud-peticiones.php?confirmacion=4");
     }else{
-        header('location:../crud-peticiones.php');
+        header("Location:../crud-peticiones.php?confirmacion=3");
     }
     }
 }

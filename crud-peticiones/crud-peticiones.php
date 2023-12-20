@@ -3,6 +3,12 @@
     if(empty($_SESSION['email_admin'])){
         header("Location:../log-admin/admin.php"); 
         }
+    $dato="";
+    if (isset($_GET["confirmacion"])) {
+        // Obtener el valor del parámetro "confirmacion"
+        $dato = $_GET["confirmacion"];
+
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,6 +31,67 @@
 			</ul>
 		</nav>
 	</header>
+    <?php
+        if($dato=="2"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Peticion Aceptada',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                });
+        });
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-peticiones.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
+        }else if($dato=="3"){
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Algo salio mal, intentelo nuevamente',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 2300
+                });});
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-peticiones.php"; }, 2300);'; // Redirigir después de 3s
+            echo '</script>';
+        }else if($dato=="4"){
+                        
+            $mensaje="
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Peticion Rechazada',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1800
+                });
+        });
+            </script>";
+            echo $mensaje;
+            echo '<script>';
+            echo 'setTimeout(function(){ window.location.href = "crud-peticiones.php"; }, 1800);'; // Redirigir después de 3s
+            echo '</script>';
+        }
+    ?>
     <!-------------------------------------------------------------------------------------->
 
     <!---------------------------Banner peticiones------------------------------->
