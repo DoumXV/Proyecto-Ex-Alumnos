@@ -34,7 +34,7 @@ $meses = array(
 		<a href="index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
 			<ul>
-				<li><a class="linkeado" href="#">Inicio</a></li>
+				<li><a class="linkeado" href="index.php">Inicio</a></li>
 				<li><a class="linkeado" href="../galeria/galeria.php">Galeria</a></li>
         <li><a class="linkeado" href="../empleos/empleos.php">Empleos</a></li>
 				<li><a class="linkeado" href="../log-admin/admin.php">Administrador</a></li>
