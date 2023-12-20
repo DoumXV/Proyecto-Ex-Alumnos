@@ -2,16 +2,17 @@
 include("consulta.php");
 $query = $conexion->query("SELECT * FROM empleos;");
 ?>
-
+<!---------------------------Pagina empleos y mentorias--------------------------------->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ex alumnos UDA</title>
+	<title>Empleos ex alumnos UDA</title>
   <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="empleos.css">
 </head>
 <body>
+  <!-------------------------------Barra de navegacion--------------------------------->
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
@@ -23,7 +24,9 @@ $query = $conexion->query("SELECT * FROM empleos;");
 			</ul>
 		</nav>
 	</header>
-  
+  <!-------------------------------------------------------------------------------------->
+
+  <!---------------------------Banner con imagen del DIICC-------------------------------->
   <section class="zona1">
     <div class="header-difuminado mx-auto">
     </div>
@@ -35,7 +38,9 @@ $query = $conexion->query("SELECT * FROM empleos;");
         </div>
 
   </section>
-
+  <!------------------------------------------------------------------------------------->
+  
+  <!-----------------------seccion para las ofertas de empleo---------------------------->
   <section class="empleos h-auto">
       <h2 class="titulos container-fluid text-center">Ofertas de Empleo</h2>
       <div class="container tarjetas row mx-auto" >
@@ -71,7 +76,9 @@ $query = $conexion->query("SELECT * FROM empleos;");
         
       <?php } ?>
   </section>
+  <!------------------------------------------------------------------------------------->
 
+  <!---------------------------Seccion para las mentorias-------------------------------->
   <section class="mentoria">
     <div class="banner">
         <div class="escape">
@@ -171,8 +178,10 @@ $query = $conexion->query("SELECT * FROM empleos;");
       </div>
     </div>
 
-  </section>
+  </section>  
+  <!------------------------------------------------------------------------------------->
 
+  <!-----------------------------------Footer-------------------------------------------->
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -201,12 +210,19 @@ $query = $conexion->query("SELECT * FROM empleos;");
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+  <!------------------------------------------------------------------------------------->
+
+  <!------------------------Script para el scroll de la nav-bar-------------------------->
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+  <!-------------------------------------------------------------------------------------->
+  
+  <!------------------------Script para el bootstrap-------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------->
 </body>
 </html>

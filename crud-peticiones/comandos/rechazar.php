@@ -1,5 +1,5 @@
 <?php
-
+//fichero.php el cual rechaza las peticiones y elimina la peticion de la tabla peticiones
 $server="localhost";
 $user="root";
 $pass="";

@@ -1,4 +1,5 @@
 <?php
+//validacion de inicio de sesion y obtencion de notificaciones desde los ficheros del CRUD
     session_start();
     if(empty($_SESSION['email_admin'])){
         header("Location:../log-admin/admin.php"); 
@@ -10,17 +11,17 @@
 
         }
 ?>
-
+<!----------------------------Pagina de CRUD eventos----------------------------->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ex alumnos UDA</title>
+	<title>Panel eventos</title>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="eventos.css">
 </head>
-
 <body>
+    <!-------------------------------Barra de navegacion--------------------------------->
 	<header>
 		<a href="../administrador/cerrar-sesion.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
@@ -30,9 +31,13 @@
 			</ul>
 		</nav>
 	</header>
-    <section class="zona1">
-    </section>
+    <!-------------------------------------------------------------------------------------->
 
+    <!-----------------------------Banner Crud eventos-------------------------------------->
+    <section class="zona1"></section>
+    <!-------------------------------------------------------------------------------------->
+    
+    <!--------------------------------Alertas con JS---------------------------------------->
     <section class="caja-crud" style=" height: auto;">
     <div class="container my-5 text-center">
         <!--includes--> 
@@ -199,8 +204,9 @@
             echo '</script>';
         }
         ?>  
+        <!-------------------------------------------------------------------------------------->
 
-        <!-- Modal Registro -->
+        <!--------------------------------------Modal REGISTRO---------------------------------->
         <div class="modal fade" id="registro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -238,8 +244,9 @@
         </div>
         </div>
     </div>
+    <!-------------------------------------------------------------------------------------->
 
-    
+    <!---------------------------Filtros de busquedas--------------------------------------->
     <div class="tabla-filtros text-center">
         <h2 class="titulos mx-auto">Busquedas</h2>
         <div class="row m-3">
@@ -268,8 +275,10 @@
             <button type="button" class="btn me-5" style="background-color:#364c59; color:#fff; border: 2px solid black;" data-bs-toggle="modal" data-bs-target="#registro">Registrar Eventos
             </button>
             <a href="eliminar-caducados.php" class="btn btn-danger" style="border: 2px solid black;">Borrar eventos pasados</a>
-    </div>
-    
+    </div>    
+    <!-------------------------------------------------------------------------------------->
+
+    <!-----------------------------Tabla empleos-------------------------------------------->
     <div class="container mb-5">
                 <table class="table bg-white" id="tablaEventos">
                     <thead class="table-dark table-striped text-center">
@@ -312,7 +321,7 @@
                             <td><a href="eliminar-eventos.php?id=<?php echo $datos->id_evento ?>" onclick="return eliminar()" class="btn btn-danger">Eliminar</a></td>
                         </tr>
 
-                        <!-- Modal  Editar-->
+                        <!---------------------Modal  Editar------------------->
                         <div class="modal fade" id="editar<?=$datos->id_evento?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -376,6 +385,9 @@
         </div>
     </div>
     </section>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------------------Footer-------------------------------------------->
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -404,19 +416,32 @@
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------Script para doble confirmacion-------------------------------->
     <script>
         function eliminar(){
             var respuesta=confirm("Estas seguro de eliminar el registro");
             return respuesta
         }
     </script>
+    <!-------------------------------------------------------------------------------------->
+
+    <!-------------------Script para el scroll de la barra de navegacion-------------------->
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <!-------------------------------------------------------------------------------------->
+
+    <!---------------------------Script para los filtros------------------------------------>
     <script src="../js/busquedas-eventos.js"></script>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------Script para el bootstrap-------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------->
 </body>
 </html>

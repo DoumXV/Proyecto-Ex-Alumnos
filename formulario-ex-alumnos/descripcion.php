@@ -1,5 +1,5 @@
 <?php
-
+//fichero.php para insertar alumnos a la tabla peticiones junto con sus datos validados
 include "../administrador/conexion.php";
 if(isset($_POST['enviar_peticion'])){
     $nombre=$_POST['nombre_peticion'];

@@ -1,5 +1,5 @@
 <?php
-
+//fichero.php que sirve para registrar eventos con todos sus datos validados
 include '../administrador/conexion.php';
 if(isset($_POST['btnregistrar'])){
 $nombre=$_POST['nombre'];

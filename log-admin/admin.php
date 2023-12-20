@@ -1,12 +1,14 @@
+<!----------------------------Pagina de logueo del administrador----------------------------->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ex alumnos UDA</title>
+	<title>Logeo administrador</title>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+    <!---------------------------------Barra de navegacion---------------------------------->
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-udacorp-lineablanca.png" alt="Logo UDA"></a>
 		<nav>
@@ -18,8 +20,13 @@
 			</ul>
 		</nav>
 	</header>
-    <section class="zona1">
-    </section>
+    <!-------------------------------------------------------------------------------------->
+
+    <!--------------------Banner con imagen de pagina administrador------------------------->
+    <section class="zona1"></section>
+    <!-------------------------------------------------------------------------------------->
+
+    <!---------------------------Seccion formulario de logeo-------------------------------->
     <section class="formulario-logeo">
         <section class="container-login">
             <div class="form">
@@ -45,6 +52,9 @@
         </section>
     </section>
     </section>
+    <!-------------------------------------------------------------------------------------->
+
+    <!--------------------------------------Footer------------------------------------------>
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -73,12 +83,19 @@
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------Script para el scroll de la nav-bar--------------------------->
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <!-------------------------------------------------------------------------------------->
+  
+    <!------------------------Script para el bootstrap-------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------->
 </body>
 </html>

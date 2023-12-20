@@ -1,5 +1,5 @@
 <?php
-
+//fichero.php el cual sirve para poder registrar alumnos con todos sus datos validados
 include '../administrador/conexion.php';
 
 if(isset($_POST['crear'])){

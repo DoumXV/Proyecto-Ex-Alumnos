@@ -1,5 +1,5 @@
 <?php
-
+//fichero.php que sirve para eliminar los eventos ya pasados
 include '../administrador/conexion.php';
 $sql=$conexion->query("DELETE FROM eventos where final < now();");
 if($sql){

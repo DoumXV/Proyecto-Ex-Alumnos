@@ -1,4 +1,5 @@
 <?php
+//fichero.php para eliminar un alumno 
 if(!empty($_GET["email"])){
     $email=$_GET["email"];
     $sql=$conexion->query("DELETE FROM alumnos WHERE email_usuario='$email'");

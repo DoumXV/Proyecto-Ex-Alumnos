@@ -1,4 +1,5 @@
 <?php
+//fichero.php para descargar pdfs desde un boton
 include "../administrador/conexion.php";
 
 

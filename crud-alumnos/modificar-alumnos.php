@@ -1,4 +1,5 @@
 <?php
+//fichero para modificar alumnos con todos sus datos validados 
     if(empty($_SESSION['email_admin'])){
         header("Location:../log-admin/admin.php"); 
         }

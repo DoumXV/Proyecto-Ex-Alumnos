@@ -1,3 +1,4 @@
+//---------------Script para la busquedas en el crud eventos---------------//
 function buscarTabla() {
     var inputId, inputNombre, inputUbicacion, inputInicio, inputFin, tabla, tr, i;
     inputId = document.getElementById("inputBuscarId").value.toUpperCase();

@@ -1,4 +1,5 @@
 <?php
+//fichero php el cual compara los datos del formulario con los datos de la tabla administrador
 session_start();
 $server="localhost";
 $user="root";

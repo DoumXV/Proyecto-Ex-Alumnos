@@ -2,17 +2,18 @@
 include("alumnos.php");
 $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND TRIM(descripcion) <> '' AND TRIM(direccion_imagen) <> '';");
 ?>
-
+<!--------------------------------Galeria para ex-alumnos-------------------------------------->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-	<title>Ex alumnos UDA</title>
+	<title>Galeria Ex alumnos UDA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="galeria.css">
 </head>
 
 <body>
+    <!-------------------------------Barra de navegacion--------------------------------->
 	<header>
 		<a href="../home/index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
@@ -24,7 +25,9 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
 			</ul>
 		</nav>
 	</header>
+    <!-------------------------------------------------------------------------------------->
 
+    <!--------------Banner con imagen del DIICC  + Departamento de matematicas-------------->
     <section class="zona1">
     <div class="header-difuminado mx-auto">
     </div>
@@ -34,9 +37,10 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
             <h1 class="titulo2">Galeria Ex Alumnos</h1>
             <p>Universidad de Atacama</p>
         </div>
-
   </section>
+    <!-------------------------------------------------------------------------------------->
 
+    <!------------------Codigo php para la paginacion de la galeria------------------------->
     <!--Maglio-->
     <?php
     #script donde se secciona de 4 en 4 registros la tabla usuarios
@@ -55,7 +59,9 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
     $busqueda = $conexion->query("SELECT * FROM alumnos LIMIT $inicio, $registros");
     $paginas = ceil($numero_alumnos / $registros);
 ?>
+    <!-------------------------------------------------------------------------------------->
 
+    <!-----------------Seccion tarjetas ex alumnos junto con la paginacion------------------>
 <section class="galeria">
         <h2 class="titulos container-fluid text-center">Galeria de Ex-Alumnos</h2>
         <div class="tarjetas row ">
@@ -125,7 +131,7 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
                 </div>
             </div>
             <?php } ?>
-
+<!------------------------------------Codigo para la paginacion----------------------------------------->
 <div class="container-fluid">
     <div class="tarjetas row justify-content-center align-content-center">
         <div class="col-12">
@@ -153,6 +159,9 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
     </div>
 </div>
 </div>
+    <!-------------------------------------------------------------------------------------->
+
+    <!--------------------------------------Footer------------------------------------------>
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -181,12 +190,19 @@ $query = $conexion->query("SELECT * FROM alumnos WHERE TRIM(contacto) <> '' AND 
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------Script para el scroll de la nav-bar--------------------------->
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------------Script para el bootstrap-------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------->
 </body>
 </html>

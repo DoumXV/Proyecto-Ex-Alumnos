@@ -1,5 +1,5 @@
 <?php
-
+//Selecciona los eventos el cual la fecha de inicio sea mayor que la fecha actual(para que sea un evento futuro)
 $server="localhost";
 $user="root";
 $pass="";

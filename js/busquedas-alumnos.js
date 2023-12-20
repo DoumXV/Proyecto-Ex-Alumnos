@@ -1,3 +1,4 @@
+//---------------script para la busquedas en el crud alumnos---------------//
 function buscarTabla() {
     var inputNombre, inputEmail, inputFecha,inputArea,inputActual,inputContacto, tabla, tr, i;
     inputNombre = document.getElementById("inputBuscarNombre").value.toUpperCase();

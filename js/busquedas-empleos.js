@@ -1,3 +1,4 @@
+//---------------Script para la busquedas en el crud empleos---------------//
 function buscarTabla() {
     var inputId, inputTitulo, inputEmpresa, inputCiudad, inputSueldo, tabla, tr, i;
     inputId = document.getElementById("inputBuscarId").value.toUpperCase();

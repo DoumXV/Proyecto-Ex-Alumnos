@@ -1,4 +1,5 @@
 <?php
+//fichero.php para modificar un empleo con todas sus validaciones
     if(empty($_SESSION['email_admin'])){
         header("Location:../log-admin/admin.php"); 
         }

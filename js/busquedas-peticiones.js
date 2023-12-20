@@ -1,3 +1,4 @@
+//---------------Script para la busquedas en el crud peticiones---------------//
 function buscarTabla() {
     var inputCodigo, inputNombre, inputEmail, inputContacto,inputArea, tabla, tr, i;
     inputCodigo = document.getElementById("inputBuscarCodigo").value.toUpperCase();

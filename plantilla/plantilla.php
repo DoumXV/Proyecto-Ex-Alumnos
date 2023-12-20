@@ -1,13 +1,15 @@
+<!-----------------------------------Plantilla------------------------------------------>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Plantilla</title>
+	<title>Plantilla ex-alumnos</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="plantilla.css">
 </head>
 <body>
+  <!---------------------------------Barra de navegacion---------------------------------->
 	<header>
 		<a href="index.php" class="logo"><img class="logo-uda" src="../img/logo-corp-diic-txtblanco.png" alt="Logo UDA"></a>
 		<nav>
@@ -19,7 +21,9 @@
 			</ul>
 		</nav>
 	</header>
+  <!-------------------------------------------------------------------------------------->
 
+  <!--------------------Banner con imagen de pagina administrador------------------------->
   <section class="zona1">
     <div class="header-difuminado mx-auto">
     </div>
@@ -33,7 +37,9 @@
   </section>
 
    
+  <!-------------------------------------------------------------------------------------->
 
+  <!-----------------------------------Footer--------------------------------------------->
     <footer>
         <div class="contenedor-footer">
             <div class="footer-logo">
@@ -62,14 +68,20 @@
           <p>&copy;2023 Creado por alumnos de Ingeniería Civil en Computación e Informática 2023</p>
       </div>
     </footer>
-    
+  <!-------------------------------------------------------------------------------------->
+
+  <!------------------------Script para el scroll de la nav-bar--------------------------->
 	<script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
 			header.classList.toggle("abajo",window.scrollY>0);
 		})
 	</script>
+  <!-------------------------------------------------------------------------------------->
+
+  <!------------------------Script para el bootstrap-------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-------------------------------------------------------------------------------------->
 </body>
 </html>
 

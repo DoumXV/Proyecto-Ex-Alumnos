@@ -1,4 +1,5 @@
 <?php
+//fichero.php para registrar un empleo con sus datos validados
 include "../administrador/conexion.php";
 if(!empty($_POST["btnregistrar"])){
         $titulo=$_POST["titulo"];

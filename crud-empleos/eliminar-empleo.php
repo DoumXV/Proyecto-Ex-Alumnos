@@ -1,4 +1,5 @@
 <?php
+//fichero.php para eliminar empleos + validacion de inicio de session
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
